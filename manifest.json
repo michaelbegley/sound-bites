@@ -1,0 +1,15 @@
+{
+ "name": "Sound Bites",
+ "short_name": "Sound Bites",
+ "start_url": "./",
+ "display": "standalone",
+ "background_color": "#FFFFFF",
+ "theme_color": "#FFFFFF",
+ "icons": [
+  {
+   "src": "icon.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  }
+ ]
+}

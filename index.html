@@ -1,0 +1,1634 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sound Bites</title>
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E0E0F" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Sound Bites">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bungee&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fog:#FFFFFF; --paper:#FFFFFF; --ink:#111111; --slate:#6B6B6B; --line:#E3E3E3;
+  --neon:#E0475E; --kelp:#2E8B57; --star:#C8A400; --open:#2E8B57; --closed:#9A9A9A; --pink:#F6C6CA;
+  --f:"Inter",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--fog);color:var(--ink);font-family:var(--f);font-size:16px;line-height:1.35;-webkit-text-size-adjust:100%}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid var(--neon);outline-offset:2px}
+a{color:inherit}
+
+/* ---------- header ---------- */
+.top{position:sticky;top:0;z-index:5;background:#fff;color:var(--ink);padding:14px 14px 8px;padding-top:calc(14px + env(safe-area-inset-top));border-bottom:1px solid var(--line)}
+.brand{display:flex;justify-content:space-between;align-items:baseline}
+.brand h1{margin:0;font-weight:700;font-size:24px;letter-spacing:-.3px;line-height:1}
+.brand h1 span{color:var(--ink)}
+.clock{font-variant-numeric:tabular-nums;font-size:18px;font-weight:600;color:var(--slate)}
+.where{margin-top:8px;display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:14px;color:var(--slate)}
+.where button{color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:5px 10px;font-size:14px;white-space:nowrap;background:#fff}
+.where button.on{border-color:var(--kelp);background:var(--kelp)}
+
+/* ---------- controls ---------- */
+.ctl{position:sticky;top:0;z-index:4;background:#fff;border-bottom:1px solid var(--line);padding:8px 10px 8px}
+.seg{display:flex;gap:6px}
+.seg button{flex:1;padding:8px 6px;border:1px solid var(--line);border-radius:10px;background:#fff;font-weight:600;font-size:15px}
+.seg button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.chips{display:flex;gap:6px;overflow-x:auto;padding:8px 0 2px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chips{mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent)}
+.chips button{white-space:nowrap;padding:6px 12px;border-radius:20px;border:1px solid var(--line);background:#fff;font-size:14px}
+.chips button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.chips button.on.k{background:var(--ink);border-color:var(--ink)}
+#meals button{background:#F4F4F4;border-color:#F4F4F4}
+#meals button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+#meals button.now::after{content:" · now";font-weight:600;color:var(--neon)}
+#meals button.on.now::after{color:#fff}
+.row2{display:flex;gap:8px;margin-top:6px;align-items:center}
+.row2 input{flex:1;min-width:0;padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:16px}
+.pick{background-color:#F6C6CA;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22200%22%20height%3D%2260%22%20viewBox%3D%220%200%20200%2060%22%3E%3Crect%20width%3D%22200%22%20height%3D%2260%22%20fill%3D%22%23F6C6CA%22%2F%3E%3Cpolygon%20points%3D%2229.2%2C25.5%2032.8%2C38.4%2046.1%2C40.1%2035.0%2C47.5%2037.5%2C60.7%2027.0%2C52.4%2015.2%2C58.8%2019.9%2C46.2%2010.1%2C37.0%2023.5%2C37.6%22%20fill%3D%22%23FFF1A8%22%2F%3E%3Cpolygon%20points%3D%2299.0%2C-10.3%20101.3%2C2.9%20114.3%2C5.9%20102.5%2C12.2%20103.7%2C25.6%2094.0%2C16.3%2081.7%2C21.5%2087.6%2C9.5%2078.8%2C-0.7%2092.1%2C1.2%22%20fill%3D%22%23FFF1A8%22%2F%3E%3Cpolygon%20points%3D%22166.6%2C11.9%20171.2%2C24.5%20184.6%2C25.1%20174.1%2C33.4%20177.6%2C46.4%20166.5%2C38.9%20155.3%2C46.3%20158.9%2C33.4%20148.4%2C25.0%20161.8%2C24.5%22%20fill%3D%22%23FFF1A8%22%2F%3E%3Cpolygon%20points%3D%2241.5%2C-26.7%2047.1%2C-14.6%2060.5%2C-15.1%2050.8%2C-5.9%2055.4%2C6.7%2043.6%2C0.2%2033.1%2C8.5%2035.6%2C-4.7%2024.5%2C-12.1%2037.8%2C-13.8%22%20fill%3D%22%23FFF1A8%22%2F%3E%3Cpolygon%20points%3D%22210.0%2C37.4%20211.0%2C45.1%20218.4%2C47.3%20211.4%2C50.6%20211.7%2C58.3%20206.4%2C52.6%20199.1%2C55.3%20202.9%2C48.5%20198.1%2C42.4%20205.7%2C43.9%22%20fill%3D%22%23FFF4BE%22%2F%3E%3Cpolygon%20points%3D%22123.9%2C-16.3%20127.3%2C-9.4%20135.1%2C-9.9%20129.6%2C-4.5%20132.4%2C2.7%20125.5%2C-0.8%20119.6%2C4.1%20120.8%2C-3.5%20114.3%2C-7.7%20121.9%2C-8.8%22%20fill%3D%22%23FFF4BE%22%2F%3E%3Cpolygon%20points%3D%22195.3%2C9.3%20199.5%2C15.8%20207.1%2C14.4%20202.2%2C20.5%20205.9%2C27.3%20198.6%2C24.5%20193.2%2C30.1%20193.6%2C22.3%20186.7%2C18.9%20194.2%2C16.9%22%20fill%3D%22%23FFF4BE%22%2F%3E%3Cpolygon%20points%3D%22149.5%2C-9.7%20152.3%2C-2.5%20160.0%2C-2.2%20154.0%2C2.7%20156.2%2C10.1%20149.7%2C5.9%20143.3%2C10.3%20145.3%2C2.8%20139.1%2C-1.9%20146.9%2C-2.4%22%20fill%3D%22%23FFF4BE%22%2F%3E%3Cpolygon%20points%3D%22-0.7%2C-11.8%201.0%2C-4.2%208.6%2C-2.9%202.0%2C1.1%203.0%2C8.8%20-2.8%2C3.7%20-9.8%2C7.0%20-6.8%2C-0.1%20-12.1%2C-5.7%20-4.4%2C-5.0%22%20fill%3D%22%23FFF4BE%22%2F%3E%3C%2Fsvg%3E");background-size:cover;background-position:center 85%;color:#2A2A2A;font-family:"Bungee","Impact","Arial Black",sans-serif;font-weight:400;font-size:14px;letter-spacing:1px;padding:12px 16px;border-radius:10px;white-space:nowrap;border:1px solid #E9A9AF;text-shadow:0 1px 0 rgba(255,255,255,.7)}
+.pick:active{filter:brightness(.95)}
+.count{font-size:13px;color:var(--slate);padding:6px 2px 0}
+
+/* ---------- board ---------- */
+.board{padding:0 0 10px}
+.rowp{display:grid;grid-template-columns:58px 1fr;gap:0 10px;padding:14px 14px 14px 8px;border-bottom:1px solid var(--line);background:#fff}
+.rowp.closed{background:#FAFAFA}
+.rowp.closed .name{color:var(--slate)}
+.min{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:2px}
+.min b{font-size:30px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-1px}
+.min small{font-size:11px;color:var(--slate)}
+.min .terr{color:var(--neon);font-weight:600;margin-top:2px}
+.rowp.closed .min b{color:var(--slate)}
+.hd{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.name{font-size:18px;font-weight:600;line-height:1.2;letter-spacing:-.2px}
+.rate{white-space:nowrap;font-size:15px;font-variant-numeric:tabular-nums}
+.rate b{color:var(--star);font-weight:700}
+.rate small{color:var(--slate)}
+.meta{font-size:13px;color:var(--slate);margin-top:3px}
+.get{font-size:15px;margin-top:5px;color:#333}
+.stat{font-size:14px;margin-top:5px;font-weight:600}
+.stat.o{color:var(--open)} .stat.c{color:var(--closed)} .stat.soon{color:var(--neon)}
+.acts{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap;align-items:center}
+.acts .mk{margin-left:auto}
+.acts a{font-size:13px;font-weight:600;text-decoration:none;padding:7px 11px;border:1px solid var(--line);border-radius:8px;background:#fff}
+.acts a.dir{background:var(--ink);color:#fff;border-color:var(--ink)}
+.showmap{font-size:13px;font-weight:600;padding:7px 11px;border:1px solid var(--line);border-radius:8px;background:#fff}
+.mk{margin-left:auto;display:flex;gap:4px}
+.mk button{width:34px;height:32px;border:1px solid var(--line);border-radius:8px;background:#fff;font-size:16px;line-height:1}
+.mk button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.mk button.on.h{background:var(--neon);border-color:var(--neon)}
+.tag{display:inline-block;font-size:12px;padding:1px 7px;border:1px solid var(--line);border-radius:6px;color:var(--slate);margin-right:6px;vertical-align:middle;background:#fff}
+.unv{color:var(--closed);font-size:13px}
+.hrs{display:none;margin-top:6px;font-size:14px;color:var(--slate);font-variant-numeric:tabular-nums}
+.rowp.x .hrs{display:block}
+.hrs div{display:flex;gap:10px}.hrs div span:first-child{width:34px}
+.hrs .today{color:var(--ink);font-weight:600}
+.empty{padding:40px 20px;text-align:center;color:var(--slate);font-size:16px}
+.empty b{display:block;color:var(--ink);font-size:20px;margin-bottom:6px}
+
+/* ---------- picked overlay ---------- */
+.ov{position:fixed;inset:0;background:rgba(17,17,17,.94);color:#fff;display:none;flex-direction:column;justify-content:center;padding:28px;z-index:20}
+.ov.on{display:flex}
+.ov .k{font-size:16px;color:#c7d2d8}
+.ov .n{font-size:36px;font-weight:700;line-height:1.08;margin:6px 0 4px;letter-spacing:-.5px}
+.ov .g{font-size:20px;color:#e6edf0;margin-bottom:6px}
+.ov .s{font-size:18px;color:#c7d2d8}
+.ov .b{display:flex;gap:10px;margin-top:22px}
+.ov .b a,.ov .b button{flex:1;text-align:center;padding:14px;border-radius:10px;font-size:17px;font-weight:700;text-decoration:none}
+.ov .go{background:#fff;color:var(--ink)}
+.ov .again{border:1px solid #6b7d87;color:#fff}
+.ov .close{position:absolute;top:calc(14px + env(safe-area-inset-top));right:16px;font-size:30px;color:#fff}
+.firstrun{display:none;position:fixed;inset:auto 12px 12px;background:var(--ink);color:var(--paper);padding:18px;border-radius:14px;z-index:28;font-size:15px;line-height:1.4;box-shadow:0 6px 24px rgba(0,0,0,.3);max-width:520px;margin:0 auto}
+.firstrun.on{display:block}
+.firstrun b{display:block;font-size:20px;margin-bottom:6px}
+.firstrun button{margin-top:14px;width:100%;padding:11px;border-radius:9px;background:var(--paper);color:var(--ink);font-weight:700;font-size:16px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 16px;border-radius:10px;font-size:15px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:30}
+.toast.on{opacity:1}
+@media (prefers-reduced-motion:reduce){.toast{transition:none}}
+
+.dish{display:inline;font:inherit;color:var(--ink);text-decoration:underline dotted var(--neon);text-decoration-thickness:2px;text-underline-offset:3px;padding:0;background:none}
+.tag.t{border-color:#D6D6D6;color:var(--ink);cursor:pointer}
+.pr{color:var(--slate);margin-right:6px;letter-spacing:1px}
+.ln{display:inline-block;font-size:13px;color:var(--closed);margin-top:3px}
+.hhon{display:inline-block;font-size:12px;font-weight:700;color:#fff;background:var(--kelp);padding:2px 8px;border-radius:6px;margin-top:3px}
+.sheet{position:fixed;left:0;right:0;bottom:0;background:#fff;border-radius:16px 16px 0 0;padding:18px 18px calc(22px + env(safe-area-inset-bottom));box-shadow:0 -6px 24px rgba(28,43,51,.25);transform:translateY(110%);transition:transform .22s;z-index:25;max-width:760px;margin:0 auto}
+.sheet.on{transform:none}
+.sheet h3{margin:0 0 6px;font-size:20px;font-weight:700;letter-spacing:-.2px}
+.sheet p{margin:0;font-size:16px;line-height:1.4}
+.sheet small{display:block;margin-top:10px;color:var(--slate);font-size:13px}
+.sheet .x{position:absolute;top:10px;right:14px;font-size:26px;color:var(--slate)}
+.scrim{position:fixed;inset:0;background:rgba(28,43,51,.35);display:none;z-index:24}
+.scrim.on{display:block}
+@media (prefers-reduced-motion:reduce){.sheet{transition:none}}
+
+.vt{display:flex;justify-content:space-between;align-items:center;padding:6px 2px 0}
+.vt .count{padding:0}
+.vt button{font-size:14px;font-weight:600;border:1px solid var(--line);border-radius:8px;padding:4px 10px;background:#fff}
+.vt button.on{background:var(--ink);color:#fff}
+#map{display:none;position:relative;background:#F0F0F0;height:calc(100vh - 230px);min-height:380px;touch-action:none;overflow:hidden;user-select:none}
+#map.on{display:block}
+#map svg{width:100%;height:100%;display:block}
+.st{stroke:#fff;stroke-width:9;fill:none;stroke-linecap:round}
+.stl{font-size:11px;fill:#8a8a8a;font-weight:600}
+.ring{fill:none;stroke:#BDBDBD;stroke-width:1.5;stroke-dasharray:6 6}
+.you{fill:var(--neon);stroke:#fff;stroke-width:3}
+.selring{fill:none;stroke:var(--ink);stroke-width:2.5;opacity:.85}
+.youring{fill:none;stroke:var(--neon);stroke-width:2;opacity:.6;animation:pulse 2s ease-out infinite;transform-origin:center;transform-box:fill-box}
+@keyframes pulse{0%{transform:scale(.5);opacity:.7}100%{transform:scale(1.6);opacity:0}}
+@media (prefers-reduced-motion:reduce){.youring{animation:none;opacity:.35}}
+.youl{font-size:12px;font-weight:700;fill:var(--neon);paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round}
+.dot{stroke:#fff;stroke-width:2;cursor:pointer}
+.dot.o{fill:var(--kelp)} .dot.c{fill:#B5B5B5} .dot.s{fill:var(--neon)} .dot.n{fill:#DADADA}
+.dot.sel{stroke:var(--ink);stroke-width:3}
+.hit{fill:transparent;pointer-events:all;cursor:pointer}
+.dot{pointer-events:none}
+.mz{position:absolute;right:10px;top:10px;display:flex;flex-direction:column;gap:6px}
+.mz button{width:42px;height:42px;background:#fff;border:1px solid var(--line);border-radius:10px;font-size:22px;font-weight:600;box-shadow:0 1px 4px rgba(0,0,0,.12)}
+.mleg{position:absolute;left:10px;top:10px;background:rgba(255,255,255,.92);border-radius:8px;padding:6px 9px;font-size:12px;line-height:1.5;border:1px solid var(--line)}
+.mleg i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:middle}
+.mpop{position:absolute;left:10px;right:10px;bottom:10px;background:#fff;border-radius:12px;padding:12px 14px;box-shadow:0 4px 18px rgba(0,0,0,.18);display:none}
+.mpop.on{display:block}
+.mpop .name{font-size:19px}
+.mpop .acts{margin-top:10px}
+.mpop .popx{position:absolute;top:6px;right:10px;font-size:26px;color:var(--slate);line-height:1}
+.mpop .stat{margin-top:4px}
+.share{background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-weight:600;white-space:nowrap}
+.note{width:100%;margin-top:8px;padding:9px 11px;border:1px solid var(--line);border-radius:10px;font:inherit;font-size:15px;min-height:44px;resize:vertical;background:#fff}
+.hasnote{color:var(--slate);font-size:13px;margin-left:6px;font-weight:500}
+
+@media (prefers-color-scheme:dark){
+  :root{--fog:#0E0E0F;--paper:#141416;--ink:#F2F2F2;--slate:#9A9A9E;--line:#2A2A2E;--neon:#FF6B7E;--kelp:#5BC48E;--star:#E6C15C;--open:#5BC48E;--closed:#8A8A8E}
+  html,body{background:#0E0E0F;color:#F2F2F2}
+  .top,.ctl,.rowp,.seg button,.chips button,.row2 input,.share,.vt button,.acts a,.mk button,.tag,.note,.mz button,.mpop,.sheet,.showmap,.where button,#help{background:#141416;color:#F2F2F2}
+  .rowp.closed{background:#0E0E0F}
+  .seg button.on,.chips button.on,.acts a.dir,.mk button.on{background:#F2F2F2;color:#141416;border-color:#F2F2F2}
+  #meals button{background:#1E1E22;border-color:#1E1E22}
+  .get{color:#D6D6D8}
+  #map{background:#1A1A1D}
+  .st{stroke:#38383D}
+  .stl{fill:#7A7A80}
+  .ring{stroke:#45454B}
+  .dot.c{fill:#55555C}.dot.n{fill:#3A3A40}
+  .selring{stroke:#F2F2F2}
+  .mleg{background:rgba(20,20,22,.92)}
+  .ov{background:rgba(0,0,0,.95)}
+  .ov .go{background:#F2F2F2;color:#141416}
+  .toast{background:#F2F2F2;color:#141416}
+  .empty b{color:#F2F2F2}
+  .pick{color:#2A2A2A}
+}
+@media (min-width:700px){.board{max-width:760px;margin:0 auto}.ctl,.top{padding-left:calc((100% - 740px)/2);padding-right:calc((100% - 740px)/2)}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="brand"><h1>Sound <span>Bites</span></h1><div style="display:flex;gap:10px;align-items:baseline"><button id="help" aria-label="How to use" style="color:var(--slate);border:1px solid var(--line);border-radius:50%;width:26px;height:26px;font-weight:600;font-size:14px;background:#fff">?</button><div class="clock" id="clock">--:--</div></div></div>
+  <div class="where"><span id="whereTxt">Distances from Harbor Steps NW</span><button id="geo">Use my location</button></div>
+</header>
+
+<div class="ctl">
+  <div class="seg" id="sort">
+    <button data-s="best" class="on">Best</button>
+    <button data-s="near">Closest</button>
+    <button data-s="pop">Most reviewed</button>
+    <button data-s="mine">Saved</button>
+  </div>
+  <div class="chips" id="meals">
+    <button data-m="">Any time</button>
+    <button data-m="breakfast">Breakfast</button>
+    <button data-m="lunch">Lunch</button>
+    <button data-m="dinner">Dinner</button>
+    <button data-m="dessert">Dessert</button>
+    <button data-m="drinks">Drinks</button>
+    <button data-m="late">Late night</button>
+    <button data-m="snacks">Snacks</button>
+  </div>
+  <div class="chips" id="cats">
+    <button data-c="" class="on">All</button>
+    <button data-c="Restaurant">Restaurant</button>
+    <button data-c="Quick bite">Quick bite</button>
+    <button data-c="Bakery & dessert">Bakery &amp; dessert</button>
+    <button data-c="Coffee">Coffee</button>
+    <button data-c="Bar">Bar</button>
+    <button data-c="Market & candy">Market &amp; candy</button>
+  </div>
+  <div class="chips" id="flt">
+    <button data-f="open" class="k on">Open now</button>
+    <button data-f="w5" class="k">≤5 min</button>
+    <button data-f="w10" class="k">≤10 min</button>
+    <button data-f="w15" class="k">≤15 min</button>
+    <button data-f="w20" class="k">≤20 min</button>
+    <button data-f="hh" class="k">Happy hour now</button>
+    <button data-f="nw" class="k">Try something new</button>
+    <button data-f="cheap" class="k">$ and $$ only</button>
+    <button data-f="unv" class="k">Include under 100 reviews</button>
+  </div>
+  <div class="row2">
+    <input id="q" type="search" placeholder="Search names or dishes" autocomplete="off">
+    <button class="pick" id="pick" aria-label="Random pick">RANDOM</button>
+    <button class="share" id="share" title="Text this list">Share</button>
+  </div>
+  <div class="vt"><div class="count" id="count"></div><button id="view">Map</button></div>
+</div>
+
+<div id="map">
+  <svg id="msvg" xmlns="http://www.w3.org/2000/svg"></svg>
+  <div class="mleg"><i style="background:var(--kelp)"></i>open <i style="background:var(--neon)"></i>closing soon <i style="background:#B5B5B5"></i>closed <i style="background:#DADADA"></i>no hours</div>
+  <div class="mz"><button id="zi" aria-label="Zoom in">+</button><button id="zo" aria-label="Zoom out">−</button><button id="zc" aria-label="Center on you" title="Center on you">◎</button><button id="zl" aria-label="Update my location" title="Update my location" style="font-size:16px">📍</button></div>
+  <div class="mpop" id="mpop"></div>
+</div>
+<main class="board" id="board"></main>
+<footer style="padding:18px 14px 40px;font-size:12px;color:var(--slate);text-align:center">Ratings, review counts, and hours from Google. What to get, categories, and picks are ours. Walk times are straight-line at 3 mph.</footer>
+
+<div class="ov" id="ov">
+  <button class="close" id="ovx" aria-label="Close">×</button>
+  <div class="k" id="ovk"></div>
+  <div class="n" id="ovn"></div>
+  <div class="g" id="ovg"></div>
+  <div class="s" id="ovs"></div>
+  <div class="b"><a class="go" id="ovgo" href="#">Directions</a><button class="again" id="ovagain">Pick another</button></div>
+</div>
+<div class="firstrun" id="firstrun"><b>Sound Bites</b>368 places to eat within a mile. The big number is minutes to walk there. Green means open now, grey means closed. Tap the status line for the week\u2019s hours, tap any dotted word to find out what the dish is, and hit RANDOM if you can\u2019t decide.<button id="frok">Got it</button></div>
+<div class="scrim" id="scrim"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true"><button class="x" id="sheetx" aria-label="Close">×</button><h3 id="sht"></h3><p id="shp"></p><small id="shs"></small></div>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ---------- data ----------
+ n name, c category, r rating, k review count, a address, la/lo coords,
+ h hours: string = every day; object = {d: default, m,t,w,r,f,s,u overrides}; "x" closed; hours in 24h decimal, >24 = past midnight
+ p Google place id, w website, g "what to get"
+*/
+const P=[
+{n:"Lands of Origin",c:"Quick bite",r:5.0,k:673,a:"1532 Pike Pl",la:47.6093547,lo:-122.3414402,h:{d:"10-19",t:"x"},p:"ChIJWVEDTl9rkFQRyIAIfZBXEtw",w:"landsoforigin.com",g:"Pastéis de nata, Moroccan lamb roll, Jamaican beef patty. Ethiopian coffee ceremony weekend mornings"},
+{n:"Riccio's Sausage Co.",c:"Quick bite",r:5.0,k:55,a:"1511 Pike Pl",la:47.6085645,lo:-122.3407712,h:"11-17",p:"ChIJhYEpTjlrkFQRZdWZY7cpYk0",w:"ricciosco.com",g:"Don Michele porchetta sandwich, lasagna"},
+{n:"Le Panier",c:"Bakery & dessert",r:4.7,k:3105,a:"1902 Pike Pl",la:47.6098446,lo:-122.3421937,h:"7-18",p:"ChIJSZYmxLJqkFQRw_JlbdtkVBE",w:"lepanier.com",g:"Croissants, macarons, sandwiches. One line for food and coffee"},
+{n:"Pufftown Bakehouse",c:"Bakery & dessert",r:4.7,k:140,a:"1928 Pike Pl",la:47.6102928,lo:-122.3431336,h:{d:"6.5-12",u:"x",m:"x"},p:"ChIJd4bZ-2AWjoARInRKP2rHlwU",g:"Pistachio croissant. Sells out by 11"},
+{n:"Hellenika Cultured Creamery",c:"Bakery & dessert",r:4.7,k:1220,a:"1920a Pike Pl",la:47.6101797,lo:-122.3428346,h:{d:"10.5-18",f:"10.5-19",s:"10.5-19",u:"10.5-18.5"},p:"ChIJmd0iYmRrkFQR9pe53GcMmEQ",g:"Ube coconut and mango split"},
+{n:"Beecher's Handmade Cheese",c:"Quick bite",r:4.6,k:2692,a:"1600 Pike Pl",la:47.6096111,lo:-122.3418611,h:"9-19",p:"ChIJ-cM_wrJqkFQR-c9Pb593-yk",g:"Mac and cheese, grilled cheese"},
+{n:"Market Grill",c:"Quick bite",r:4.6,k:1001,a:"1509 Pike Pl",la:47.6088521,lo:-122.3410809,h:{d:"7.5-17",s:"9-17",u:"10-16"},p:"ChIJU2Vb9rJqkFQR9JH9oyUp8ns",g:"Blackened salmon sandwich"},
+{n:"Three Girls Bakery",c:"Bakery & dessert",r:4.6,k:607,a:"1514 Pike Pl",la:47.6090092,lo:-122.3408068,h:"7-17",p:"ChIJmbBY97JqkFQR5yrPXS_EquU",g:"Meatloaf sandwich, croissants"},
+{n:"City Fish Co.",c:"Market & candy",r:4.6,k:204,a:"1535 Pike Pl",la:47.6092885,lo:-122.3417563,h:{d:"7-17",f:"7-19",s:"7-19",u:"7-19"},p:"ChIJMzk46rJqkFQRTlQqS_3l1aI",g:"Smoked salmon, ships nationwide"},
+{n:"Chukar Cherries",c:"Market & candy",r:4.6,k:92,a:"1529B Pike Pl",la:47.6091101,lo:-122.3416457,h:"9-18",p:"ChIJK0uFvJVrkFQR-haxTbufpPI",g:"Chocolate cherries, ask for samples"},
+{n:"Sweetie's Candy",c:"Market & candy",r:4.5,k:28,a:"1501 Pike Pl #435",la:47.6086274,lo:-122.3407369,h:{d:"10-16",w:"x",s:"10-17",u:"10-17"},p:"ChIJkX3s-LJqkFQRSzkuYgpD3aw",g:"Old-school candy"},
+{n:"Lowell's Restaurant",c:"Restaurant",r:4.4,k:4044,a:"1519 Pike Pl",la:47.6090542,lo:-122.3415694,h:{d:"8-16",f:"8-17",s:"8-17",u:"8-17"},p:"ChIJFTNZ9rJqkFQRGhB_g8Zdu5o",g:"Dungeness crab melt, 3rd floor water view"},
+{n:"Mee Sum Pastry",c:"Quick bite",r:4.4,k:1240,a:"1526 Pike Pl",la:47.6092754,lo:-122.3413626,h:"8-19",p:"ChIJjQjo9rJqkFQRrGSWuC3TVzk",g:"Curry beef hom bao, BBQ pork bun"},
+{n:"Old Fashioned Candy Store",c:"Market & candy",r:4.2,k:13,a:"1501 Pike St #502",la:47.6085731,lo:-122.3408676,h:"10.5-17.5",p:"ChIJkX3s-LJqkFQRCNT0tckW9V8",g:"Black licorice selection"},
+{n:"Jack's Fish Spot",c:"Quick bite",r:4.1,k:1314,a:"1514 Pike Pl",la:47.6090678,lo:-122.3408691,h:{d:"7.5-18",u:"8-17"},p:"ChIJmbBY97JqkFQR4ok9vvlmBpw",g:"Fish and chips, fish tacos"},
+{n:"Pure Food Fish Market",c:"Market & candy",r:4.1,k:270,a:"1511 Pike Pl",la:47.6088206,lo:-122.3410033,h:"7-17",p:"ChIJg4Rb9rJqkFQRj4k1Qm1KhvQ",g:"Shrimp cocktail, oyster shooter"},
+{n:"Seattle Dumpling Co.",c:"Quick bite",r:4.1,k:396,a:"1916 Pike Pl #14",la:47.6102179,lo:-122.3424507,h:{d:"10-17",t:"x"},p:"ChIJTyZkO8BrkFQR15Kb1Bl0c6c",g:"Mushroom dumplings, chicken dumpling noodle soup"},
+{n:"Chocolate & Ice Cream Delight",c:"Bakery & dessert",r:3.9,k:104,a:"1918 Pike Pl",la:47.6101355,lo:-122.3427666,h:"10-18",p:"ChIJgx08ybJqkFQRvOYXXP-yo7U",g:"Milkshakes. Prices not posted, ask first"},
+{n:"Pike Place Bakery",c:"Bakery & dessert",r:3.6,k:101,a:"1501 Pike Pl",la:47.6087414,lo:-122.3409641,h:{d:"x",r:"8-17",f:"8-17",s:"8-17",u:"8-17"},p:"ChIJkX3s-LJqkFQR8DuBOOTQ8uo",g:"Texas donut, apple fritter"},
+{n:"Pike Place Chinese Cuisine",c:"Restaurant",r:3.1,k:401,a:"1533 Pike Pl",la:47.6091667,lo:-122.3416667,h:"9-21",p:"ChIJyyT09rJqkFQRLLYe2Nl0orA",g:"Water view. Food is the weak point"},
+{n:"Radiator Whiskey",c:"Bar",r:4.7,k:1432,a:"94 Pike St #30",la:47.608994,lo:-122.3405592,h:{d:"15-22",f:"15-23",s:"15-23",u:"x"},p:"ChIJt6GM-bJqkFQRE8bmHiV_3ws",g:"Happy hour 3 to 6, pulled pork, deep whiskey list"},
+{n:"Lonely Siren",c:"Restaurant",r:4.7,k:364,a:"1501 Pike Pl, Lvl 2",la:47.608559,lo:-122.3407461,h:{d:"15-24",r:"18-24",f:"12-24",s:"12-24",u:"12-24"},p:"ChIJH3w22oprkFQR6Y9YPFCH50Q",w:"lonelysiren.com",g:"Fries with eyes, patatas bravas, window seats over Pike Pl"},
+{n:"Storyville Coffee",c:"Coffee",r:4.6,k:3183,a:"94 Pike St, top floor",la:47.60895,lo:-122.3404309,h:{d:"7-17",f:"7-18",s:"7-18",u:"7-18"},p:"ChIJBR3G8LJqkFQRWD2Wzn0qG3c",w:"storyville.com",g:"Views over the market. Cinnamon scroll"},
+{n:"Pike Place Fish Market",c:"Market & candy",r:4.6,k:4486,a:"86 Pike St",la:47.6086406,lo:-122.3406838,h:"7-17",p:"ChIJAaWYV7JqkFQREsNb5jEo0sE",g:"Crab cocktail, watch the fish throw"},
+{n:"Alibi Room",c:"Restaurant",r:4.6,k:2277,a:"85 Pike St #410",la:47.6082846,lo:-122.3403579,h:"11.5-26",p:"ChIJfR_RWLJqkFQRnuNtvUDfw-4",g:"Pizza by the gum wall, open till 2 AM"},
+{n:"The Rabbit Box",c:"Bar",r:4.6,k:141,a:"94 Pike St",la:47.6088844,lo:-122.3404024,h:{d:"14-24",m:"x"},p:"ChIJ55YGcLhrkFQRWRDWep6UdAU",g:"Cocktails, live shows, Twin Peaks vibe"},
+{n:"Pasta Casalinga",c:"Restaurant",r:4.6,k:996,a:"93 Pike St #201",la:47.6084776,lo:-122.3399556,h:"11-16.75",p:"ChIJAdP3V7JqkFQRh3g6UpDngzY",g:"Four pastas, changes daily. Trottole"},
+{n:"Ghost Alley Espresso",c:"Coffee",r:4.6,k:764,a:"1499 Post Alley",la:47.6086076,lo:-122.340581,h:"7-16",p:"ChIJPQG7WLJqkFQRUXVHLnb3Lro",g:"Walk-up window by the gum wall"},
+{n:"Matt's in the Market",c:"Restaurant",r:4.5,k:1305,a:"94 Pike St #32",la:47.6089023,lo:-122.3405542,h:{d:"11.5-14.5,17.5-22",u:"11.5-14.5"},p:"ChIJt6GM-bJqkFQRnqQLxHoXr4w",g:"Halibut fishwich. Reserve"},
+{n:"Place Pigalle",c:"Restaurant",r:4.5,k:700,a:"81 Pike St",la:47.6083301,lo:-122.3408338,h:{d:"11.5-21",f:"11.5-21.5",s:"11.5-21.5"},p:"ChIJIeFF9rJqkFQRTqf19QZYftY",g:"Mussels with bacon, French onion soup. Behind the fish throwers"},
+{n:"IL Bistro",c:"Restaurant",r:4.3,k:897,a:"93 Pike St A",la:47.6084952,lo:-122.3401715,h:"17-26",p:"ChIJI2kVWLJqkFQRoNhAi2fjAz0",g:"Candlelit, steak, cioppino"},
+{n:"Pike Place Bar & Grill",c:"Restaurant",r:4.1,k:1346,a:"90 Pike St",la:47.6089274,lo:-122.340594,h:{d:"10-22",f:"9-23",s:"9-23"},p:"ChIJWalY97JqkFQR03-hwcBDefo",g:"Crab benedict, bang bang shrimp"},
+{n:"Chef Joe Brunch",c:"Restaurant",r:4.9,k:144,a:"1914 Post Alley",la:47.6103476,lo:-122.3421963,h:{d:"x",f:"10-15",s:"10-15",u:"10-15"},p:"ChIJK0kBtAtrkFQREu1svJlo_d4",g:"Pan con chicharrón, lomo saltado, tres leches pancakes"},
+{n:"Pike Place Chowder",c:"Quick bite",r:4.6,k:8346,a:"1530 Post Alley",la:47.6094243,lo:-122.3412192,h:"11-17",p:"ChIJldHS8bJqkFQRJ3mW7Hb1pQ0",w:"pikeplacechowder.com",g:"Order online, skip the outside line"},
+{n:"The Pink Door",c:"Restaurant",r:4.6,k:7342,a:"1919 Post Alley",la:47.6103652,lo:-122.3425604,h:{d:"11.5-23.5",u:"x",m:"x"},p:"ChIJ91YOzrJqkFQRKmSW0B1qrbo",w:"thepinkdoor.net",g:"Lasagna, bruschetta. Reservations book weeks out"},
+{n:"Cafe Campagne",c:"Restaurant",r:4.5,k:1568,a:"1600 Post Alley",la:47.6097561,lo:-122.3415071,h:{d:"9-21",s:"8-21",u:"8-20"},p:"ChIJWfoS3bJqkFQRe8w36H6VslI",g:"Cassoulet, sipping chocolate, French toast"},
+{n:"White Horse Tavern",c:"Bar",r:4.5,k:433,a:"1908 Post Alley",la:47.6102358,lo:-122.3419821,h:{d:"17-24",u:"x"},p:"ChIJ1T6s2rJqkFQRptgjf0YL9_8",g:"Ask for the strongest drink. Fresh lemonade"},
+{n:"Kells Irish Restaurant & Pub",c:"Bar",r:4.3,k:2152,a:"1916 Post Alley",la:47.6103865,lo:-122.3422223,h:{m:"10-22",t:"11-23",w:"11-24",r:"10-24",f:"10-26",s:"10-26",u:"10-22"},p:"ChIJmT4pzrJqkFQRGIQO7h3UiMY",g:"Crab cakes, Reuben, sports on"},
+{n:"The Chocolate Market",c:"Market & candy",r:4.3,k:209,a:"1906 Post Alley",la:47.6101444,lo:-122.3419357,h:"9-20",p:"ChIJ59ap2rJqkFQRq-upIMYx4jg",g:"Fudge, toffee"},
+{n:"Old Stove Brewing Co.",c:"Bar",r:4.5,k:5622,a:"1901 Western Ave",la:47.609483,lo:-122.3430118,h:"11-22",p:"ChIJy5yh7LJqkFQRwDkAcw9At84",g:"Fish and chips, corn dip, patio at sunset"},
+{n:"indi chocolate",c:"Bakery & dessert",r:4.5,k:347,a:"1901 Western Ave D",la:47.6094848,lo:-122.3425906,h:{d:"8.5-17.5",r:"8-19",f:"8-19",s:"8-19",u:"8-19"},p:"ChIJv1QuXrJqkFQRyZmyvORKlQY",g:"Cacao nib chocolate chip cookie, sipping chocolate"},
+{n:"Freya Bakery & Cafe",c:"Bakery & dessert",r:4.5,k:397,a:"1426 Western Ave",la:47.608167,lo:-122.3406391,h:{d:"7-16",s:"8-16",u:"8-16"},p:"ChIJ20YiR9hrkFQRy2tadLeY5I0",w:"freyabakery.com",g:"Quiche, churro cruffin, almond croissant. Quiet street"},
+{n:"Honest Biscuits",c:"Quick bite",r:4.3,k:974,a:"1901 Western Ave E",la:47.6095293,lo:-122.343178,h:{d:"8-14",t:"x",s:"8-15",u:"8-15"},p:"ChIJAdP3V7JqkFQRLJz9zbHtfVs",g:"GF fried chicken biscuit, butterhole"},
+{n:"Pike Street Coffee",c:"Coffee",r:4.2,k:249,a:"1501 Western Ave #300",la:47.6083904,lo:-122.3415875,h:{m:"7.5-17.5",t:"7.5-17.5",w:"7-18",r:"7-18",f:"7-18.5",s:"7-18.5",u:"7.5-18"},p:"ChIJL6-LM7VrkFQRQP58nbHU4lE",g:"Honey lavender latte, postcards with stamps"},
+{n:"Ludi's Restaurant",c:"Restaurant",r:4.6,k:2499,a:"120 Stewart St",la:47.610944,lo:-122.3407198,h:"7-14.5",p:"ChIJbUAe611rkFQR_EFtZDsxaT4",g:"Ube pancake, silog plates. No reservations, line up"},
+{n:"Market Grocery & Deli",c:"Quick bite",r:4.6,k:60,a:"2003 1st Ave",la:47.6111245,lo:-122.3430032,h:{d:"10.5-21.5",s:"12.5-21",u:"x"},p:"ChIJq20qL00VkFQRUFt1EMX4HRs",g:"Bodega sandwiches, California club"},
+{n:"Virginia Inn",c:"Restaurant",r:4.4,k:1043,a:"1937 1st Ave",la:47.610922,lo:-122.342612,h:{d:"11.5-21",s:"9-21",u:"9-21"},p:"ChIJ8wI-LE0VkFQRBVlGBWsOp0k",g:"GF calamari, garlic fries, local art"},
+{n:"Le Pichet",c:"Restaurant",r:4.4,k:1716,a:"1933 1st Ave",la:47.6108014,lo:-122.3425876,h:{d:"10-21",r:"10-22",f:"10-22",s:"10-22"},p:"ChIJLWKDK00VkFQRQaHHVu-CZ1g",g:"Pâté, gratin Lyonnaise. Very French"},
+{n:"Biscuit Bitch",c:"Quick bite",r:4.4,k:3889,a:"1909 1st Ave",la:47.610365,lo:-122.3417,h:"7.5-13",p:"ChIJ9Z7V1rJqkFQR4PQw1WfZh3M",g:"Biscuits and gravy, grits. Order ahead online"},
+{n:"El Borracho",c:"Restaurant",r:4.2,k:1993,a:"1521 1st Ave",la:47.6093214,lo:-122.3407154,h:{d:"11-22",u:"11-20"},p:"ChIJmVeu_rJqkFQRz8kW3M6doE8",g:"Vegan Mexican, loaded nachos"},
+{n:"The Taproom at Pike Place",c:"Bar",r:4.2,k:719,a:"1525 1st Ave #16",la:47.6095162,lo:-122.3408971,h:{d:"11-22",f:"11-23",s:"11-23"},p:"ChIJgbiD5rJqkFQRI-lpw4TzU8Q",g:"Local taps, pretzel"},
+{n:"Social Grounds Coffee & Tea",c:"Coffee",r:4.1,k:84,a:"1914 1st Ave",la:47.6107343,lo:-122.3417849,h:{d:"7-18",f:"7-18.5",s:"7-18.5"},p:"ChIJs2QCcgBrkFQRXUBfh0k8uXI",g:"Honeycomb iced latte"},
+{n:"Plantiful First & Union",c:"Quick bite",r:4.8,k:159,a:"1405 1st Ave",la:47.608068,lo:-122.3395497,h:"8-20",p:"ChIJRV1pNXRrkFQRmLQjWMmJkcc",w:"plantiful.us",g:"Açaí bowl, chckn sandwich. No seating, eat by the water"},
+{n:"The Crumpet Shop",c:"Quick bite",r:4.7,k:1563,a:"1503 1st Ave",la:47.6090398,lo:-122.3405168,h:"7-16",p:"ChIJBx-J_rJqkFQRlLepwvXHbuo",g:"Smoked salmon cream cheese crumpet, unlimited tea"},
+{n:"Baxter & Frost",c:"Bakery & dessert",r:4.7,k:294,a:"1419 1st Ave",la:47.6083099,lo:-122.3397189,h:{d:"10-19",f:"10-20",s:"10-21",u:"10-20"},p:"ChIJ7b60pSFrkFQRRQQkeDQYOtQ",w:"baxterandfrost.com",g:"Sparkling lavender matcha lemonade, brownies"},
+{n:"DeLaurenti Food & Wine",c:"Quick bite",r:4.7,k:698,a:"1435 1st Ave",la:47.6086184,lo:-122.3401015,h:"9-17",p:"ChIJbWSJ-LJqkFQR96t3ak16578",g:"$5 pizza slice, cheese counter, spritz bar upstairs"},
+{n:"Bottega Gelato",c:"Bakery & dessert",r:4.6,k:640,a:"1425 1st Ave",la:47.6084299,lo:-122.3398586,h:{d:"10-21",f:"10-22",s:"10-22",u:"10-22"},p:"ChIJFwOJ-LJqkFQReAbSXHUAqI8",g:"Pistachio, affogato"},
+{n:"Salt & Straw",c:"Bakery & dessert",r:4.5,k:179,a:"102 Pike St",la:47.6089767,lo:-122.3399245,h:"11-23",p:"ChIJJ12nCqlrkFQRhX1lL1olRTc",g:"Pear and blue cheese, honey lavender"},
+{n:"La Vaca",c:"Quick bite",r:4.4,k:123,a:"1429 1st Ave",la:47.6086246,lo:-122.3400652,h:{d:"11-17.5",u:"x"},p:"ChIJERKJ-LJqkFQRjnLQYdXmeSY",g:"Cheap big burritos, takeout only"},
+{n:"Blarney Stone Pub",c:"Bar",r:4.2,k:1294,a:"1416 1st Ave",la:47.6083051,lo:-122.3391296,h:{d:"14-26",r:"13-26",f:"12-26",s:"12-26",u:"12-26"},p:"ChIJHT8jULJqkFQRbWUzOe5ZHHk",g:"Pool table, bean burger, cold beer"},
+{n:"Falafel King",c:"Quick bite",r:3.9,k:471,a:"1509 1st Ave",la:47.6090808,lo:-122.3405155,h:{d:"11-20",f:"11-21",s:"11-21",u:"11-19"},p:"ChIJb4pG-7JqkFQRvsbImcPOiZs",g:"Gyro or falafel to go, eat at the overlook"},
+{n:"CU Urban Market & Cafe",c:"Coffee",r:4.8,k:214,a:"1117 1st Ave",la:47.6057955,lo:-122.3375124,h:{d:"6.5-19",u:"8-16"},p:"ChIJJ7opW15rkFQRpE4PHo9qP7A",g:"Biscoff iced latte, pistachio latte, pup cups"},
+{n:"Von's 1000Spirits",c:"Restaurant",r:4.6,k:7724,a:"1225 1st Ave",la:47.6066052,lo:-122.3384085,h:{d:"11-24",f:"11-25",s:"11-25"},p:"ChIJYSjPILJqkFQRE-m7s1g6K0Y",w:"vons1000spirits.com",g:"Sourdough pizza, king salmon pasta. Join the waitlist early"},
+{n:"Diller Room",c:"Bar",r:4.6,k:2538,a:"1224 1st Ave",la:47.6068168,lo:-122.3379406,h:"14-26",p:"ChIJcUvNJ7JqkFQR_qdDVl2ZRfo",w:"dillerroom.com",g:"Deep bourbon list, Michter's flight"},
+{n:"Fonté Coffee",c:"Coffee",r:4.4,k:1341,a:"1321 1st Ave",la:47.6072763,lo:-122.3389292,h:{d:"7-17",r:"7-19",f:"7-19",s:"7-19",u:"7-19"},p:"ChIJx_rKPrJqkFQR7OliFT0Jk-A",w:"fontecoffee.com",g:"Turkish latte, patio across from SAM"},
+{n:"Noi Thai Cuisine",c:"Restaurant",r:4.4,k:3037,a:"1303 1st Ave",la:47.6068919,lo:-122.3387501,h:{d:"12-21.5",f:"12-22.5",s:"12-22.5"},p:"ChIJe-eSIrJqkFQRgqI9cdi2xwc",w:"noithaicuisine.com",g:"Crab claypot, pineapple rice. Reserve"},
+{n:"Musubi Kai",c:"Quick bite",r:4.7,k:360,a:"108 Union St",la:47.608103,lo:-122.3387789,h:"9-20",p:"ChIJuRd6ryBrkFQRgM7rGsivREs",w:"musubikaiseattle.com",g:"Spam egg eel musubi, rainbow poke bowl"},
+{n:"Pane Pane Sandwiches",c:"Quick bite",r:4.6,k:200,a:"304 Union St",la:47.6089792,lo:-122.3367651,h:{d:"8-16",s:"x",u:"x"},p:"ChIJNVSfl7NqkFQR_xwx9YUxm04",g:"Teriyaki meatball banh mi, breakfast sandwich"},
+{n:"Gelatiamo",c:"Bakery & dessert",r:4.6,k:1477,a:"1400 3rd Ave",la:47.6089194,lo:-122.3368074,h:{d:"11-21",f:"11-22",s:"11-22"},p:"ChIJ_ZS9l7NqkFQRfgE2Hnj2VeE",g:"Crème brûlée gelato, pistachio"},
+{n:"The Hart and the Hunter",c:"Restaurant",r:4.3,k:639,a:"109 Pine St",la:47.6098596,lo:-122.3403051,h:{d:"8-21",m:"8-15",u:"8-15"},p:"ChIJL0zcZMprkFQRpiWglnqZ5zE",g:"Smoked beef hash, biscuits, eggs benedict"},
+{n:"Wild Ginger",c:"Restaurant",r:4.3,k:2365,a:"1401 3rd Ave",la:47.6087817,lo:-122.3371981,h:{d:"16-21",t:"11.5-14,16-21",w:"11.5-14,16-21",r:"11.5-14,16-21"},p:"ChIJHUQoo7NqkFQRj20DssNIn8c",g:"Duck with buns, Malay chicken"},
+{n:"The Fonté Bar at Rainier Square",c:"Bar",r:4.3,k:218,a:"401 Union St #201",la:47.6092838,lo:-122.3345808,h:{d:"6-19",s:"x",u:"x"},p:"ChIJKwN6kldrkFQRldtAp3Yrhp8",g:"Sliders, truffle fries, fire pit"},
+{n:"Little Ben's Rooftop Bar",c:"Bar",r:4.3,k:8,a:"130 Pike St",la:47.6094289,lo:-122.3392560,h:"16-20",p:"ChIJFwk9MVNrkFQRfGmwef3WlEE",g:"$15 cover with a drink, views of the bay"},
+{n:"Ben Paris",c:"Restaurant",r:4.2,k:1171,a:"130 Pike St",la:47.6093889,lo:-122.339296,h:{d:"7-21",f:"7-22",s:"7-22"},p:"ChIJtRCZSe9rkFQRxl4Y_upZoF0",g:"Ricotta pancakes, baked eggs"},
+{n:"The George",c:"Restaurant",r:4.2,k:821,a:"411 University St",la:47.6080551,lo:-122.3334547,h:{m:"6.5-11,11.5-13.5,17-21",t:"6.5-11,11.5-13.5",w:"6.5-11,11.5-13.5",r:"6.5-11,11.5-13.5,17-21",f:"6.5-11,11.5-13.5,17-21.5",s:"7-11.5,12-14,17-21.5",u:"7-11.5,12-14,17-21"},p:"ChIJkSxTm_xrkFQRyBwGa8MfLvQ",g:"1924 Fairmont dining room. Breakfast is the safe bet"},
+{n:"Third Avenue Cafe",c:"Quick bite",r:4.8,k:95,a:"1908 3rd Ave",la:47.6120203,lo:-122.3398256,h:{d:"8-14.5",s:"x",u:"x"},p:"ChIJkTO9sUwVkFQR-2S50boraf8",g:"Spicy chicken teriyaki, classic Seattle style"},
+{n:"Nom House Vietnamese Kitchen",c:"Quick bite",r:4.7,k:69,a:"1111 3rd Ave",la:47.6062675,lo:-122.335259,h:{d:"10.5-17.5",s:"x",u:"x"},p:"ChIJGQfqXwBrkFQR1cBllDTeQvQ",g:"BBQ pork banh mi, nom nom sauce"},
+{n:"Homegrown",c:"Quick bite",r:4.1,k:313,a:"999 3rd Ave",la:47.604664,lo:-122.3343443,h:{d:"7-15",s:"x",u:"x"},p:"ChIJ1xiXVrBqkFQRgTH5jcL_57I",g:"Broccoli melt, chickpea salad sandwich"},
+{n:"Original Deli",c:"Quick bite",r:4.9,k:476,a:"1215 4th Ave",la:47.6074515,lo:-122.3348903,h:{d:"7-14",s:"x",u:"x"},p:"ChIJYTsF4rNqkFQRY0yKbRAG0Oo",g:"Bulgogi teriyaki, two-pound breakfast burrito. Alley entrance"},
+{n:"Lingon Restaurant",c:"Restaurant",r:4.9,k:147,a:"1518 4th Ave",la:47.6108479,lo:-122.3367195,h:{d:"14-22",m:"x"},p:"ChIJYyrSB8drkFQRcvRwEF_ujZw",g:"Swedish meatballs, toast Skagen, pancake flight"},
+{n:"Howdy Y'all Coffee",c:"Coffee",r:4.9,k:121,a:"Central Library, 3rd fl",la:47.6066875,lo:-122.3325625,h:{d:"10-16",u:"x"},p:"ChIJAb0KE0RrkFQRuI4X0By5Mcw",g:"Earl Grey matcha, pistachio matcha"},
+{n:"Harbor Cafe",c:"Quick bite",r:4.8,k:191,a:"1411 4th Ave #103",la:47.6093771,lo:-122.3363408,h:{d:"9-14.5",s:"x",u:"x"},p:"ChIJuWpchLNqkFQR5R69vy9sQj8",g:"Daily curry special, chicken curry noodles"},
+{n:"Monorail Espresso (4th Ave)",c:"Coffee",r:4.6,k:44,a:"1411 4th Ave",la:47.6093102,lo:-122.3362841,h:{d:"7-14",s:"x",u:"x"},p:"ChIJ_enN2XNrkFQRp8o_z9a515o",g:"Walk-up espresso, Seattle original"},
+{n:"Caffe Migliore",c:"Coffee",r:4.5,k:275,a:"1215 4th Ave",la:47.6076207,lo:-122.3347955,h:{d:"6-15",s:"x",u:"x"},p:"ChIJeVn94rNqkFQR_vdGCDV4HD0",g:"Quiche, oat scone, quiet corner"},
+{n:"Yard House",c:"Restaurant",r:4.4,k:6528,a:"1501 4th Ave",la:47.61051,lo:-122.33735,h:{d:"11-22",f:"11-23",s:"11-23",u:"10-22"},p:"ChIJSxHAcbNqkFQRimpTht7bPsM",g:"Chain. Big tap list, happy hour"},
+{n:"Urban Coffee House",c:"Coffee",r:4.3,k:149,a:"1900 4th Ave",la:47.6124821,lo:-122.3387289,h:{d:"7-12",f:"7-14",s:"8-14",u:"8-12"},p:"ChIJv-fjWUsVkFQR-BkLFs20m00",g:"Urban rush latte, house syrups"},
+{n:"W Living Room Bar",c:"Bar",r:4.3,k:88,a:"1112 4th Ave",la:47.6073948,lo:-122.3337075,h:{d:"15-23",f:"15-24",s:"14-24",u:"14-23"},p:"ChIJe1rOQUhrkFQR5uBjsMBMCmQ",g:"Truffle fries, hotel lobby DJ nights"},
+{n:"4th Ave Espresso Bar",c:"Coffee",r:4.1,k:114,a:"1208 4th Ave",la:47.6078846,lo:-122.3341893,h:{d:"6-12",s:"7-13",u:"7-13"},p:"ChIJHzPbSBVrkFQRcG6dthLLVYU",g:"Caffè Ladro beans, breakfast burrito. Pricey"},
+{n:"1928 Tap and Grill",c:"Bar",r:4.1,k:219,a:"1102 4th Ave",la:47.6070958,lo:-122.3335577,h:{d:"11-22",f:"11-24",s:"11-24",u:"11-23"},p:"ChIJNV5JFvRrkFQRU87TjTVOLas",g:"Crispy fries, late kitchen"},
+{n:"Elephant & Castle",c:"Bar",r:4.5,k:3447,a:"1415 5th Ave",la:47.6099215,lo:-122.3355269,h:{d:"11.5-24",f:"11.5-26",s:"11.5-26"},p:"ChIJB9c1hrRqkFQRAdly96gziZ4",g:"Pie flight, fish and chips, proper Guinness"},
+{n:"Carmine's",c:"Restaurant",r:4.5,k:257,a:"1420 5th Ave",la:47.6106057,lo:-122.3341309,h:{d:"11.5-22",s:"17-22",u:"x"},p:"ChIJYxnjaXZrkFQRFuGhseoJc24",g:"Linguine with clams, chocolate mousse. Bar only 3 to 5"},
+{n:"Tulio",c:"Restaurant",r:4.3,k:1182,a:"1100 5th Ave",la:47.6076206,lo:-122.3324201,h:{d:"7-10.5,11.5-14,17-21",s:"7-12,17-21",u:"7-12,17-21"},p:"ChIJJ6iYtLZqkFQRPwfAHFSulgg",g:"Burrata, sweet potato gnocchi"},
+{n:"Frolik Kitchen + Cocktails",c:"Restaurant",r:3.8,k:1130,a:"1415 5th Ave",la:47.6099943,lo:-122.3355937,h:"6.5-23",p:"ChIJ8c7QfbRqkFQRZQie8I5SLwI",g:"Hotel restaurant. Elephant & Castle downstairs is better"},
+{n:"Downtowndelimarket",c:"Quick bite",r:4.9,k:101,a:"1303 6th Ave",la:47.6094457,lo:-122.3332891,h:{d:"8-23",u:"10-20"},p:"ChIJiVf-BUdrkFQRhM2ZIYzk1os",w:"downtown-delimarket.com",g:"Chicken pesto sub, Zesty Fay, weird candy"},
+{n:"Vivienne's Bistro",c:"Restaurant",r:4.6,k:230,a:"602 Union St",la:47.6103558,lo:-122.3334738,h:"11-15,16-21",p:"ChIJ5UKL6shrkFQRtxy6YOJYK2w",g:"Basil beef, seafood, Sheraton lobby"},
+{n:"Alder & Ash",c:"Restaurant",r:4.4,k:889,a:"629 Pike St",la:47.6113175,lo:-122.3334013,h:"6-22",p:"ChIJiajxot1rkFQRemLl_XPhBoo",g:"Fish and chips, salmon crispy rice. 4% surcharge"},
+{n:"Evergreens",c:"Quick bite",r:4.4,k:42,a:"600 University St #114",la:47.6097991,lo:-122.3319886,h:{d:"10-15",f:"10-14",s:"x",u:"x"},p:"ChIJtzfh0AprkFQRlkVpmNaUDkg",g:"Salads and bowls, order ahead"},
+{n:"Cortina",c:"Restaurant",r:4.2,k:643,a:"621 Union St",la:47.610257,lo:-122.3328019,h:{d:"11-21",s:"16-21",u:"x"},p:"ChIJTyQoov1rkFQRZYHgoMIeSxw",g:"Ricotta ravioli, meatballs. Reserve"},
+{n:"Cortina Cafe",c:"Coffee",r:4.2,k:10,a:"621 Union St",la:47.6102454,lo:-122.3328607,h:{d:"7-15",f:"7-13",s:"x",u:"x"},p:"ChIJFeb0WX5rkFQRBDfamdt__Sw",g:"Pastries. 18% charge on to-go coffee"},
+{n:"Redtrees Restaurant and Bar",c:"Restaurant",r:3.9,k:97,a:"1301 6th Ave",la:47.6091942,lo:-122.3328979,h:"7-10.5,16-23",p:"ChIJE2F8FLRqkFQREDtIoA4fBTs",g:"Hilton bar. Old fashioned is the move"},
+{n:"Fountain Wine Bar",c:"Bar",r:3.6,k:80,a:"1400 6th Ave",la:47.6111893,lo:-122.3339532,h:"16-24",p:"ChIJhUk19rRqkFQRjKWClJHOdq4",g:"Sheraton bar, serves late"},
+{n:"Seattle Rooftop by Fogo de Chão",c:"Restaurant",r:4.5,k:388,a:"400 University St, rooftop",la:47.6084115,lo:-122.3347433,h:{d:"16-22",f:"16-23",s:"11-22",u:"11-21"},p:"ChIJt0eaMThrkFQRDLLMicShGng",g:"Lamb lollipops, rooftop views"},
+{n:"Olympic Bar",c:"Bar",r:4.4,k:240,a:"411 University St",la:47.6079956,lo:-122.3338074,h:{d:"12-23",f:"14-24",s:"11-24",u:"11-23"},p:"ChIJWVBFYDBrkFQRe3izcKdQSYg",g:"Fairmont lobby bar, ask for a Sazerac"},
+{n:"Iconic Grounds",c:"Coffee",r:4.3,k:7,a:"1001 4th Ave",la:47.6061317,lo:-122.3338615,h:{d:"7-15",s:"x",u:"x"},p:"ChIJa8CLilprkFQRTGYei_aAXmI",g:"Office-lobby lattes"},
+{n:"Din Tai Fung",c:"Restaurant",r:4.5,k:5743,a:"600 Pine St",la:47.6126501,lo:-122.335168,h:"11-21",p:"ChIJPemT0bRqkFQREiTAzMgdB0M",g:"Kurobuta pork XLB, garlic string beans. Join waitlist online"},
+{n:"Marketplace Cafe at Nordstrom",c:"Restaurant",r:4.3,k:292,a:"500 Pine St",la:47.6123483,lo:-122.3363335,h:{d:"11-19",u:"11-18"},p:"ChIJKa5KuLRqkFQR-MZ-Yz9Sd3o",g:"Cilantro lime shrimp salad, tomato basil soup"},
+{n:"Pike Place Chowder (Pacific Place)",c:"Quick bite",r:4.3,k:1384,a:"600 Pine St, 4th fl",la:47.6126392,lo:-122.3353844,h:{d:"11-20",f:"11-21",s:"11-21",u:"11-18"},p:"ChIJLSDL0bRqkFQRuNacMrcI15A",g:"Same chowder, no line, combos still offered"},
+{n:"Dough Zone Dumpling House",c:"Restaurant",r:4.3,k:1874,a:"815 Pine St",la:47.6132524,lo:-122.3323551,h:"11-22",p:"ChIJoSxoXp1rkFQRCGgq6rhU78U",g:"Soup dumplings, beef noodle soup, QR waitlist"},
+{n:"Rider",c:"Restaurant",r:4.1,k:974,a:"619 Pine St",la:47.6123441,lo:-122.3344124,h:"12-22",p:"ChIJud5oVw9rkFQRyfFQG59KZGI",g:"Oysters, parmesan fries, wood grill"},
+{n:"Super Chix",c:"Quick bite",r:4.9,k:1114,a:"910 Alaskan Way",la:47.6038757,lo:-122.3377857,h:"11-22",p:"ChIJZ6GRvsdrkFQRRiCuvUgWU-4",g:"Cajun chicken sandwich, rosemary pepper fries, custard shake"},
+{n:"Elliott's Oyster House",c:"Restaurant",r:4.3,k:7222,a:"1201 Alaskan Way, Pier 56",la:47.605376,lo:-122.3405651,h:{d:"11-19",f:"11-20",s:"11-20",u:"11-20"},p:"ChIJfToLAa5qkFQRRKwO4L3kGUU",g:"20+ oyster varieties, Dungeness crab cakes"},
+{n:"Anthony's Pier 66 & Bell St Diner",c:"Restaurant",r:4.3,k:2605,a:"2201 Alaskan Way",la:47.6108458,lo:-122.3482049,h:"11.5-21",p:"ChIJZ6RlD1IVkFQRVwMuo0FAzyA",g:"Crab and grapefruit salad, waterfront"},
+{n:"The Crab Pot",c:"Restaurant",r:4.2,k:11934,a:"1301 Alaskan Way, Pier 57",la:47.606075,lo:-122.3414167,h:{d:"11-21",f:"11-21.5",s:"11-21.5"},p:"ChIJs-Di-61qkFQRca-vbJs-L2o",g:"Seafood boil dumped on the table"},
+{n:"Ivar's Pier 54 Fish Bar",c:"Quick bite",r:4.1,k:336,a:"1001 Alaskan Way",la:47.6039519,lo:-122.3388831,h:"10-21",p:"ChIJk_rHFwBrkFQRCkO3Mg6SldA",g:"Fish and chips on the pier. Don't feed the gulls"},
+{n:"Seafood Bar",c:"Quick bite",r:4.0,k:25,a:"1301 Alaskan Way",la:47.6059904,lo:-122.3407656,h:"11.5-21",p:"ChIJoQln-a1qkFQRI067V_RCeWk",g:"Shrimp po'boy, chowder, eat outside"},
+{n:"The Fisherman's Restaurant",c:"Restaurant",r:3.9,k:2707,a:"1301 Alaskan Way",la:47.605956,lo:-122.341148,h:{d:"11.5-20.5",f:"11.5-21",s:"11-21",u:"11-20.5"},p:"ChIJs-Di-61qkFQRlo6i3JGwHqA",g:"Tourist pier spot. Deck view is the draw"},
+{n:"Sugo Hand Roll Bar",c:"Restaurant",r:4.5,k:1025,a:"2001 Western Ave #110",la:47.6106632,lo:-122.3443931,h:"11-21",p:"ChIJu7etpnAVkFQRVxcLsAKUXsY",g:"6-roll set, Hokkaido scallop hand roll"},
+{n:"Half Shell",c:"Restaurant",r:4.5,k:375,a:"2020 Western Ave",la:47.6107983,lo:-122.343826,h:"15-21",p:"ChIJVVWpN00VkFQRo_7o0uSZsVA",g:"$2 oysters 3 to 6, Dungeness crab roll"},
+{n:"Aerlume",c:"Restaurant",r:4.5,k:870,a:"2003 Western Ave C",la:47.6106445,lo:-122.3447539,h:{d:"16-21",u:"x",m:"x"},p:"ChIJ-42sd3QVkFQRuLT1DqxuGsM",g:"Duck tacos, grilled octopus. Waterfront, pricey"},
+{n:"Cutters Crabhouse",c:"Restaurant",r:4.3,k:3390,a:"2001 Western Ave",la:47.6105802,lo:-122.3442192,h:{d:"11.5-21",f:"11.5-21.5",s:"11.5-21.5"},p:"ChIJ-yhc6gkUkFQRTFqpRaFdjxc",g:"Happy hour lounge with the water view"},
+{n:"Mr. Fish Chips & Chowder",c:"Quick bite",r:4.2,k:267,a:"2010 Western Ave",la:47.6105655,lo:-122.3435012,h:"11.5-19",p:"ChIJV3tW4I4VkFQR1qKBKMANv84",g:"$2 oyster happy hour, smoky chowder, dog patio"},
+{n:"Cut Club Seattle",c:"Restaurant",r:4.7,k:25,a:"612 Stewart St",la:47.6141456,lo:-122.3366526,h:null,p:"ChIJSckubO0VkFQRnkeJFKmZxgY",g:"New Ethan Stowell spot, happy hour. Hours not listed yet"},
+{n:"Moore Coffee Shop",c:"Coffee",r:4.6,k:1085,a:"1930 2nd Ave",la:47.6116389,lo:-122.3412222,h:{d:"x",r:"8-15.5",f:"8-15.5",s:"8-15.5",u:"8-15"},p:"ChIJl0E_zkwVkFQRczdVGbfpPvI",g:"Horchata latte, latte art. Thu to Sun only"},
+{n:"The Shop by Porter",c:"Coffee",r:4.5,k:143,a:"1201 2nd Ave #100",la:47.6065056,lo:-122.3376377,h:{d:"7-19",s:"8-16",u:"x"},p:"ChIJZXzsp_5rkFQRbN2ATdDzqEE",g:"Cortado, strawberry cake, private rooms to work"},
+{n:"Retro Restaurant & Lounge",c:"Bar",r:4.3,k:864,a:"216 Stewart St",la:47.611442,lo:-122.3400435,h:"12-26",p:"ChIJB_s4tUwVkFQRmjJhGfNaMiw",g:"Pick-the-music app, fish from the Market, pool"},
+{n:"Caffè Ladro (2+U)",c:"Coffee",r:4.2,k:42,a:"1201 2nd Ave",la:47.6068412,lo:-122.3370351,h:{d:"6.5-17",s:"x",u:"x"},p:"ChIJHXS4CKRrkFQRGikx6QFTY08",g:"Americano, mocha"},
+{n:"Conversation",c:"Restaurant",r:4.1,k:622,a:"110 Stewart St",la:47.6105739,lo:-122.3412987,h:{d:"7-11,17-22",s:"8-13,17-22",u:"8-13,17-22"},p:"ChIJbXcZ2LJqkFQRpTSIOx58B4w",g:"Mushroom risotto, fireplace seats. Thompson hotel"},
+{n:"Seoul Bowl Westlake",c:"Quick bite",r:3.9,k:47,a:"700 Stewart St",la:47.6150843,lo:-122.3371223,h:{d:"10.5-14",s:"x",u:"x"},p:"ChIJuXXEEIYVkFQRIv1cFZUK2CQ",g:"Build-a-bowl, all toppings included"},
+{n:"oh dang",c:"Quick bite",r:4.9,k:87,a:"2132 1st Ave, inside Black Cat",la:47.612601,lo:-122.3448268,h:{d:"x",t:"15-23.5",w:"15-23.5",r:"15-24.5",f:"15-24.5",s:"15-24",u:"15-22.5"},p:"ChIJWYRg8X4VkFQRyvCWzAeGqCI",g:"Wings, katsu, loaded noodle box. Late night"},
+{n:"Herkimer Coffee",c:"Coffee",r:4.8,k:154,a:"2101 4th Ave",la:47.6141795,lo:-122.3423247,h:{d:"7.5-14",s:"x",u:"x"},p:"ChIJ-5JmonoVkFQR_L6iSomni80",g:"Latte, bacon parmesan scone"},
+{n:"Anchor & Bloom Cafe",c:"Coffee",r:4.8,k:173,a:"2121 1st Ave #105",la:47.6121027,lo:-122.3449332,h:{d:"7.5-15",s:"7.5-16",u:"8-15"},p:"ChIJ4T003D4VkFQRVOqUoEZKMrc",g:"Bagel breakfast sandwiches, window seats"},
+{n:"Slow Day Coffee",c:"Coffee",r:4.8,k:174,a:"2103 3rd Ave",la:47.6131742,lo:-122.3426386,h:"7-14",p:"ChIJ03xz90gVkFQRiGHmJ9tT910",g:"Light-roast pour-over, cortado. No seating"},
+{n:"Neb Italian Restaurant",c:"Restaurant",r:4.5,k:127,a:"316 Virginia St",la:47.6128779,lo:-122.3405189,h:{d:"16-21",u:"x",m:"x"},p:"ChIJgXWjmUwVkFQR3XUWCH0rUTk",g:"Uni spaghetti, beef cheeks, negroni flight"},
+{n:"Eva's Cafe and Bar",c:"Coffee",r:4.5,k:35,a:"2208 4th Ave B",la:47.6150297,lo:-122.3427694,h:{d:"7-19",f:"7-21",s:"7-21"},p:"ChIJlUkh1-wVkFQRp7_A3iHwu-w",g:"Breakfast sandwich, cappuccino"},
+{n:"Kedai Makan Belltown",c:"Restaurant",r:4.5,k:532,a:"2234 1st Ave",la:47.6134046,lo:-122.3462791,h:{d:"11-21",f:"11-22",s:"11-22"},p:"ChIJTTRNRiAVkFQROY5bpEvuFSU",g:"Nasi goreng, roti canai, rusuk kedai ribs"},
+{n:"Provisions",c:"Bar",r:4.5,k:295,a:"2137 2nd Ave",la:47.6130748,lo:-122.3443719,h:{m:"17-24",t:"17-25",w:"17-25",r:"17-26",f:"17-26",s:"17-26",u:"11-24"},p:"ChIJ2XMlcTAVkFQR5YN08JZfdlA",g:"Live jazz, no cover, crab cakes"},
+{n:"Palace Kitchen",c:"Restaurant",r:4.4,k:1257,a:"2030 5th Ave",la:47.6145745,lo:-122.3400493,h:{d:"17-24",u:"x",m:"x"},p:"ChIJkQm5kEsVkFQR6b6A73k2XI0",g:"Happy hour 5 to 6 and 11 to midnight, $2 oysters"},
+{n:"Barolo Ristorante",c:"Restaurant",r:4.4,k:1780,a:"1940 Westlake Ave",la:47.6145704,lo:-122.3375008,h:"15-23",p:"ChIJX6U7AksVkFQRrEjQU0XxtsQ",g:"Happy hour till 7 with full entrees, chocolate cake"},
+{n:"Cinque Terre Ristorante",c:"Restaurant",r:4.4,k:1845,a:"2001 Westlake Ave",la:47.6150536,lo:-122.3380046,h:{d:"11.5-22",s:"15-22",u:"15-22"},p:"ChIJ1SMKqUsVkFQRLqd5ovPxvuE",g:"Sit on the right side for half-off happy hour"},
+{n:"Black Cat Bar",c:"Bar",r:4.4,k:555,a:"2132 1st Ave",la:47.6125734,lo:-122.3448587,h:"14-26",p:"ChIJXamgB00VkFQRFR1CIeWqlws",g:"Pinball, skee-ball, hand-cut fries. oh dang cooks here"},
+{n:"Marination",c:"Quick bite",r:4.3,k:1334,a:"2000 6th Ave",la:47.6146302,lo:-122.3383121,h:"11-20",p:"ChIJSzFUr0sVkFQRsxbiyJvLEKM",g:"Kimchi cheesesteak, kālua pork sliders"},
+{n:"Ohana Belltown",c:"Restaurant",r:4.3,k:1764,a:"2207 1st Ave",la:47.6126571,lo:-122.3458926,h:{d:"15-25",f:"13-26",s:"13-26",u:"13-25"},p:"ChIJXUznpU0VkFQRcc35QzkAM7w",g:"Firecracker roll, katsu curry, karaoke nights"},
+{n:"Amber Seattle",c:"Bar",r:4.1,k:70,a:"2214 1st Ave",la:47.6130884,lo:-122.3455909,h:{d:"18-25",f:"18-26",s:"18-26",m:"x"},p:"ChIJkdswoXAVkFQRlIvnAxHuwvs",g:"Lounge, mimosa tower, sliders"},
+{n:"Margaux",c:"Restaurant",r:4.1,k:437,a:"401 Lenora St",la:47.6139187,lo:-122.3408993,h:{d:"7-22",f:"7-23",s:"7-14,15-23",u:"7-14,15-22"},p:"ChIJW2wzfksVkFQRYbtMOjuVnfc",g:"French onion soup, fish and chips. Warwick hotel"},
+{n:"The Victor Tavern",c:"Bar",r:4.0,k:530,a:"2121 6th Ave",la:47.6153686,lo:-122.3403288,h:{d:"11-22",u:"11-21"},p:"ChIJ2fJh2RoVkFQRm2sEB9TX1bo",g:"Fried polenta, $9 after 9 happy hour"},
+{n:"Taco Del Mar",c:"Quick bite",r:3.8,k:305,a:"2136 1st Ave",la:47.6126735,lo:-122.3448913,h:{d:"10-21",u:"11-18"},p:"ChIJtYraB00VkFQRaTJwt4R1enc",g:"Baked fish bowl, daily special"},
+{n:"Mirabelle by Orphée",c:"Bakery & dessert",r:4.9,k:865,a:"616 1st Ave",la:47.6024595,lo:-122.3337182,h:"8-17",p:"ChIJ2_2xyNprkFQRIBYhiL1uE74",g:"Pain au chocolat, almond croissant, salmon tartine, canelés"},
+{n:"Cherry Street Coffee House",c:"Coffee",r:4.4,k:1189,a:"700 1st Ave",la:47.6027528,lo:-122.3342127,h:{d:"6.5-17",s:"7.5-16",u:"7.5-16"},p:"ChIJAyi_C7BqkFQRrBhr-KrrtOc",g:"Bagel breakfast sandwich, coffee cake warmed, window seats"},
+{n:"Molly Moon's Homemade Ice Cream",c:"Bakery & dessert",r:4.6,k:258,a:"199 Alaskan Way",la:47.6009159,lo:-122.3361905,h:"11-23",p:"ChIJ280jDwBrkFQRMwWVpJWaUx4",g:"Cookie dough, seasonal marionberry, tables on the water"},
+{n:"Lune Cafe",c:"Coffee",r:4.5,k:1334,a:"107 1st Ave S",la:47.6013795,lo:-122.3345335,h:{d:"9-22",f:"9-23",s:"10-23",u:"10-22"},p:"ChIJU6O0Y_1rkFQRw0BduR7xyBU",g:"Iced pistachio latte, strawberry crepe"},
+{n:"TOASTED Bagels & Coffee",c:"Quick bite",r:4.6,k:99,a:"102 1st Ave S",la:47.6013869,lo:-122.3338243,h:{d:"7-15",m:"8-15",w:"10-15"},p:"ChIJJU0HRnxrkFQRxnmDkA-rAf0",g:"LOX bagel, jalapeño bagel BEC, cardamom iced coffee. Order online, no seating"},
+{n:"KAYAVA Belltown",c:"Restaurant",r:4.6,k:159,a:"2226 1st Ave",la:47.6132958,lo:-122.3459765,h:{d:"12-15,16-22",f:"12-15,16-23",s:"12-23",u:"12-22",m:"x"},p:"ChIJJfbZ8hAVkFQRIIkA6B0vHw8",g:"Truffle shantan ramen, spicy vegan miso. Small room"},
+{n:"Lenox",c:"Restaurant",r:4.6,k:312,a:"2510 1st Ave",la:47.6150285,lo:-122.3490342,h:{d:"x",f:"16-20",s:"16-20"},p:"ChIJV6YFClwVkFQROdBqbXXybvc",g:"Mofongo, lechón, alcapurria, clarified piña colada. Fri and Sat only"},
+{n:"Cyclops",c:"Bar",r:4.4,k:895,a:"2421 1st Ave",la:47.6144674,lo:-122.3487071,h:{d:"15-24",r:"15-26",f:"15-26",s:"12-26",u:"12-24"},p:"ChIJszqRdE4VkFQRU6u6ItQ5u3E",g:"Polenta tots, vegan quesadilla, punk bar next to the Crocodile"},
+{n:"Belltown Pizza",c:"Bar",r:4.2,k:1411,a:"2422 1st Ave",la:47.6145704,lo:-122.3482375,h:{d:"11.5-26",m:"16-26"},p:"ChIJrcLZ3k0VkFQRkXJdDg7Ga30",g:"Slices, meatballs, Seattle dog, pinball. Open till 2 AM"},
+{n:"Some Random Bar",c:"Bar",r:4.6,k:1868,a:"2604 1st Ave",la:47.6155026,lo:-122.349845,h:{d:"16-23",f:"16-24",s:"16-24",u:"16-22"},p:"ChIJs0wbQE4VkFQRXDfBCoEe708",g:"Random burger, machaca beef nachos, wings. Deck under a tree"},
+{n:"The 5 Point Cafe",c:"Restaurant",r:4.3,k:9057,a:"415 Cedar St",la:47.6180712,lo:-122.3473786,h:"0-24",p:"ChIJibX4ME8VkFQRypD16V31l-Q",g:"24 hours. French toast, Dick burger, cheese curds. Sticker-bombed dive since 1929"},
+{n:"Tavolàta Belltown",c:"Restaurant",r:4.4,k:1274,a:"2323 2nd Ave",la:47.6143389,lo:-122.3467139,h:{d:"16-22",f:"16-23",s:"16-23"},p:"ChIJzSyY000VkFQR9bWQhF5ItrE",g:"Nonna's pappardelle, rigatoni with spicy sausage, Macrina focaccia"},
+{n:"Cotto Belltown",c:"Restaurant",r:4.3,k:239,a:"2318 2nd Ave",la:47.6145933,lo:-122.3460893,h:{d:"16-22",f:"16-23",s:"16-23"},p:"ChIJJ3CZpDIVkFQRCAdFuUcaJ1A",g:"Housemade ravioli, meatballs, chef's choice pizza. Dog friendly"},
+{n:"La Vita E Bella",c:"Restaurant",r:4.4,k:1448,a:"2411 2nd Ave",la:47.614881,lo:-122.3474313,h:{d:"11.5-14.5,17-21.5",s:"17-21.5",u:"17-21.5"},p:"ChIJM5q0fU4VkFQR2RFNXJX7lQ0",g:"Rigatoni boscaiola, cioppino, gamberoni pistacchio. Huge portions"},
+{n:"ROCCO'S",c:"Restaurant",r:4.4,k:4303,a:"2312 2nd Ave",la:47.6145021,lo:-122.3460224,h:"11-24",p:"ChIJ5-MKSkwVkFQR6uTnu8Akzf0",g:"Giant slices, jalapeño face pizza, Greek salad. Get a half"},
+{n:"Hatch Cantina",c:"Restaurant",r:4.3,k:804,a:"200 Bell St",la:47.6142952,lo:-122.3456437,h:{d:"11-23",f:"11-24",s:"10-24",u:"10-22"},p:"ChIJgYW-hfEVkFQRC-tTG6s4qDY",g:"Hatch chile rellenos, red and green chile, cinco leches cake"},
+{n:"Karaage Setsuna",c:"Restaurant",r:4.5,k:952,a:"2429 2nd Ave",la:47.6151835,lo:-122.3478917,h:{d:"11.5-14,17-21",s:"12-15,17-21",u:"12-15,17-21"},p:"ChIJqZKYe04VkFQREw6b8VUjwkg",g:"Lemon pepper karaage, loco moco. Happy hour is a steal"},
+{n:"Buckley's in Belltown",c:"Bar",r:4.3,k:1747,a:"2331 2nd Ave",la:47.6145925,lo:-122.3469495,h:{d:"11.5-25",s:"9-26",u:"9-24"},p:"ChIJyflW1E0VkFQR0ONRNk5ABdQ",g:"Cheese curds, blue cheese onion burger, Thai sesame ribs. Screens everywhere"},
+{n:"Just The Tap",c:"Bar",r:4.5,k:550,a:"90 Blanchard St",la:47.6124491,lo:-122.3456823,h:{d:"11-23",f:"11-25",s:"11-25"},p:"ChIJ7ff2EmkVkFQRwqnH9wP5eJ8",g:"Pour-your-own beer wall by the ounce, pizza slices, pinball room"},
+{n:"Kalabaw Bar & Thai Kitchen",c:"Restaurant",r:4.5,k:302,a:"2328 1st Ave",la:47.6140981,lo:-122.3473099,h:{d:"11-24",f:"11-26",s:"11-26",u:"11-22"},p:"ChIJbfExOgAVkFQRAUArZsnUf1E",g:"Ba mee moo dang noodles, chicken wings, lunch specials. Upscale Thai"},
+{n:"Bathtub Gin & Co.",c:"Bar",r:4.4,k:1421,a:"2205 2nd Ave, in the alley",la:47.6131423,lo:-122.3450608,h:"17-26",p:"ChIJUwXYrE0VkFQRlWpBzFOkOys",g:"Speakeasy in an old boiler room. Look for the wooden door past the dumpster"},
+{n:"Pennyroyal",c:"Bar",r:4.3,k:280,a:"2000 2nd Ave",la:47.61204,lo:-122.34186,h:{d:"16-22",f:"15-23",s:"15-23",u:"15-22"},p:"ChIJx8nBw0wVkFQRejcwK9h2fpg",g:"One-penny slider with a happy hour cocktail, truffle parmesan fries"},
+{n:"Screwdriver Bar",c:"Bar",r:4.6,k:593,a:"2320 1st Ave",la:47.613995,lo:-122.346966,h:"16-26",p:"ChIJYe79xE0VkFQRj2nte5hIkC0",g:"Punk and grunge history on every wall, Holiday in Cambodia cocktail"},
+{n:"Rob Roy",c:"Bar",r:4.4,k:829,a:"2332 2nd Ave",la:47.6147616,lo:-122.3465852,h:{d:"16-24",f:"16-26",s:"16-26"},p:"ChIJI7PHf04VkFQRpCaMkS1lfec",g:"Final Cut cocktail, themed menus, lounge couches"},
+{n:"Navy Strength",c:"Bar",r:4.4,k:720,a:"2505 2nd Ave #102",la:47.6153178,lo:-122.3482096,h:{d:"x",w:"16-22",r:"16-24",f:"16-24",s:"16-24"},p:"ChIJCw3cZU4VkFQRxfg_GTHpmXM",g:"Tiki drinks, steam buns, seasonal pop-ups. Wed to Sat only"},
+{n:"Shorty's",c:"Bar",r:4.3,k:1198,a:"2316 2nd Ave",la:47.6145575,lo:-122.3460054,h:"12-26",p:"ChIJAQAAAE0VkFQR25CAVyAwAAs",g:"Hot dogs, cheap beer, pinball machines built into the booths, clown decor"},
+{n:"Coffee TAB",c:"Coffee",r:4.7,k:621,a:"211 Lenora St",la:47.6125094,lo:-122.342781,h:"7-15",p:"ChIJl7c2h8IVkFQRIlInTREJSSk",g:"Wildflower honey cinnamon latte, single-origin espresso. Nonprofit training homeless youth"},
+{n:"Black Arrows Coffee",c:"Coffee",r:4.6,k:302,a:"521 Wall St #110",la:47.6170699,lo:-122.3444419,h:"7-18",p:"ChIJzVsySHwVkFQRM-KQdrSRUzM",g:"Avocado toast, summit breakfast bagel, latte in a real pumpkin on fall weekends"},
+{n:"Uptown Espresso Belltown",c:"Coffee",r:4.4,k:1044,a:"2504 4th Ave",la:47.6169657,lo:-122.3462736,h:"6-18",p:"ChIJTUxGxE4VkFQR59zWpPn6SYo",g:"Open-wall corner seats, opens at 6 AM"},
+{n:"Fulcrum Café",c:"Coffee",r:4.4,k:721,a:"590 Bell St",la:47.6165989,lo:-122.3425766,h:{d:"7-18",s:"8-18",u:"8-18"},p:"ChIJhUYpdTEVkFQRyXPEzyPjJiY",g:"Bee pollen latte, vegan sandwiches, jasmine tea done right. Pricey"},
+{n:"Street Bean Cafe",c:"Coffee",r:4.6,k:367,a:"2711 3rd Ave",la:47.6172573,lo:-122.3494879,h:{d:"7-15",f:"x",s:"x",u:"x"},p:"ChIJ3X6BA08VkFQRqC7NsOPY5Ps",g:"Honey lavender latte, hot blueberry scones. Nonprofit roaster, Mon to Thu"},
+{n:"Artisan Cafe",c:"Quick bite",r:4.7,k:325,a:"2523 5th Ave",la:47.6176695,lo:-122.3463233,h:{d:"9-14.5",s:"9.5-14.5",u:"x"},p:"ChIJteL-1U4VkFQRk3iALSegYlQ",g:"Banh mi, cold cut sandwiches, view of the Space Needle. Tiny"},
+{n:"Menya Muso Tsukemen & Ramen",c:"Restaurant",r:4.6,k:52,a:"2720 4th Ave #116",la:47.6184528,lo:-122.3484056,h:{d:"11.5-21",f:"11.5-22",s:"11.5-22"},p:"ChIJD6b88OUVkFQRIHkbNRlxM8A",g:"Tsukemen dipping noodles, spicy miso, red bean taiyaki. Just opened"},
+{n:"Wasabi Sushi & Izakaya",c:"Restaurant",r:4.5,k:2481,a:"2311 2nd Ave",la:47.6141611,lo:-122.3461889,h:{d:"16-23",f:"16-24",s:"16-24"},p:"ChIJrRIczU0VkFQRCy-ASSOUXHY",g:"Pork belly skewers, fried tofu, late-night happy hour after 9"},
+{n:"Umi Sake House",c:"Restaurant",r:4.6,k:4754,a:"2230 1st Ave",la:47.6133307,lo:-122.3460646,h:{d:"16-23",f:"16-24",s:"16-24"},p:"ChIJlwUFuk0VkFQRzdTvH0McgL0",g:"Salmon sashimi, seared scallops, happy hour rolls under $10"},
+{n:"ShoMon Kappo Sushi",c:"Restaurant",r:4.8,k:188,a:"2301 5th Ave #102",la:47.6160651,lo:-122.3435966,h:{d:"17-22.5",m:"x",t:"x"},p:"ChIJ4TMxOAAVkFQRO2_HC_U741A",g:"Multi-course omakase, chutoro, fish flown from Japan. Reserve"},
+{n:"Momiji South Lake Union",c:"Restaurant",r:4.4,k:870,a:"731 Bell St",la:47.6177332,lo:-122.3404506,h:{d:"11-21",f:"11-22",s:"16-22",u:"16-21"},p:"ChIJ4RRLcFUVkFQRv3D3JV4bwPE",g:"SLU roll, grilled short ribs, sashimi lunch set. Good happy hour"},
+{n:"Sushi Blossom",c:"Quick bite",r:4.5,k:171,a:"2720 3rd Ave",la:47.6176129,lo:-122.3490479,h:{d:"16.5-20.5",u:"x"},p:"ChIJt7OYoFBrkFQRNnREW4oMMs4",g:"Seared salmon, nigiri set B. Takeout only, run by a couple"},
+{n:"Good Shape Pizza",c:"Quick bite",r:4.7,k:75,a:"2126 2nd Ave, inside Jupiter",la:47.6132517,lo:-122.3437232,h:{d:"16-24",f:"16-25",s:"16-25"},p:"ChIJx2um8c9rkFQRTzpY4k_0Dic",g:"Personal Neapolitan pies with charred crust, breakfast-for-dinner pizza. Order at the pizza counter, not the bar"},
+{n:"A Pizza Mart Belltown",c:"Bar",r:4.0,k:644,a:"2525 6th Ave",la:47.6183606,lo:-122.3454309,h:"15.75-26.5",p:"ChIJ9zEgJ0kVkFQRFqMCDUgo0JY",g:"Two slices and a tall boy Rainier for $12.50. Open till 2:30 AM"},
+{n:"BAMBINOS PIZZERIA",c:"Restaurant",r:4.3,k:820,a:"401 Cedar St",la:47.6178033,lo:-122.3476976,h:"11.5-22",p:"ChIJx9kQZNMVkFQRqlurRR5i8Ww",g:"Wood-fired Neapolitan, margherita. One bathroom"},
+{n:"Seattle Pizza and Bar",c:"Restaurant",r:4.4,k:613,a:"2801 Western Ave",la:47.6160583,lo:-122.3532657,h:"11-27",p:"ChIJsz7XdiMVkFQR1Ce6e81GqLs",g:"Butter chicken pizza, pesto cheese sticks. Open till 3 AM"},
+{n:"Pho Viet Anh",c:"Restaurant",r:4.6,k:1187,a:"2621 5th Ave",la:47.6181958,lo:-122.34707,h:"11-20",p:"ChIJITbnyEAVkFQRn1bmyyorreg",g:"Pho tai with extra beef, clear aromatic broth. Fast"},
+{n:"Thai On 1 Belltown",c:"Restaurant",r:4.4,k:551,a:"2904 1st Ave",la:47.6172486,lo:-122.3525593,h:{d:"11-21",f:"11-21.5",s:"12-21.5",u:"12-21"},p:"ChIJ56BP6k8VkFQReKu3ugBHpeo",g:"Crack chicken, roasted duck curry, coconut dream cocktail"},
+{n:"Ti22 Thai Cookery and Bar",c:"Restaurant",r:4.4,k:515,a:"2510 4th Ave",la:47.6170683,lo:-122.346494,h:{d:"x",t:"11-15,16-20.75",w:"16-20.5",r:"11-15,16-20.75",f:"11-15,16-20",s:"16-21"},p:"ChIJ6XUB204VkFQRhpfMZkdf3ZI",g:"Khao soi, lychee mojito, mango sticky rice"},
+{n:"Pho 25",c:"Quick bite",r:4.2,k:508,a:"1525 3rd Ave",la:47.6102795,lo:-122.3387582,h:{d:"11-19",u:"x"},p:"ChIJS1YeVrJqkFQRTmxxi2l1Eks",g:"Steak and brisket pho, tofu banh mi. No frills"},
+{n:"Bangrak Market",c:"Restaurant",r:4.3,k:2717,a:"2319 2nd Ave",la:47.6143105,lo:-122.3464699,h:{d:"11-15,16-24",f:"11-15,16-26",s:"12-26",u:"12-23"},p:"ChIJI-BoPiQVkFQR4oyXmWwhGbI",g:"Crying tiger steak, pork satay, massaman curry. Loud, half-off wine Wednesdays"},
+{n:"Meekong Kitchen",c:"Quick bite",r:4.5,k:759,a:"2525 4th Ave",la:47.6170244,lo:-122.347128,h:"11-20.5",p:"ChIJnR5-504VkFQRU73v8xTw2Z8",g:"Bún bò Huế, pork bao with apple, vegetarian pho with beef broth"},
+{n:"Banh Mi Burgers Pho",c:"Quick bite",r:4.5,k:205,a:"2525 4th Ave",la:47.6170644,lo:-122.3471680,h:"11-20.5",p:"ChIJBQobL7FqkFQR77Ox617LgcY",g:"Chicken pho, level 3 pad thai, two eat for $35"},
+{n:"Tilikum Place Cafe",c:"Restaurant",r:4.6,k:2017,a:"407 Cedar St",la:47.6179313,lo:-122.3476593,h:{d:"x",r:"10-14,17-21",f:"10-14,17-21",s:"9-14,17-21",u:"9-14"},p:"ChIJ6TtIO08VkFQRRNn6uHOo27g",g:"Dutch baby pancakes, sweet or savory, share one between three. Reserve"},
+{n:"Bang Bang Cafe",c:"Coffee",r:4.4,k:804,a:"2460 Western Ave",la:47.6140229,lo:-122.3492388,h:{d:"7-17",s:"8-17",u:"8-17"},p:"ChIJ5Y74B04VkFQRvoWKWLoETmA",g:"Cowboy breakfast, turkey avocado sandwich, vegan concha, warmed cinnamon roll"},
+{n:"Biscuit Bitch Belltown",c:"Quick bite",r:4.5,k:2122,a:"2303 3rd Ave",la:47.6147642,lo:-122.3452791,h:"7.5-13",p:"ChIJozoAJUwVkFQR9ZsSDbW7CwY",g:"Biscuits with mushroom gravy, hangover cure. Order ahead online"},
+{n:"Cafe Opla",c:"Restaurant",r:4.3,k:492,a:"2200 Alaskan Way #120",la:47.6110132,lo:-122.3475165,h:"7-14",p:"ChIJxbeJhFIVkFQRJXdfn17jAsk",g:"Egg skillets from five countries, banana milk macchiato. Free parking while you eat"},
+{n:"Mama Chavez's Tamales",c:"Quick bite",r:4.6,k:199,a:"2219 2nd Ave B",la:47.613514,lo:-122.3452114,h:{d:"17-25",w:"17-24",s:"17-26",u:"17-24",m:"x"},p:"ChIJsQlQ3NwVkFQROJ1o7pQPYCc",g:"Rajas tamales, $2 tacos on Thursdays. Walk-up window, no seating"},
+{n:"La Llorona Taqueria",c:"Restaurant",r:4.4,k:289,a:"1922 2nd Ave",la:47.6115652,lo:-122.3410881,h:{d:"8-23",r:"8-25.5",f:"8-25.5",s:"8-25.5"},p:"ChIJYbBctQ0VkFQRdHZc0P9HrBk",g:"Michelada, tamales, wet burrito. Separate bar in back"},
+{n:"Villa Escondida",c:"Restaurant",r:4.5,k:707,a:"2203 1st Ave",la:47.6126324,lo:-122.3456724,h:{d:"x",t:"11-20",w:"11-20",r:"11-21",f:"11-23",s:"12-24"},p:"ChIJOzjfpk0VkFQRmRjtqDxmzlU",g:"Enchiladas verdes, mole, fresh churros, margaritas"},
+{n:"Maiz Molino",c:"Restaurant",r:4.4,k:388,a:"2325 6th Ave",la:47.6169882,lo:-122.343132,h:{d:"11-15,17-21",m:"11-15",w:"11-15",s:"10-14,17-21",u:"10-14,17-21"},p:"ChIJD9qH4UUVkFQRSD5K9TrQwow",g:"Mole, duck confit, purple multigrain tortillas. Small team, be patient"},
+{n:"Casco Antiguo",c:"Restaurant",r:4.3,k:2124,a:"2102 7th Ave",la:47.6162114,lo:-122.3386504,h:{d:"11.5-21",s:"14-21",u:"x"},p:"ChIJ5W7wFhcVkFQRa80_sBpKPBc",g:"Birria quesadilla, alambre burrito, plantain empanadas. Housemade tortillas"},
+{n:"Limoncello Belltown",c:"Restaurant",r:4.4,k:593,a:"2326 1st Ave",la:47.6140512,lo:-122.3472049,h:{d:"16-21",f:"16-22",s:"16-22"},p:"ChIJgeOaXXsVkFQRp5rGLz49h4U",g:"Gnocchi with sausage, polenta, GF pasta. Dog friendly"},
+{n:"Cherry Street Coffee Belltown",c:"Coffee",r:4.3,k:456,a:"2719 1st Ave",la:47.6161523,lo:-122.3514766,h:{d:"7-15",s:"8-15",u:"8-15"},p:"ChIJ5zV-zE8VkFQRv7i9Q1zAzBo",g:"Warmed coffee cake, bagels, Middle Eastern-inspired room"},
+{n:"Macrina Bakery & Cafe",c:"Bakery & dessert",r:4.5,k:1359,a:"2408 1st Ave",la:47.6144996,lo:-122.3480106,h:"7-17",p:"ChIJd4EJdk4VkFQRcE5sxKy08ww",g:"Croissants, CATE breakfast sandwich, bread loaves. Seattle institution"},
+{n:"Shiro's Sushi",c:"Restaurant",r:4.6,k:2589,a:"2401 2nd Ave",la:47.6147775,lo:-122.3474324,h:"16.5-21.5",p:"ChIJUwKffU4VkFQRVMTVWrCtcLE",g:"Omakase at the bar, 19-piece happy hour omakase, sardine nigiri. Reserve"},
+{n:"El Gaucho Seattle",c:"Restaurant",r:4.6,k:2005,a:"2200 Western Ave #101",la:47.6122632,lo:-122.346285,h:{d:"16-21",f:"16-22",s:"16-22",u:"x",m:"x"},p:"ChIJ0XNlhkQVkFQREV8k0zjrj3s",g:"Tableside Caesar, New York strip, mac and cheese, bananas Foster. Occasion place"},
+{n:"Serious Pie Downtown",c:"Restaurant",r:4.5,k:4701,a:"2001 4th Ave",la:47.6130415,lo:-122.3403637,h:{d:"11.5-21",f:"11.5-22",s:"11.5-22"},p:"ChIJSXeVvUwVkFQRcNZSuiadHdA",g:"Sweet fennel sausage pizza, clam pizza, triple coconut cream pie"},
+{n:"Top Pot Doughnuts",c:"Bakery & dessert",r:4.5,k:2950,a:"2124 5th Ave",la:47.615243,lo:-122.3411313,h:{d:"6-19",s:"7-19",u:"7-19"},p:"ChIJZ3fV7EsVkFQRyXzzrkx3iDs",g:"Old fashioned, maple log, Bavarian cream. Two-story library room, monorail passes the window"},
+{n:"Bedlam Coffee",c:"Coffee",r:4.5,k:641,a:"2231 2nd Ave",la:47.6137994,lo:-122.3455789,h:null,p:"ChIJpwZYNUwVkFQR_Rbc2QmzP64",g:"Lavender mocha, board games, 80s decor. Stay a while"},
+{n:"Two Bells Tavern",c:"Bar",r:4.1,k:163,a:"2313 4th Ave",la:47.6156158,lo:-122.3447342,h:null,p:"ChIJ4XB2p04VkFQRni0M72cm29Q",g:"Burger on a baguette, artichoke garlic dip, daily soup"},
+{n:"Queen City",c:"Restaurant",r:4.5,k:209,a:"2201 1st Ave",la:47.6125528,lo:-122.3455874,h:{d:"16-22",f:"16-24",s:"16-24",u:"x",m:"x"},p:"ChIJr8_vqE0VkFQRBgAVl5NlKFc",g:"Steak frites, scallops, clams and mussels, cheesecake with honey"},
+{n:"The Whisky Bar",c:"Bar",r:4.4,k:1276,a:"2122 2nd Ave",la:47.6130928,lo:-122.3437155,h:"12-26",p:"ChIJ-2iVw0wVkFQRWsDII6LOrq8",g:"Quarter and half pours to taste rare bottles, proper burger, grilled turkey sandwich"},
+{n:"Dead Line",c:"Bar",r:4.5,k:678,a:"114 1st Ave S",la:47.6011901,lo:-122.3339543,h:{d:"16-22",t:"16-23",w:"16-23",r:"16-24",f:"16-25",s:"16-25",u:"16-21"},p:"ChIJr7ePtbpqkFQR-Q44duvMqLo",g:"Argentinian beef empanadas, potato leek soup, exposed-brick cocktail bar"},
+{n:"Damn the Weather",c:"Restaurant",r:4.3,k:1626,a:"116 1st Ave S",la:47.601122,lo:-122.333951,h:{d:"11-22",f:"11-23",s:"11-23",u:"11-21"},p:"ChIJUfxntbpqkFQRxoN_1GvKcTU",g:"Oysters, burger, duck fat fries, steak frites. Dark and cozy"},
+{n:"Il Terrazzo Carmine",c:"Restaurant",r:4.6,k:1045,a:"411 1st Ave S",la:47.5988117,lo:-122.3345893,h:{d:"11.5-15,17-22",s:"17-22",u:"x"},p:"ChIJM0ls76RqkFQRXb9WD2irbCo",g:"Duck, lamb, pesto pasta. Old-school white-tablecloth Italian, free valet"},
+{n:"Luigis Italian Eatery",c:"Restaurant",r:4.2,k:679,a:"211 1st Ave S",la:47.60041,lo:-122.334547,h:{d:"x",t:"16-20",w:"14.5-20",f:"14-20",s:"14-20",u:"16-20"},p:"ChIJy-HQB7BqkFQR1Gg7cDzHsYY",g:"Carbonara, chicken Marsala, gnocchi. Pregame pasta"},
+{n:"Salt Harvest",c:"Restaurant",r:4.4,k:91,a:"100 S King St",la:47.5985667,lo:-122.3338012,h:{d:"7-22",s:"9-22",u:"9-22"},p:"ChIJMVCF66RqkFQRA63Tz7JMF1k",g:"Spaetzle, cod with white bean purée, beet salad, Sea-tini"},
+{n:"Public House",c:"Bar",r:4.8,k:100,a:"210 Occidental Ave S",la:47.6006467,lo:-122.332652,h:{d:"10-23.5",r:"10-25",f:"10-26",s:"10-26"},p:"ChIJN4c5U7ZrkFQR3DAWF5IiimM",g:"Smoky chicken teriyaki, TVs inside and out. New for the World Cup"},
+{n:"Darkalino's",c:"Restaurant",r:4.2,k:227,a:"300 Occidental Ave S",la:47.5998543,lo:-122.3324981,h:{d:"11-20",s:"x"},p:"ChIJHQ4m3uxrkFQRCSOCaTcUecA",g:"Focaccia, mussels, chicken parm, garlicky broccolini. Sidewalk tables"},
+{n:"13 Coins Pioneer Square",c:"Restaurant",r:4.1,k:5028,a:"255 S King St",la:47.5981583,lo:-122.3311639,h:{d:"7-23",f:"7-25",s:"7-25"},p:"ChIJF7ZkqaRqkFQRbhNt6fDQljQ",g:"Rösti, lobster mac and cheese, chicken and waffles. Open late, big booths"},
+{n:"Caffe Umbria",c:"Coffee",r:4.6,k:789,a:"320 Occidental Ave S",la:47.5994714,lo:-122.3326771,h:{d:"7-17",s:"7-16",u:"8-16"},p:"ChIJs4w00KRqkFQRvAKL6ThuLiA",g:"Honey oat latte, rose cardamom mocha, Italian-style drip. Roaster's flagship"},
+{n:"Occidental Hall",c:"Bar",r:4.6,k:353,a:"589 Occidental Ave S",la:47.596151,lo:-122.333458,h:{d:"11-21",f:"11-24",s:"11-24",m:"x"},p:"ChIJD1ka5mBrkFQRsWvCDoIU518",g:"OG smash burger, cheese curds with dill sauce, wings. Happy hour 3 to 6"},
+{n:"Saigon Drip Cafe",c:"Quick bite",r:4.9,k:1876,a:"161 S Washington St",la:47.6007541,lo:-122.3323471,h:{d:"9-17",f:"9-22",s:"10-22",u:"10-16"},p:"ChIJo_oHZdxrkFQRBGQajOZ1PCU",g:"French dip banh mi with dipping broth, bún bò Huế. Order at the kiosk"},
+{n:"Good Bar",c:"Bar",r:4.3,k:496,a:"240 2nd Ave S",la:47.60032,lo:-122.331191,h:{d:"11-21",w:"11-22",r:"11-23",f:"11-24",s:"11-24",u:"15-20"},p:"ChIJG2K5JrtqkFQRsT22hSRqrrc",g:"Paper plane, last word, espresso martini. Separate menus for zero and low alcohol"},
+{n:"The Meyer",c:"Bar",r:4.0,k:300,a:"118 S Washington St",la:47.6010977,lo:-122.3333371,h:"15-26",p:"ChIJM7MMybpqkFQRdmy5_tPUg18",g:"Hot dogs, daiquiri machine, pregame crowds. Pirate theme"},
+{n:"The Pharmacy",c:"Bar",r:4.2,k:145,a:"126 S Jackson St, downstairs",la:47.5994254,lo:-122.3330938,h:{d:"x",r:"16-24",f:"16-24",s:"16-24"},p:"ChIJN_H42qRqkFQRZhvw_SO9a0M",g:"Couches and coves under Temple Billiards. Thu to Sat, slow when empty"},
+{n:"Underbelly",c:"Bar",r:4.4,k:333,a:"119 1st Ave S, downstairs",la:47.6010017,lo:-122.3343811,h:{d:"14-24",f:"14-26",s:"14-26"},p:"ChIJpcYJPktrkFQRR9cLx1UrQCQ",g:"Garlic bread, pizza, dirty martini. Dark basement, bartender will freestyle a drink"},
+{n:"Flatstick Pub Pioneer Square",c:"Bar",r:4.6,k:2574,a:"240 2nd Ave S",la:47.6001482,lo:-122.3309898,h:{d:"12-23",f:"12-25",s:"12-25",u:"12-21"},p:"ChIJDegKJLtqkFQRTOTyeFUdN6o",g:"Mini golf and duffleboard underground, local taps, pizza slices. Trivia Thursdays"},
+{n:"Merchant's Cafe and Saloon",c:"Bar",r:4.2,k:683,a:"109 Yesler Way",la:47.6016261,lo:-122.3334541,h:{d:"12-23",f:"12-26",s:"11-24",u:"0-19",m:"x"},p:"ChIJY6NHurpqkFQRBNxKBnDfAQA",g:"Seattle's oldest saloon, 1890. Wings, shot of whiskey, haunted basement"},
+{n:"Day Made Kaffe Bar",c:"Coffee",r:4.8,k:152,a:"524 1st Ave S",la:47.5976302,lo:-122.3337929,h:{d:"7-19",m:"7-16",t:"7-16",s:"8-20",u:"x"},p:"ChIJ87tNWmRrkFQRigTtj3Lwp2I",g:"Cortado, single-origin Ethiopian pour-over, Stockholm-grade cardamom bun"},
+{n:"gloom coffee",c:"Coffee",r:4.9,k:82,a:"240 2nd Ave S #103",la:47.600136,lo:-122.331072,h:{d:"8-15",s:"x",u:"x"},p:"ChIJh8NuvcBrkFQRWGIwAO2DiGU",g:"Nutella syrup latte, custom espresso ratios, NA cocktails. Ghost merch"},
+{n:"Zeitgeist Coffee",c:"Coffee",r:4.5,k:1636,a:"171 S Jackson St",la:47.5991106,lo:-122.331799,h:{d:"6-18",u:"8-14"},p:"ChIJM_73yqRqkFQRgLc2-YKhXr4",g:"Chai with coconut milk, scones, big room with local art. Opens 6 AM, near the train"},
+{n:"Caffé D'arte Pioneer Square",c:"Coffee",r:4.3,k:424,a:"99 Yesler Way",la:47.6016109,lo:-122.3343794,h:{d:"6-18",s:"8-17",u:"8-17"},p:"ChIJe7kyrbpqkFQR6hTNFSZRiio",g:"Coconut macadamia latte, macchiato, patio on the square"},
+{n:"Louie's Deli",c:"Quick bite",r:4.5,k:53,a:"401 2nd Ave S",la:47.5987468,lo:-122.3319559,h:{d:"9-14",s:"x",u:"x"},p:"ChIJJfIJewBrkFQR3Rdv8R7DtCs",g:"East Coast bacon egg and cheese on a poppy seed roll. Sells out, come early"},
+{n:"BÉ MI Vietnamese Sandwich Bar",c:"Quick bite",r:4.9,k:136,a:"90 Yesler Way",la:47.6018856,lo:-122.3347173,h:{d:"11-15",s:"12-16",u:"x",m:"x"},p:"ChIJIwMUXkdrkFQRERILNCrmlj8",g:"Lemongrass pork banh mi, fish cake banh mi, Vietnamese coffee. Plastic street stools"},
+{n:"Tat's Deli",c:"Quick bite",r:4.7,k:2752,a:"159 Yesler Way",la:47.6015936,lo:-122.3323265,h:{d:"9-14.5",s:"11-17.5",u:"x"},p:"ChIJBVc-lbpqkFQRaoKWP0nxwnE",g:"Tat's Way cheesesteak with Whiz, Tatstrami, grinder. Order ahead"},
+{n:"Deli Cut Subs",c:"Quick bite",r:4.9,k:159,a:"300 5th Ave, in the passport office bodega",la:47.6019852,lo:-122.3273827,h:{d:"6-15",s:"x",u:"x"},p:"ChIJI9eLZbBqkFQRxICXLFwVaPc",g:"$7 southern chicken sandwich, croissant breakfast sandwich, chai. Bodega, rough block"},
+{n:"Bottega Gabriele",c:"Quick bite",r:4.9,k:205,a:"75 Yesler Way",la:47.6015885,lo:-122.3354338,h:"11-16",p:"ChIJX3psaOBrkFQRGhVWSpPepfA",g:"Mortadella or nduja on crispy focaccia, cannoli. Staff speaks Italian"},
+{n:"Salumi",c:"Quick bite",r:4.6,k:1555,a:"404 Occidental Ave S",la:47.5990276,lo:-122.3326336,h:"10-18",p:"ChIJtTqQPrtqkFQRNVqKYE0CasQ",g:"Porchetta, meatball, eggplant parm. Batali family original, wait after ordering"},
+{n:"Hole In the Wall BBQ",c:"Quick bite",r:4.7,k:293,a:"215 James St",la:47.6023966,lo:-122.3317642,h:{d:"11-14.5",s:"x",u:"x"},p:"ChIJv2femrpqkFQRMmskHwd1_xA",g:"Pulled pork sandwich meal deal, brisket, baked beans. Ribs Thu and Fri only"},
+{n:"SuperKim Thai Kitchen & Bar",c:"Restaurant",r:4.0,k:665,a:"166 S King St",la:47.5984194,lo:-122.3318861,h:{d:"10-20",s:"11-20",u:"x"},p:"ChIJkU9ARuhrkFQRJQb4nUMgqd0",g:"Pad woonsen with crispy chicken, blue crab fried rice, clam chowder bread bowl. Locals get 10% off"},
+{n:"Cafe Paloma",c:"Restaurant",r:4.6,k:612,a:"93 Yesler Way",la:47.601552,lo:-122.33472,h:{d:"10.5-17",r:"10.5-20",f:"10.5-20",s:"17-20",u:"x"},p:"ChIJS67_rLpqkFQRqaW8c0lZf6s",g:"Falafel wrap, köfte plate, mezze platter, Turkish coffee. Feels like someone's house"},
+{n:"Casa Gabriele",c:"Restaurant",r:4.9,k:53,a:"88 Yesler Way, downstairs",la:47.6018747,lo:-122.3347491,h:{d:"17-21",m:"x",t:"x"},p:"ChIJC3VhGQBrkFQRENpZvK0BrNc",g:"Sicilian grandma recipes, crispy calamari, Caesar. Underground room from the Bottega owners"},
+{n:"MOTO Pizza Pioneer Square",c:"Quick bite",r:4.6,k:77,a:"512 2nd Ave #100, Smith Tower",la:47.6021361,lo:-122.3319226,h:"11-22",p:"ChIJ50fNUQBrkFQRIXlAoPrEp58",g:"Detroit-style squares, personal size under $15 in 15 minutes"},
+{n:"Shawn O'Donnell's",c:"Bar",r:4.6,k:1402,a:"508 2nd Ave, Smith Tower",la:47.6019787,lo:-122.3319805,h:{d:"11-22",r:"11-23",f:"11-23",s:"11-23"},p:"ChIJHVmPk7pqkFQRekQgR8tHgw0",g:"Beef and Guinness stew, rasher burger, chicken pot pie. Irish-approved Guinness pour"},
+{n:"Asia Ginger Teriyaki",c:"Quick bite",r:4.5,k:242,a:"209 2nd Ave S",la:47.6005136,lo:-122.3318241,h:{d:"10-14.5",s:"x",u:"x"},p:"ChIJW6jK2LpqkFQRRSbr_HlJKIs",g:"Ginger chicken teriyaki, yakisoba. Weekday lunch counter, add the sauce yourself"},
+{n:"Tendon Kohaku",c:"Restaurant",r:4.7,k:432,a:"504 5th Ave S #119",la:47.5975676,lo:-122.3270834,h:"11-15,17-22",p:"ChIJj7SyWl1rkFQRJuw3Mk5wQa0",g:"Classic tendon set, giant curry, matcha Mont Blanc soft serve. Reserve online"},
+{n:"Matsu",c:"Restaurant",r:4.5,k:692,a:"501 Stadium Pl S",la:47.5980162,lo:-122.3320445,h:{d:"16-22",f:"16-23",s:"16-23",u:"x"},p:"ChIJbQRId-ZrkFQRMdjDxCnlv3A",g:"KFC wings with rice, 12th Man roll, Barcelona roll. Umi's sister spot by the stadiums"},
+{n:"Jufeng Noodle House",c:"Restaurant",r:4.7,k:220,a:"418 8th Ave S",la:47.5985936,lo:-122.3222134,h:{d:"11-21",t:"x"},p:"ChIJY3HHgWhrkFQRUikCaEG6ewY",g:"Black pepper udon, spicy wontons with peanuts, brisket wonton soup. Very spicy means it"},
+{n:"Jade Garden",c:"Restaurant",r:4.3,k:2789,a:"424 7th Ave S",la:47.5985466,lo:-122.3235379,h:"9-21",p:"ChIJnb9JP7xqkFQR1r8VvSZ-zsY",g:"Har gow, radish cake, chicken feet. Live tanks, line moves fast"},
+{n:"Gan Bei Eatery and Bar",c:"Restaurant",r:4.6,k:242,a:"670 S Weller St",la:47.597685,lo:-122.3241332,h:{d:"16-23",r:"16-23.75",f:"16-23.75",s:"16-23.75"},p:"ChIJja-Cs3JrkFQRhaqHEXFnaOc",g:"Garlic wings, salted and century egg greens, eel claypot rice. Karaoke Thursdays"},
+{n:"Maneki Restaurant",c:"Restaurant",r:4.6,k:1146,a:"304 6th Ave S",la:47.5996596,lo:-122.3261688,h:{d:"17-21",m:"x"},p:"ChIJiycRj7tqkFQRA0eEzZouZWc",g:"Chirashi, black cod collar, unagi bowl. Seattle's oldest Japanese restaurant, 1904. Reserve by text"},
+{n:"Tai Tung",c:"Restaurant",r:4.4,k:2133,a:"655 S King St",la:47.5982228,lo:-122.3247683,h:"11-19.5",p:"ChIJp-tsXbxqkFQR1odBHpvf_YY",g:"Roast duck, wonton soup, special chow mein. Bruce Lee's booth, oldest in Chinatown"},
+{n:"Onibaba by Tsukushinbo",c:"Restaurant",r:4.6,k:1294,a:"515 S Main St",la:47.5998559,lo:-122.3267847,h:{d:"12-14,17-21",t:"x",w:"x",u:"12-21"},p:"ChIJISxeT81rkFQRyzjg6jvXWD0",g:"Ebi mayo onigiri, mentaiko onigiri, gyoza, karaage. Tiny, 20 minute waits"},
+{n:"Honey Court Seafood",c:"Restaurant",r:4.2,k:2671,a:"516 Maynard Ave S",la:47.5978255,lo:-122.3248511,h:{d:"9-26",f:"9-27.5",s:"9-27.5",u:"9-25.5"},p:"ChIJFcFOWLxqkFQRMuFR02hPit4",g:"Salt and pepper pork, geoduck, Chinese donuts. Real food until 3:30 AM on weekends"},
+{n:"Argentum Bakery & Coffee",c:"Bakery & dessert",r:4.9,k:107,a:"221 1st Ave S",la:47.6001823,lo:-122.3344542,h:{d:"8-19",f:"9-21.5",s:"10-22",u:"10-20"},p:"ChIJQSnAE-hrkFQR8SqqikmZzCE",g:"Alfajores, sandwiches de miga, milanesa sandwich, facturas. Full of Argentines"},
+{n:"The Pastry Project",c:"Bakery & dessert",r:4.7,k:121,a:"165 S Main St",la:47.5999445,lo:-122.332297,h:{d:"8.5-13",u:"x",m:"x"},p:"ChIJr5H7ZKprkFQRP8NYqnHfEGk",g:"Cinnamon roll, ham and cheese croissant, cardamom coffee cake. Walk-up window, sells out"},
+{n:"Lady Yum Pioneer Square",c:"Bakery & dessert",r:4.7,k:346,a:"116 S Washington St",la:47.6009961,lo:-122.3334523,h:"10-22",p:"ChIJB8jhVaZrkFQRff7Z5aTYSm4",g:"$3 macarons, peanut butter brownie, champagne pairing. Korean BBQ wings at night"},
+{n:"Le Macaron French Pastries",c:"Bakery & dessert",r:4.6,k:62,a:"101 Yesler Way #102",la:47.6015699,lo:-122.3338966,h:{d:"10.5-21.5",r:"10.5-22.5",f:"10.5-23",s:"10.5-23",u:"10.5-22"},p:"ChIJU522ZMNrkFQRThMwY0UAShQ",g:"Dubai chocolate macaron, gelato, chocolate cigars"},
+{n:"Hood Famous Bakeshop",c:"Bakery & dessert",r:4.6,k:673,a:"504 5th Ave S #107a",la:47.5980429,lo:-122.3275238,h:{d:"8-16",s:"9-16",u:"9-16",m:"x"},p:"ChIJEWssZr5rkFQRel6OnOIsQog",g:"Ube cheesecake, ube latte, bibingka blueberry corn muffin, arroz caldo"},
+{n:"TOUS les JOURS Union Station",c:"Bakery & dessert",r:4.1,k:209,a:"625 5th Ave S",la:47.597439,lo:-122.328037,h:{d:"6.5-19",s:"7-19",u:"7-19"},p:"ChIJx0NtyTRrkFQRlsZP5F0ceBc",g:"Tiramisu matcha latte, huge pastry case, spinach feta"},
+{n:"The Fig & The Judge",c:"Restaurant",r:3.7,k:70,a:"515 Madison St, Renaissance Hotel",la:47.6068035,lo:-122.3307573,h:{d:"6.5-21.5",s:"7-10",u:"7-10"},p:"ChIJ__8v0bZqkFQRCyCkZ5YK2yM",g:"Hotel breakfast buffet, avocado toast with salmon, seafood linguine"},
+{n:"Ferry Noodle House",c:"Quick bite",r:4.2,k:262,a:"93 Marion St",la:47.6037231,lo:-122.3358953,h:{d:"11-14",s:"x",u:"x"},p:"ChIJF8xKOrBqkFQR2v3l29PQwGc",g:"Thai fried rice with wok char, red curry combo. Weekday lunch only"},
+{n:"Piroshky Piroshky Columbia Center",c:"Quick bite",r:4.3,k:64,a:"701 5th Ave",la:47.6045126,lo:-122.3304832,h:{d:"7-15",m:"8-14",f:"8-14",s:"x",u:"x"},p:"ChIJLcJfubBqkFQRo9bfms7hVoc",g:"Smoked salmon pâté piroshky, no line unlike the Market one, $3 happy hour after 2"},
+{n:"Elemental Pizza",c:"Quick bite",r:4.3,k:59,a:"701 5th Ave #300, Columbia Tower",la:47.6045079,lo:-122.330799,h:{d:"10.5-14.5",s:"x",u:"x"},p:"ChIJUei2vrBqkFQR_IfGmivbLns",g:"Pepperoni and honey pizza, big chop salad. Office tower lunch"},
+{n:"Dim Sum King",c:"Quick bite",r:4.3,k:557,a:"617 S Jackson St",la:47.59903,lo:-122.3256232,h:{d:"7-17",w:"x"},p:"ChIJw7cve75rkFQR0qu3BOZ421o",g:"Har gow, siu mai, coconut bun. Cheap, takeout, sauce costs extra"},
+{n:"Itsumono",c:"Restaurant",r:4.4,k:490,a:"610 S Jackson St",la:47.599373,lo:-122.3258156,h:{d:"x",f:"17-23.5",s:"17-23.5"},p:"ChIJ4ddzd7xqkFQR3ysPAKkjWzw",g:"Loco moco scotch egg, rotating izakaya menu. Fri and Sat only"},
+{n:"KAKURENBO",c:"Restaurant",r:4.9,k:51,a:"517 S Main St",la:47.5999393,lo:-122.3268137,h:{d:"17-22",f:"17-23",s:"17-23",t:"x",w:"x"},p:"ChIJY8FJBABrkFQRAr-H7z7n9M8",g:"Chef Sho's nigiri bar, watermelon pickles, sake list. Tsukushinbo reborn, reserve by phone"},
+{n:"A+ HK Restaurant",c:"Restaurant",r:4.4,k:257,a:"667 S King St",la:47.598266,lo:-122.3242639,h:{d:"11.5-21.5",w:"x"},p:"ChIJBRWjsYZrkFQR5BNry0t0Smo",g:"Beef chow fun, clay pot rice with brisket, XO seafood stone pot"},
+{n:"Kau Kau BBQ",c:"Restaurant",r:4.4,k:2294,a:"656 S King St",la:47.598458,lo:-122.3246879,h:{d:"10-20",t:"x"},p:"ChIJ_RikQrxqkFQRH1VyS-G5DNI",g:"Crispy BBQ pork belly, roast duck, brisket clay pot. $6 BBQ pork rice on game days"},
+{n:"Chengdu Memory Hot Pot",c:"Restaurant",r:4.4,k:1118,a:"520 S Jackson St",la:47.599362,lo:-122.326641,h:"12-24",p:"ChIJpcnQTZxrkFQRwcYwLkI8ItM",g:"Half and half pork stomach and chicken broth, big sauce bar. Spiciest hot pot in town"},
+{n:"Diamond Bay",c:"Restaurant",r:4.2,k:501,a:"409 8th Ave S",la:47.5988306,lo:-122.3226144,h:{d:"10-15,16.5-21.5",f:"10-15,16.5-22",s:"10-22",u:"10-22"},p:"ChIJhzCYbwBrkFQRvY0tB68Tid4",g:"Scallop dumplings, clay pot rice, roast duck. Newest big dining room in Chinatown"},
+{n:"Harmony Palace",c:"Restaurant",r:4.5,k:200,a:"711 S King St",la:47.5982579,lo:-122.3231516,h:{d:"9-15,17-21",s:"9-16,17-21",w:"x"},p:"ChIJAZtONKdrkFQR3vB9Wtz3-4A",g:"Tomato pork chop rice, HK milk tea, beef chow fun, brisket. Order by QR code"},
+{n:"King's Kitchen",c:"Quick bite",r:4.0,k:115,a:"409 8th Ave S",la:47.5989373,lo:-122.322609,h:"10-22",p:"ChIJvx04JABrkFQRQD7LW0sDetY",g:"Char siu, three-choice BBQ plate. Diamond Bay's takeout counter"},
+{n:"Homestyle Dim Sum",c:"Quick bite",r:4.2,k:508,a:"664 S Weller St",la:47.5976122,lo:-122.3243248,h:"7-17.5",p:"ChIJT8CoVrxqkFQRqv8jKveMxJM",g:"Meat buns, pork floss rolls, siu mai. Opens 7 AM, order rolls a day ahead"},
+{n:"Hong Kong Bistro",c:"Restaurant",r:4.0,k:2017,a:"507 Maynard Ave S",la:47.5979502,lo:-122.3252005,h:"10-24",p:"ChIJa2TgWLxqkFQRUHagkFyjJ98",g:"Rice roll with crispy fritter, pineapple bun, purple sweet potato lava balls. Dim sum all day till midnight"},
+{n:"Dough Zone International District",c:"Restaurant",r:4.5,k:3280,a:"504 5th Ave S #109",la:47.5978751,lo:-122.3274926,h:{d:"11-21",f:"11-22",s:"11-22"},p:"ChIJIfHalrxqkFQRaVg8DKk28po",g:"Xiao long bao, dan dan noodles, sweet and sour cucumber. QR waitlist"},
+{n:"Phở Ba",c:"Restaurant",r:4.6,k:826,a:"415 7th Ave S",la:47.598736,lo:-122.3239002,h:"11-21",p:"ChIJXfniP7xqkFQRQVDMtUOacQk",g:"Special combination pho, beef ribs, fried spring rolls. Hole in the wall, slow at lunch"},
+{n:"Saigon Streets",c:"Quick bite",r:4.6,k:235,a:"507 S Weller St, Uwajimaya food court",la:47.5974122,lo:-122.3271211,h:"10-19.5",p:"ChIJ38s56rxqkFQR0C8QtwfoP2I",g:"Pork banh mi combo with peach lemon tea, fish balls. Food court stall that beats restaurants"},
+{n:"Oasis Tea Zone",c:"Bakery & dessert",r:4.3,k:1907,a:"519 6th Ave S #110",la:47.5976545,lo:-122.326544,h:{d:"11-24",f:"11-26",s:"11-26"},p:"ChIJ99NL7LxqkFQR2sbTmAs3DMU",g:"Mango milk tea, curry bowl, tteokbokki in a cup, popcorn chicken. Open till 2 AM weekends"},
+{n:"Panda Yogurt",c:"Bakery & dessert",r:4.6,k:303,a:"518 S King St",la:47.5984624,lo:-122.3268247,h:{d:"11-22.5",f:"11-23",s:"11-23",u:"11-23"},p:"ChIJP-6RtiJrkFQR5Eh5tlRbNbA",g:"Yogurt with purple rice at 25% sugar, avocado lemon, durian. Sweetest owners in Chinatown"},
+{n:"Xing Fu Tang",c:"Bakery & dessert",r:4.2,k:579,a:"1905 4th Ave",la:47.6122544,lo:-122.3391254,h:{d:"11-22",f:"11-23",s:"11-23"},p:"ChIJ0_hRRq8VkFQR_yAxLsJcA_Y",g:"Brown sugar boba milk, warm fresh-made pearls, sweetness to zero"},
+{n:"GAGA TEA",c:"Bakery & dessert",r:4.7,k:403,a:"523 Maynard Ave S",la:47.5977354,lo:-122.325245,h:{d:"17-24",f:"12-26",s:"12-26",u:"12-24"},p:"ChIJUfCeGWFrkFQRlKS2OHhdYnM",g:"White peach oolong smoothie, green grape slush, real fruit. Two chairs, takeout"},
+{n:"Jollidaze Cafe",c:"Coffee",r:4.8,k:145,a:"519 6th Ave S #110",la:47.5977971,lo:-122.3265245,h:{d:"9-17",f:"9-20",s:"9.5-20",u:"9-20"},p:"ChIJ-6-74YdrkFQRUldIRIh6Z7s",g:"Vietnamese coffee, Nutella latte, tater tots. Decorated like Christmas exploded"},
+{n:"Fuji Bakery",c:"Bakery & dessert",r:4.6,k:588,a:"526 S King St",la:47.5984521,lo:-122.3265114,h:{d:"7.5-17",u:"7.5-16"},p:"ChIJ2UIdj7xqkFQRf5OVSNKl2DQ",g:"Crunchy cream malasada, kouign amann, steak curry bun. Walk-up window"},
+{n:"Sharetea Chinatown",c:"Bakery & dessert",r:3.8,k:138,a:"651 S King St",la:47.5982502,lo:-122.3249353,h:"11-22",p:"ChIJ5dqqmPlrkFQRBTeoyt96uus",g:"Taro pearl milk tea, honey oolong. Inconsistent by barista"},
+{n:"Fuji Sushi",c:"Restaurant",r:4.5,k:1108,a:"520 S Main St",la:47.6001248,lo:-122.3269166,h:"11-21.5",p:"ChIJPwV0kbtqkFQRYW8ahXSUuVU",g:"Green dragon roll, short ribs with peppers, poke lunch bowl. Free parking up the hill"},
+{n:"Uwajimaya",c:"Market & candy",r:4.6,k:10792,a:"600 5th Ave S",la:47.5968404,lo:-122.3267453,h:"8-21",p:"ChIJq9nX27xqkFQRu05rxkrN7f4",g:"Roast pork, sushi and sashimi to go, ramen aisle, food court. Kinokuniya bookstore inside"},
+{n:"Aloha Plates",c:"Quick bite",r:4.5,k:674,a:"511 S Weller St, Uwajimaya food court",la:47.597381,lo:-122.3272502,h:"9-21.5",p:"ChIJGSo36rxqkFQRObEkHMGnmac",g:"Katsu loco moco, kālua pig and teriyaki chicken combo, mac salad"},
+{n:"BeanFish",c:"Bakery & dessert",r:4.4,k:156,a:"517 S Weller St, Uwajimaya food court",la:47.5973871,lo:-122.3269334,h:{d:"11-18",s:"11-19",u:"11-19"},p:"ChIJl4LCy2drkFQRliCWDa-rRho",g:"Taiyaki fish waffles, custard or savory bacon egg cheese, Spam fries"},
+{n:"Thai Place",c:"Quick bite",r:3.6,k:166,a:"513 S Weller St, Uwajimaya food court",la:47.5974138,lo:-122.3274336,h:"10-19.5",p:"ChIJjUUx6rxqkFQR27SROJ-3m1s",g:"Drunken noodles, dumpling noodle soup, black rice coconut dessert"},
+{n:"Tidal+",c:"Restaurant",r:4.0,k:927,a:"1639 8th Ave",la:47.6137059,lo:-122.334288,h:{d:"7-23",s:"7-22",u:"7-22"},p:"ChIJu_VRNLVqkFQRR6qyyVqUSb8",g:"Oysters, French toast, seasoned fries. Late-night happy hour is the move"},
+{n:"Nyc Deli Market",c:"Quick bite",r:4.3,k:348,a:"1520 7th Ave",la:47.6121241,lo:-122.3336605,h:"7-23",p:"ChIJMTvW4bRqkFQRQhfHHHxclfA",g:"California Dream sandwich, Reuben, empanadas, breakfast bagels. Open till 11"},
+{n:"Bombo Italian Kitchen",c:"Restaurant",r:4.2,k:517,a:"1600 9th Ave",la:47.6138731,lo:-122.3319342,h:{d:"11-22",t:"11-20.5",m:"x",u:"x"},p:"ChIJRWSv5ZRrkFQReM22rzxrgEs",g:"House-made pasta, fire-baked pizza. In the Convention Center across from the Paramount"},
+{n:"The Carlile Room",c:"Restaurant",r:4.4,k:956,a:"820 Pine St",la:47.613529,lo:-122.332408,h:{d:"16.5-21",f:"16.5-22",s:"16.5-22",m:"x",t:"x"},p:"ChIJJZURTrVqkFQRwzsuIzqfVmo",g:"Butternut squash fusilli, beef ribs, triple coconut cream pie. Grand room by the convention center"},
+{n:"Le Caviste",c:"Bar",r:4.8,k:569,a:"1919 7th Ave",la:47.6147302,lo:-122.3372433,h:{d:"16-24",u:"x"},p:"ChIJWf0s40oVkFQRSA0HCWXNDwM",g:"Charcuterie, cheese board, French wine by the glass. Menu is on a board, ask the sommelier"},
+{n:"King Leroy",c:"Bar",r:4.0,k:120,a:"2051 7th Ave",la:47.6155476,lo:-122.3387063,h:{d:"11-23",s:"15-22",u:"15-22"},p:"ChIJK_P9xFYVkFQRPq_FmyqZO8w",g:"Salmon dip and chips, Seattle dog, jalapeño hush puppies. Next to the Spheres"},
+{n:"The Dressing Room by Can Can",c:"Restaurant",r:4.4,k:141,a:"95 Pine St",la:47.6095609,lo:-122.3411516,h:{d:"x",r:"16-21",f:"9.5-15,16-24",s:"9.5-15,16-24",u:"9.5-15,16-21"},p:"ChIJhXZj8uRrkFQRVa92sD30N9Q",g:"Coconut shrimp, absinthe served classic style, patio. From the cabaret people"},
+{n:"Anchorhead Coffee",c:"Coffee",r:4.6,k:1954,a:"1600 7th Ave #105",la:47.6134003,lo:-122.3347638,h:"7-18",p:"ChIJgdrD00oVkFQRbSXCy0wr9RY",g:"Strawberry balsamic latte, single-origin espresso, house syrups. Busy at 9 AM"},
+{n:"Mr West Cafe Bar Downtown",c:"Coffee",r:4.3,k:1606,a:"720 Olive Way",la:47.6141236,lo:-122.3344984,h:{d:"7-19",s:"8-19",u:"8-19"},p:"ChIJnzzCxkoVkFQRTECoVWZJFiA",g:"Garden veggie sandwich, salmon toast, seasonal lattes, wine at night"},
+{n:"Caffe Umbria Olive Way",c:"Coffee",r:4.7,k:455,a:"622 Olive Way",la:47.6135786,lo:-122.3355599,h:{d:"7-15",s:"7-13.5",u:"7-12"},p:"ChIJvwKi10oVkFQR6XaZSD_r2wA",g:"Honey fig latte, ham egg cheese croissant. Narrow room, one guy runs it"},
+{n:"Cherry Street Coffee Olive Way",c:"Coffee",r:4.3,k:456,a:"509 Olive Way",la:47.6127499,lo:-122.3366757,h:{d:"7-16",s:"8-15",u:"8-15"},p:"ChIJW89pNksVkFQR_CVWb71WoPo",g:"Lox bagel, Persian eggplant bowl, tomato basil breakfast sandwich"},
+{n:"Made Coffee",c:"Coffee",r:4.3,k:80,a:"1531 7th Ave, Hotel Theodore",la:47.6123607,lo:-122.3342659,h:"6-12",p:"ChIJwXGb2LRqkFQRFt37UIp92B8",g:"Lobby coffee bar, English muffin, pastries. Closes at noon"},
+{n:"Grumpy Bean",c:"Coffee",r:4.5,k:195,a:"910 Stewart St",la:47.6158769,lo:-122.3343672,h:{d:"7-15",m:"7-14",t:"7-14",s:"x",u:"x"},p:"ChIJPfCORiwVkFQRdHfqwAP7BNQ",g:"Drip coffee, squash bread, empanadas, seasonal lemonades"},
+{n:"Victrola Coffee Roasters Pine",c:"Coffee",r:4.3,k:429,a:"300 Pine St",la:47.6109993,lo:-122.3386219,h:{d:"7-16",s:"8-16",u:"8-16"},p:"ChIJKR4NPaxrkFQRYYLyfQohDVY",g:"Light-roast cortado, local roaster. Inside what used to be Macy's"},
+{n:"Olympia Coffee Roasting",c:"Coffee",r:4.4,k:445,a:"1420 5th Ave #103",la:47.610384,lo:-122.3352306,h:{d:"6-18",s:"7-18",u:"7-18"},p:"ChIJp77dZ15rkFQRYIEJmZfTJcU",g:"The Trifecta, mochi donut, Sweetheart beans. Big lobby with real seating"},
+{n:"House of Eve",c:"Restaurant",r:4.3,k:279,a:"730 Blanchard St",la:47.6172318,lo:-122.3396109,h:{d:"11-21",m:"11-20",f:"11-22",s:"11-22",u:"11-20"},p:"ChIJOSY9beUVkFQRyDs4OHtO8-A",g:"Brussels sprouts everyone talks about, duck, steak sandwich, Passion of Women cocktail"},
+{n:"Andare Kitchen & Bar",c:"Restaurant",r:4.1,k:696,a:"808 Howell St, Hyatt Regency",la:47.6143837,lo:-122.3340172,h:"6.5-21.5",p:"ChIJ3c88zo0VkFQRPj6JIWaYzfA",g:"Spaghetti with clams, $20 soup-and-half-sandwich lunch combo, kid pizza is full size"},
+{n:"Andaluca",c:"Restaurant",r:4.4,k:464,a:"407 Olive Way, Mayflower Park Hotel",la:47.6122235,lo:-122.3379617,h:null,p:"ChIJR6ebU0sVkFQRLXLxX2C6PL8",g:"B'stilla chicken pie, lamb tagine, pear ginger cardamom pancakes, roasted eggplant"},
+{n:"Just Poke Olive Way",c:"Quick bite",r:3.9,k:108,a:"800 Olive Way",la:47.6145798,lo:-122.3332339,h:"11-20",p:"ChIJm5VJCUkVkFQRJwWM0lntGCQ",g:"Heat Wave bowl with avocado, jalapeño chips. Counter and stools"},
+{n:"Mendocino Farms",c:"Quick bite",r:4.0,k:394,a:"2118 Westlake Ave N",la:47.617239,lo:-122.3379975,h:"10-21",p:"ChIJdVWO3S8VkFQRZZ3dtq-NkeQ",g:"Not-so-fried chicken sandwich, vegan banh mi, chicken parm dip. GF bread"},
+{n:"Mainstay Provisions",c:"Coffee",r:4.6,k:95,a:"2295 7th Ave",la:47.6171813,lo:-122.3414006,h:{d:"7-18",s:"x",u:"x"},p:"ChIJG27hvY8VkFQR1BMdyhB9d2s",g:"Maple latte, pizza, made-to-order sandwiches, beer and groceries. No wifi"},
+{n:"Cafe Madeline",c:"Quick bite",r:4.3,k:127,a:"700 Stewart St",la:47.6150972,lo:-122.3371201,h:{d:"7-14",s:"x",u:"x"},p:"ChIJ604YhmYVkFQRK08f6JNADWk",g:"Korean street toast, chorizo breakfast burrito, spicy pork burrito"},
+{n:"rachel's ginger beer at the Spheres",c:"Bakery & dessert",r:4.7,k:181,a:"2112 7th Ave",la:47.616296,lo:-122.3390821,h:"11-20",p:"ChIJWTKb-0kVkFQRmmkPGMKwC2E",g:"White peach ginger beer, Moscow mule, free samples. Kitchen closes at 6"},
+{n:"Willmott's Ghost",c:"Restaurant",r:4.2,k:538,a:"2100 6th Ave, in the Spheres",la:47.615443,lo:-122.3396126,h:{d:"11.5-21",s:"16-21",m:"x",u:"x"},p:"ChIJiQRNuEsVkFQRcV6cAUlcDX4",g:"Roman-style pizza cut with scissors, potato pizza, burrata. Inside the Amazon Spheres"},
+{n:"Charlotte Restaurant & Lounge",c:"Restaurant",r:4.4,k:473,a:"809 5th Ave, 16th floor",la:47.6055078,lo:-122.3312475,h:{d:"7-23",f:"7-24",s:"7-24"},p:"ChIJMYXksdJrkFQRoQB2nkiNzH0",g:"Duck, salmon eggs benedict, flourless matcha cake. 16th floor, bay views, ask for Gin the sommelier"},
+{n:"TRACE Market",c:"Restaurant",r:3.9,k:243,a:"1112 4th Ave, W Seattle Hotel",la:47.6074138,lo:-122.3336713,h:{d:"7-13",s:"7-14",u:"7-14"},p:"ChIJT2djT7FqkFQRGYb_BBWPvlE",g:"Kimchi fried rice, loco moco, Hawaiian sliders. Breakfast and lunch only"},
+{n:"Gyro First",c:"Quick bite",r:4.8,k:334,a:"1009 Boren Ave",la:47.6095216,lo:-122.325611,h:"11-21",p:"ChIJG9hVcm1rkFQRKKJkxSFbM-w",g:"Gyro plate, beef shawarma plate, baba ganoush, Greek fries. Plain room, huge portions"},
+{n:"Eighteen15 Bar & Restaurant",c:"Bar",r:4.0,k:153,a:"1815 Terry Ave",la:47.6155279,lo:-122.3329101,h:"16-22",p:"ChIJX3RwZTUVkFQRUUshCa3F1hk",g:"Marriott burger, oven-baked wings. Hotel bar that punches above its weight"},
+{n:"Thai Thani Kitchen",c:"Restaurant",r:3.9,k:754,a:"201 Boren Ave N",la:47.6199449,lo:-122.3360588,h:{d:"11-20.5",f:"11-21",s:"12-21",u:"12-20.5"},p:"ChIJl8KLQTYVkFQRjHSTewvVVb4",g:"Seafood fried rice, pineapple fried rice, wonton soup"},
+{n:"Metropolitan Cafe",c:"Quick bite",r:4.3,k:109,a:"1801 Boren Ave",la:47.6163672,lo:-122.3319653,h:{d:"7-22",s:"8-20",u:"8-20"},p:"ChIJtf8QEjUVkFQR3CG0RZNL0Yw",g:"Mercer St Madness, Monorail, Philly, tuna melt. Skip the samosa"},
+{n:"Gold Coast Kitchen",c:"Restaurant",r:4.6,k:271,a:"1009 Boren Ave",la:47.6095303,lo:-122.3256416,h:{d:"x",w:"16-21"},p:"ChIJRyqqYaJrkFQRvNC0hnSHE-A",g:"Jollof rice with grilled chicken, suya, kelewele, fufu with peanut soup. Wednesdays only"},
+{n:"La Loba",c:"Restaurant",r:4.3,k:346,a:"2125 Terry Ave",la:47.6181765,lo:-122.3372695,h:{d:"16-22",u:"10-14,16-22"},p:"ChIJwYkOldkVkFQR4v2lxEIqjT4",g:"Truffle gnocchi, scallop in tom kha, beef tartare, caviar and eggs. Plants everywhere"},
+{n:"Di Fiora",c:"Restaurant",r:4.4,k:761,a:"1320 University St #1",la:47.6128683,lo:-122.3242173,h:{d:"12-16,17-21.5",f:"12-16,17-22",s:"12-16,17-22"},p:"ChIJLUfoDStrkFQR4036u4yjPys",g:"Lobster spaghetti, lava scallop, crab fried rice, floral cocktails. Covered in flowers"},
+{n:"Founders Club",c:"Bar",r:4.2,k:130,a:"411 University St, Fairmont",la:47.6079557,lo:-122.3337674,h:{d:"17-24",m:"x",u:"x"},p:"ChIJQ4qnXp9rkFQROGsO_dzcNxU",g:"1920s speakeasy under the Fairmont, oysters, chocolate mousse. Reserve, bar seats are the good ones"},
+{n:"Pine Box",c:"Bar",r:4.4,k:1561,a:"1600 Melrose Ave",la:47.6155083,lo:-122.3276222,h:{d:"15-24",f:"15-26",s:"15-26"},p:"ChIJy-JEK8tqkFQRGGiE5pLvCFA",g:"Pizza, pretzels, huge tap list, tarot reading with some cocktails. A former mortuary"},
+{n:"Dahlia Bakery",c:"Bakery & dessert",r:4.5,k:1315,a:"2001 4th Ave",la:47.613111,lo:-122.340459,h:"7.5-15",p:"ChIJG0jTnUwVkFQRawMulmeDYDw",g:"Triple coconut cream pie, mochi donuts, breakfast sandwich on sourdough English muffin"},
+{n:"R+M Dessert Bar",c:"Bakery & dessert",r:4.4,k:391,a:"601 E Pike St",la:47.6139377,lo:-122.3241612,h:{d:"18.5-22.5",f:"18.5-23.5",s:"18.5-23.5"},p:"ChIJH2HvdMtqkFQRtAJ-OmP4Y94",g:"Nutella cheesecake, key lime tart, s'mores tart. Evenings only, hours drift"},
+{n:"TOUS les JOURS Terry Ave",c:"Bakery & dessert",r:3.9,k:272,a:"101 Terry Ave N",la:47.6186612,lo:-122.3373929,h:"7-20",p:"ChIJZ2uMQCkVkFQRVZ13ouf0jgY",g:"Cloud cake, cream-filled donuts, milk bread, honey lavender matcha"},
+{n:"Get Baked Seattle Cookie Co.",c:"Bakery & dessert",r:4.7,k:305,a:"1501 Western Ave #100",la:47.6082904,lo:-122.3416123,h:{d:"11.5-18",w:"11.5-17.5",u:"11.5-17.5",m:"x",t:"x"},p:"ChIJWUOKyVBrkFQRQrfNu4KmMI8",g:"Warm Oreo cookie à la mode, s'mores, protein cookies, banana pudding. Veteran-owned"},
+{n:"La Parisienne French Bakery",c:"Bakery & dessert",r:4.5,k:1935,a:"2507 4th Ave",la:47.6167625,lo:-122.3468846,h:{d:"7-19",s:"7-18",u:"x"},p:"ChIJMf8n3U4VkFQRN3KYYp1tlYA",g:"French breakfast set, asparagus prosciutto quiche, red berry tart. Loud, hard to get a seat"},
+{n:"Pub 70",c:"Bar",r:4.3,k:632,a:"2801 Alaskan Way, Pier 70",la:47.6146509,lo:-122.354731,h:{d:"11-24",s:"10-24",u:"10-24"},p:"ChIJFWNgXgIVkFQRFnIMzElGH94",g:"Crab cakes, ceviche, eggs benedict. Dog menu and pier seating"},
+{n:"Six Seven Restaurant",c:"Restaurant",r:4.5,k:2287,a:"2411 Alaskan Way, Pier 67",la:47.612361,lo:-122.3522391,h:{d:"7-14,17-21",f:"7-14,17-21.5",s:"7-14,17-21.5"},p:"ChIJhdZMaVIVkFQRi8VtUoNN7Qo",g:"Shrimp and scallop grits, clam chowder, artisan bread. Edgewater Hotel, water on three sides"},
+{n:"Anthony's Fish Bar",c:"Quick bite",r:4.3,k:341,a:"2201 Alaskan Way",la:47.6108006,lo:-122.3482026,h:"11-16",p:"ChIJCX1gSekVkFQRwyxDHdIK62Q",g:"Fried prawns, oysters, clams. Quick-service counter on the Pier 66 patio"},
+{n:"AQUA by El Gaucho",c:"Restaurant",r:4.5,k:1870,a:"2801 Alaskan Way, Pier 70",la:47.6147128,lo:-122.3548346,h:{d:"17-21",s:"16-21",m:"x",u:"x"},p:"ChIJ25mZrFEVkFQRJvECq4Dl-Ls",g:"Black cod with Asian barbecue sauce, ahi tuna, clam and scallop linguine. Occasion place on the water"},
+{n:"Ivar's Acres of Clams",c:"Restaurant",r:4.3,k:9542,a:"1001 Alaskan Way #102",la:47.6040762,lo:-122.3389838,h:"11-21",p:"ChIJh8xzLa5qkFQRc-VyM5h5uuU",g:"Clam chowder, oyster shooters at happy hour, sourdough rolls. Seattle institution since 1938"},
+{n:"Hook & Plow",c:"Restaurant",r:3.8,k:192,a:"2100 Alaskan Way, Marriott Waterfront",la:47.6103086,lo:-122.3462967,h:{d:"6.5-10.5",s:"7-11",u:"7-11"},p:"ChIJgWcQmVIVkFQRFK7hrHKxw04",g:"Breakfast buffet, crispy home potatoes, thick-cut bacon. Water views, breakfast only"},
+{n:"Here Today Brewery & Kitchen",c:"Bar",r:4.7,k:277,a:"2815 Elliott Ave #101",la:47.6149826,lo:-122.3539582,h:{d:"11-22",m:"16-22",t:"16-22",s:"10-22",u:"10-22"},p:"ChIJWSZSV4MVkFQR0qgvgDNWHMg",g:"Seattle burger with cream cheese, elote, tots, hazy IPA. Vinyl night Wednesdays, by the Sculpture Park"},
+{n:"Chennai Express",c:"Restaurant",r:4.4,k:354,a:"305 Bell St",la:47.6148525,lo:-122.344291,h:{d:"10.5-14.5,17-21",m:"x"},p:"ChIJWffWy2YVkFQRLzaGTxyVyQc",g:"Dosas, medu vada with sambar, Malabar paratha, butter garlic shrimp"},
+{n:"Evoke Cafe Bar",c:"Coffee",r:4.5,k:518,a:"234 9th Ave N",la:47.6205512,lo:-122.3395949,h:{d:"7-16",s:"8-16",u:"8-16"},p:"ChIJq8K12DcVkFQRdPGoNaBvVUQ",g:"Avocado toast, turkey pesto sandwich, cheddar dill croissant. 90s Seattle music gallery"},
+{n:"Monorail Espresso Westlake",c:"Coffee",r:4.7,k:403,a:"2120 Westlake Ave N",la:47.6173318,lo:-122.3380289,h:{d:"6-18",s:"7-18",u:"7-18"},p:"ChIJ8RVGTEsVkFQRYOi-Hu_IboE",g:"Seattle fog, rose and blackberry syrups, spinach cheese croissant. Walk-up window"},
+{n:"Chaco Coffee & Tea",c:"Coffee",r:4.8,k:314,a:"100 4th Ave N #165",la:47.6192312,lo:-122.3485786,h:{d:"9-18",s:"9-19",u:"9-19"},p:"ChIJdxfOMSYVkFQRT283uS_dls4",g:"Rose matcha latte, terrace with the Space Needle right there"},
+{n:"Zeeks Pizza",c:"Restaurant",r:4.3,k:2496,a:"419 Denny Way",la:47.6184655,lo:-122.3478624,h:{d:"11-21",r:"11-22",f:"11-22",s:"11-22"},p:"ChIJ5YJuQU8VkFQRZonqey4Qyj8",g:"Puget Pounder, Kitchen Sink, Tree Hugger. Local chain, lots of taps"},
+{n:"Zig Zag Cafe",c:"Bar",r:4.6,k:1311,a:"1501 Western Ave #202",la:47.6083333,lo:-122.3416667,h:"17-24",p:"ChIJUQY5irJqkFQRNyEM-1Nq3oQ",g:"Burrata, deviled eggs, Brussels sprouts, butterscotch crème brûlée. Jazz nights, tucked below the Market"},
+{n:"Spice King Seattle",c:"Quick bite",r:4.0,k:443,a:"213 Pike St",la:47.6094488,lo:-122.3382091,h:"10.5-20",p:"ChIJpRalmVFrkFQR1QO9__xI7oA",g:"Veg or meat thali, chicken tikka masala, garlic naan. Counter service"},
+{n:"White Heron Cellars",c:"Bar",r:3.9,k:128,a:"1501 Pike Pl #527",la:47.6087158,lo:-122.3412314,h:{d:"11-18",t:"x"},p:"ChIJ1_445rJqkFQRaXpyjQg8uQs",g:"Cheese and salami with a Puget Sound view. Wines are funky, not for everyone"},
+{n:"Pike Place Market",c:"Market & candy",r:4.6,k:79758,a:"85 Pike St",la:47.6094076,lo:-122.3418358,h:{d:"8-18",u:"8-17"},p:"ChIJPcr187JrkFQRLApO8QKP8ZM",g:"The market itself: fish throwing, produce, the gum wall, the original Starbucks. Go before 9 to beat the crowd"},
+{n:"Verve Bowls Downtown",c:"Quick bite",r:4.6,k:358,a:"106 Pine St",la:47.6101465,lo:-122.3406145,h:"8-20",p:"ChIJ9ccgfZ1rkFQR2un5s_1zZxI",g:"Verve açaí bowl with granola, berry yum with cacao nibs. Vegan with agave on request"},
+{n:"Kastoori Grill",c:"Restaurant",r:4.2,k:1939,a:"94 Stewart St",la:47.6101953,lo:-122.3417312,h:{d:"10.5-21",f:"10.5-21.5",s:"10.5-22"},p:"ChIJm6pa2rJqkFQReL5-qw2P3Ms",g:"Chicken karahi, samosas, lunch plates, halal. New owners, freshened up"},
+{n:"Wines of Washington",c:"Bar",r:4.4,k:180,a:"1924 Post Alley",la:47.6105066,lo:-122.3424647,h:{d:"14-20",f:"12-22",s:"12-22",u:"14-19"},p:"ChIJQVHlzbJqkFQR3KSsOoYgmr4",g:"Tasting flights of Washington wines, cheese board. Quiet corner off the Market"},
+{n:"Zuba",c:"Quick bite",r:4.2,k:111,a:"400 Pine St, Westlake Center",la:47.6121594,lo:-122.3371514,h:{d:"11-19",u:"12-19"},p:"ChIJF-LqqkFrkFQRQoqnHEXSyTQ",g:"Chicken shawarma platter, falafel, baba ganoush. Huge portions, cheap"},
+{n:"Westlake Center",c:"Market & candy",r:4.1,k:6116,a:"400 Pine St",la:47.6120485,lo:-122.3374325,h:{d:"11-19",u:"12-19"},p:"ChIJ5YbCpbRqkFQRYPb1fHc0MQw",g:"Third-floor food court: burgers, sushi, Zuba. Monorail to Seattle Center leaves from here"},
+{n:"Cocoa Banana",c:"Quick bite",r:4.9,k:138,a:"103 Cherry St",la:47.6026139,lo:-122.3338082,h:{d:"8-16",s:"10-15.5",u:"10-15.5"},p:"ChIJF8uhc7BqkFQReuz4DBHbYC0",g:"William smoothie, matcha smoothie, turkey black bean soup, curried lentil. Family-run bodega"},
+{n:"Fusion Bistro Indian Cuisine",c:"Restaurant",r:4.7,k:862,a:"601-A 2nd Ave",la:47.6024513,lo:-122.3330276,h:"11-22",p:"ChIJjxALCYZrkFQRDWMs5sUBImA",g:"Chicken 65, butter chicken sliders, kofta, chaat, masala soda"},
+{n:"BERRY MUCH",c:"Quick bite",r:4.7,k:127,a:"1811 7th Ave",la:47.6138044,lo:-122.3356693,h:{d:"8-19",s:"8-18",u:"8-18"},p:"ChIJMW___MsVkFQRH7Ba6iPVWYM",g:"Maca mocha bowl, fresh smoothies, big portions"},
+{n:"Chan Seattle",c:"Restaurant",r:4.3,k:557,a:"724 Pine St",la:47.6131124,lo:-122.3334204,h:{d:"16-21",f:"16-22",s:"16-22",m:"x",u:"x"},p:"ChIJsShv3bJqkFQRSqYTgc7r_0w",g:"Beef ragu rice cake, potato spaetzle with truffle, smoked duck, kalbi. Modern Korean"},
+{n:"Daawat Indian Grill & Bar",c:"Restaurant",r:4.0,k:2745,a:"820 Pike St",la:47.6126007,lo:-122.3314142,h:{d:"11-21.5",u:"12-21.5"},p:"ChIJTaq-E7VqkFQRbVu5G0WF9NY",g:"Chilli paneer, butter chicken, spinach naan, veggie pakora. Big room by the Paramount"},
+{n:"Kanak Indian Cuisine",c:"Restaurant",r:4.2,k:1193,a:"2211 4th Ave",la:47.6147911,lo:-122.3432849,h:{d:"11.5-22.5",m:"11-22",f:"11.5-23",s:"11.5-23",u:"11.5-22"},p:"ChIJGZv5YCsVkFQRNBWTvkEg6nw",g:"Chicken karahi, palak masala, fresh naan. Small portions but good"},
+{n:"Al Basha Mediterranean Grill",c:"Quick bite",r:4.2,k:2196,a:"2302 1st Ave",la:47.6136392,lo:-122.3466024,h:{d:"11-26",f:"11-27",s:"11-27"},p:"ChIJbQ-0x00VkFQRxqbXptW5zsg",g:"Gyro salad, kofta kabab plate, shawarma. Open till 2 AM"},
+{n:"Vindicktive Bar and Wings",c:"Bar",r:4.4,k:978,a:"2322 1st Ave",la:47.6139232,lo:-122.3471276,h:{d:"12-24",f:"12-26",s:"10-26",u:"10-24"},p:"ChIJHaNmK6EVkFQRpIVd0Myj2m8",g:"Wet lemon pepper wings, buffalo, reaper sauce, homemade blue cheese. Buffalo NY owners"},
+{n:"Fat Shack",c:"Bar",r:4.0,k:917,a:"200 S Jackson St",la:47.5993074,lo:-122.3313865,h:{d:"16-25",f:"16-27",s:"16-27"},p:"ChIJLXBIm1RrkFQRallMhBfCjtM",g:"The Fat Shack with jalapeño poppers inside, deep fried cheesecake, cheap beer. Late night"},
+{n:"Melrose Market",c:"Market & candy",r:4.4,k:166,a:"1527 Melrose Ave",la:47.6147793,lo:-122.3282146,h:"6-23",p:"ChIJ-ykm8ixrkFQRtpyAE2YedAM",g:"Butcher, wine shop, small restaurants under one roof. Not a grocery store"},
+{n:"District H",c:"Market & candy",r:4.2,k:555,a:"101 Terry Ave N",la:47.6187112,lo:-122.3374429,h:"8-21",p:"ChIJMcEFR9cVkFQRFLOT9hRxbuM",g:"H-Mart's downtown store. Korean groceries, hot deli, kalbi and katsu counter"},
+{n:"Pluto Organic Cafe",c:"Coffee",r:4.5,k:448,a:"2502 5th Ave",la:47.61767,lo:-122.3454919,h:{d:"7-18",s:"8-18",u:"8-18"},p:"ChIJeepuK0kVkFQR1Y_4A_kzTWE",g:"Pastrami sandwich, hash browns, house juice, cortado. Halal, vegan and GF options, dog friendly"},
+{n:"Pure Green Juice Bar",c:"Quick bite",r:4.7,k:198,a:"107 Fairview Ave N",la:47.618749,lo:-122.3346952,h:"7-21",p:"ChIJw4nBApIVkFQRj5mOyl58yAo",g:"Açaí bowls, avocado toast, cold-pressed juice. No added sugar, swinging chairs"},];
+
+/* ---------- extra per-place info: cu cuisine, pr price 1-4, hh happy hour (same format as h), ln line/reservation note, nw "try something new" ---------- */
+const X={
+"Lands of Origin":{cu:"African fusion",pr:2,nw:1},"Riccio's Sausage Co.":{cu:"Italian",pr:2},"Le Panier":{cu:"French bakery",pr:2},
+"Pufftown Bakehouse":{cu:"French bakery",pr:1,ln:"Sells out by 11"},"Hellenika Cultured Creamery":{cu:"Frozen yogurt",pr:2,ln:"Expect a line"},
+"Beecher's Handmade Cheese":{cu:"American",pr:2,ln:"Expect a line"},"Market Grill":{cu:"Seafood",pr:2},"Three Girls Bakery":{cu:"American bakery",pr:2},
+"City Fish Co.":{cu:"Seafood market",pr:3},"Chukar Cherries":{cu:"Candy",pr:2},"Sweetie's Candy":{cu:"Candy",pr:1},
+"Lowell's Restaurant":{cu:"Seafood",pr:2},"Mee Sum Pastry":{cu:"Chinese",pr:1,ln:"Line moves fast"},"Old Fashioned Candy Store":{cu:"Candy",pr:1},
+"Jack's Fish Spot":{cu:"Seafood",pr:2},"Pure Food Fish Market":{cu:"Seafood market",pr:2},"Seattle Dumpling Co.":{cu:"Chinese",pr:1},
+"Chocolate & Ice Cream Delight":{cu:"Ice cream",pr:2},"Pike Place Bakery":{cu:"American bakery",pr:1},"Pike Place Chinese Cuisine":{cu:"Cantonese",pr:2},
+"Radiator Whiskey":{cu:"American",pr:2,hh:"15-18"},"Lonely Siren":{cu:"Spanish",pr:2,nw:1},"Storyville Coffee":{cu:"Coffee",pr:2},
+"Pike Place Fish Market":{cu:"Seafood market",pr:3},"Alibi Room":{cu:"Pizza",pr:2},"The Rabbit Box":{cu:"Cocktails",pr:2},
+"Pasta Casalinga":{cu:"Italian",pr:2},"Ghost Alley Espresso":{cu:"Coffee",pr:1},"Matt's in the Market":{cu:"Pacific Northwest",pr:3,ln:"Reserve"},
+"Place Pigalle":{cu:"French",pr:3},"IL Bistro":{cu:"Italian",pr:2},"Pike Place Bar & Grill":{cu:"American",pr:2},
+"Chef Joe Brunch":{cu:"Peruvian",pr:2,nw:1},"Pike Place Chowder":{cu:"Seafood",pr:2,ln:"Order online to skip the line"},
+"The Pink Door":{cu:"Italian",pr:2,ln:"Reserve weeks ahead"},"Cafe Campagne":{cu:"French",pr:2},"White Horse Tavern":{cu:"Pub",pr:1},
+"Kells Irish Restaurant & Pub":{cu:"Irish pub",pr:2},"The Chocolate Market":{cu:"Candy",pr:2},"Old Stove Brewing Co.":{cu:"Brewpub",pr:2},
+"indi chocolate":{cu:"Chocolate",pr:1},"Freya Bakery & Cafe":{cu:"Scandinavian bakery",pr:2,nw:1},"Honest Biscuits":{cu:"Southern",pr:2},
+"Pike Street Coffee":{cu:"Coffee",pr:1},"Ludi's Restaurant":{cu:"Filipino",pr:2,nw:1,ln:"Line, no reservations"},"Market Grocery & Deli":{cu:"Deli",pr:1},
+"Virginia Inn":{cu:"American",pr:2},"Le Pichet":{cu:"French",pr:2},"Biscuit Bitch":{cu:"Southern",pr:1,ln:"Order ahead online"},
+"El Borracho":{cu:"Vegan Mexican",pr:2},"The Taproom at Pike Place":{cu:"Beer bar",pr:2},"Social Grounds Coffee & Tea":{cu:"Coffee",pr:1},
+"Plantiful First & Union":{cu:"Vegan",pr:1},"The Crumpet Shop":{cu:"British",pr:2,ln:"Line up to 25 min"},"Baxter & Frost":{cu:"Coffee & bakery",pr:1},
+"DeLaurenti Food & Wine":{cu:"Italian deli",pr:2},"Bottega Gelato":{cu:"Gelato",pr:2},"Salt & Straw":{cu:"Ice cream",pr:2,ln:"Slow line, samples"},
+"La Vaca":{cu:"Mexican",pr:1},"Blarney Stone Pub":{cu:"Irish pub",pr:1},"Falafel King":{cu:"Turkish",pr:2},
+"CU Urban Market & Cafe":{cu:"Coffee",pr:1},"Von's 1000Spirits":{cu:"American",pr:2,ln:"Join waitlist ahead"},"Diller Room":{cu:"Whiskey bar",pr:2},
+"Fonté Coffee":{cu:"Coffee",pr:1},"Noi Thai Cuisine":{cu:"Thai",pr:2,ln:"Reserve"},"Musubi Kai":{cu:"Hawaiian",pr:1,nw:1},
+"Pane Pane Sandwiches":{cu:"Sandwiches",pr:1},"Gelatiamo":{cu:"Gelato",pr:2},"The Hart and the Hunter":{cu:"Southern",pr:2},
+"Wild Ginger":{cu:"Pan-Asian",pr:2},"The Fonté Bar at Rainier Square":{cu:"American",pr:2},"Little Ben's Rooftop Bar":{cu:"Cocktails",pr:2,ln:"$15 cover, first come"},
+"Ben Paris":{cu:"American",pr:2},"The George":{cu:"Pacific Northwest",pr:3},"Third Avenue Cafe":{cu:"Seattle teriyaki",pr:2},
+"Nom House Vietnamese Kitchen":{cu:"Vietnamese",pr:1,nw:1},"Homegrown":{cu:"Sandwiches",pr:1},"Original Deli":{cu:"Korean",pr:1,nw:1},
+"Lingon Restaurant":{cu:"Swedish",pr:2,nw:1},"Howdy Y'all Coffee":{cu:"Matcha & coffee",pr:1},"Harbor Cafe":{cu:"Thai",pr:2},
+"Monorail Espresso (4th Ave)":{cu:"Coffee",pr:1},"Caffe Migliore":{cu:"Coffee",pr:1},"Yard House":{cu:"American",pr:2},
+"Urban Coffee House":{cu:"Coffee",pr:1},"W Living Room Bar":{cu:"Cocktails",pr:2},"4th Ave Espresso Bar":{cu:"Coffee",pr:2},
+"1928 Tap and Grill":{cu:"American",pr:2},"Elephant & Castle":{cu:"British pub",pr:2},"Carmine's":{cu:"Italian",pr:4},
+"Tulio":{cu:"Italian",pr:3},"Frolik Kitchen + Cocktails":{cu:"American",pr:2},"Downtowndelimarket":{cu:"Deli",pr:1},
+"Vivienne's Bistro":{cu:"Chinese",pr:2},"Alder & Ash":{cu:"Pacific Northwest",pr:2},"Evergreens":{cu:"Salads",pr:2},
+"Cortina":{cu:"Italian",pr:2},"Cortina Cafe":{cu:"Coffee",pr:2},"Redtrees Restaurant and Bar":{cu:"American",pr:2},
+"Fountain Wine Bar":{cu:"Wine bar",pr:2},"Seattle Rooftop by Fogo de Chão":{cu:"Brazilian",pr:3,nw:1},"Olympic Bar":{cu:"Cocktails",pr:2},
+"Iconic Grounds":{cu:"Coffee",pr:1},"Din Tai Fung":{cu:"Taiwanese",pr:2,nw:1,ln:"Join waitlist online"},"Marketplace Cafe at Nordstrom":{cu:"American",pr:2},
+"Pike Place Chowder (Pacific Place)":{cu:"Seafood",pr:2},"Dough Zone Dumpling House":{cu:"Chinese",pr:2,ln:"QR-code waitlist"},"Rider":{cu:"Pacific Northwest",pr:3},
+"Super Chix":{cu:"Chicken",pr:2},"Elliott's Oyster House":{cu:"Seafood",pr:3},"Anthony's Pier 66 & Bell St Diner":{cu:"Seafood",pr:2},
+"The Crab Pot":{cu:"Seafood",pr:2},"Ivar's Pier 54 Fish Bar":{cu:"Seafood",pr:2},"Seafood Bar":{cu:"Seafood",pr:2},
+"The Fisherman's Restaurant":{cu:"Seafood",pr:2},"Sugo Hand Roll Bar":{cu:"Japanese",pr:2},"Half Shell":{cu:"Oysters",pr:3,hh:"15-18"},
+"Aerlume":{cu:"Pacific Northwest",pr:4},"Cutters Crabhouse":{cu:"Seafood",pr:3},"Mr. Fish Chips & Chowder":{cu:"Seafood",pr:2},
+"Cut Club Seattle":{cu:"American",pr:3},"Moore Coffee Shop":{cu:"Coffee",pr:1},"The Shop by Porter":{cu:"Coffee",pr:2},
+"Retro Restaurant & Lounge":{cu:"American",pr:2},"Caffè Ladro (2+U)":{cu:"Coffee",pr:1},"Conversation":{cu:"Pacific Northwest",pr:3},
+"Seoul Bowl Westlake":{cu:"Korean",pr:2},"oh dang":{cu:"Asian comfort",pr:2,nw:1},"Herkimer Coffee":{cu:"Coffee",pr:1},
+"Anchor & Bloom Cafe":{cu:"Coffee",pr:2},"Slow Day Coffee":{cu:"Coffee",pr:1},"Neb Italian Restaurant":{cu:"Italian",pr:2},
+"Eva's Cafe and Bar":{cu:"Coffee",pr:2},"Kedai Makan Belltown":{cu:"Malaysian",pr:2,nw:1},"Provisions":{cu:"Cocktails",pr:2},
+"Palace Kitchen":{cu:"Pacific Northwest",pr:2,hh:"17-18,23-24"},"Barolo Ristorante":{cu:"Italian",pr:2,hh:"15-19"},
+"Cinque Terre Ristorante":{cu:"Italian",pr:2,hh:"15-18"},"Black Cat Bar":{cu:"Dive bar",pr:1},"Marination":{cu:"Hawaiian-Korean",pr:2,nw:1},
+"Ohana Belltown":{cu:"Hawaiian sushi",pr:2},"Amber Seattle":{cu:"Lounge",pr:2},"Margaux":{cu:"French-American",pr:2},
+"The Victor Tavern":{cu:"American",pr:2,hh:{d:"21-22",u:"11-21"}},"Taco Del Mar":{cu:"Mexican",pr:1},
+"Mirabelle by Orphée":{cu:"French bakery",pr:2,nw:1},"Cherry Street Coffee House":{cu:"Coffee",pr:2},"Molly Moon's Homemade Ice Cream":{cu:"Ice cream",pr:2},"Lune Cafe":{cu:"Coffee",pr:2},"TOASTED Bagels & Coffee":{cu:"Deli",pr:1,ln:"Order online, no seating"},
+"KAYAVA Belltown":{cu:"Japanese ramen",pr:2},
+"Lenox":{cu:"Puerto Rican",pr:2,nw:1},
+"Cyclops":{cu:"Bar food",pr:2},
+"Belltown Pizza":{cu:"Pizza",pr:2},
+"Some Random Bar":{cu:"Bar food",pr:2},
+"The 5 Point Cafe":{cu:"Diner",pr:2},
+"Tavolàta Belltown":{cu:"Italian",pr:2},
+"Cotto Belltown":{cu:"Italian",pr:2},
+"La Vita E Bella":{cu:"Italian",pr:2},
+"ROCCO'S":{cu:"Pizza",pr:1},
+"Hatch Cantina":{cu:"New Mexican",pr:2,nw:1},
+"Karaage Setsuna":{cu:"Japanese",pr:2,nw:1},
+"Buckley's in Belltown":{cu:"Sports bar",pr:2},
+"Just The Tap":{cu:"Self-pour beer",pr:1},
+"Kalabaw Bar & Thai Kitchen":{cu:"Thai",pr:3},
+"Bathtub Gin & Co.":{cu:"Cocktails",pr:2},
+"Pennyroyal":{cu:"Cocktails",pr:2},
+"Screwdriver Bar":{cu:"Dive bar",pr:1},
+"Rob Roy":{cu:"Cocktails",pr:2},
+"Navy Strength":{cu:"Tiki",pr:2},
+"Shorty's":{cu:"Dive bar",pr:1},
+"Coffee TAB":{cu:"Coffee",pr:1},
+"Black Arrows Coffee":{cu:"Coffee",pr:2},
+"Uptown Espresso Belltown":{cu:"Coffee",pr:2},
+"Fulcrum Café":{cu:"Coffee",pr:1},
+"Street Bean Cafe":{cu:"Coffee",pr:2},
+"Artisan Cafe":{cu:"Sandwiches",pr:2},
+"Menya Muso Tsukemen & Ramen":{cu:"Japanese ramen",pr:2,nw:1},
+"Wasabi Sushi & Izakaya":{cu:"Japanese",pr:2},
+"Umi Sake House":{cu:"Japanese",pr:2},
+"ShoMon Kappo Sushi":{cu:"Japanese omakase",pr:4,ln:"Reserve"},
+"Momiji South Lake Union":{cu:"Japanese",pr:2},
+"Sushi Blossom":{cu:"Japanese",pr:2},
+"Good Shape Pizza":{cu:"Pizza",pr:1},
+"A Pizza Mart Belltown":{cu:"Pizza",pr:1},
+"BAMBINOS PIZZERIA":{cu:"Pizza",pr:1},
+"Seattle Pizza and Bar":{cu:"Indian pizza",pr:2,nw:1},
+"Pho Viet Anh":{cu:"Vietnamese",pr:2},
+"Thai On 1 Belltown":{cu:"Thai",pr:2},
+"Ti22 Thai Cookery and Bar":{cu:"Thai",pr:2},
+"Pho 25":{cu:"Vietnamese",pr:2},
+"Bangrak Market":{cu:"Thai",pr:2},
+"Meekong Kitchen":{cu:"Vietnamese",pr:1},
+"Banh Mi Burgers Pho":{cu:"Vietnamese",pr:1},
+"Tilikum Place Cafe":{cu:"Brunch",pr:2,ln:"Reserve, packs out in 20 minutes"},
+"Bang Bang Cafe":{cu:"Cafe",pr:2},
+"Biscuit Bitch Belltown":{cu:"Southern",pr:2,ln:"Line on weekend mornings"},
+"Cafe Opla":{cu:"Brunch",pr:2},
+"Mama Chavez's Tamales":{cu:"Mexican",pr:1},
+"La Llorona Taqueria":{cu:"Mexican",pr:2},
+"Villa Escondida":{cu:"Mexican",pr:2},
+"Maiz Molino":{cu:"Mexican",pr:2},
+"Casco Antiguo":{cu:"Mexican",pr:2},
+"Limoncello Belltown":{cu:"Italian",pr:2},
+"Cherry Street Coffee Belltown":{cu:"Coffee",pr:2},
+"Macrina Bakery & Cafe":{cu:"Bakery",pr:2},
+"Shiro's Sushi":{cu:"Japanese omakase",pr:4,ln:"Reserve"},
+"El Gaucho Seattle":{cu:"Steakhouse",pr:4},
+"Serious Pie Downtown":{cu:"Pizza",pr:2},
+"Top Pot Doughnuts":{cu:"Doughnuts",pr:1},
+"Bedlam Coffee":{cu:"Coffee",pr:1},
+"Two Bells Tavern":{cu:"Tavern",pr:1},
+"Queen City":{cu:"American",pr:3},
+"The Whisky Bar":{cu:"Whiskey bar",pr:2},
+"Dead Line":{cu:"Cocktails",pr:2},
+"Damn the Weather":{cu:"Pacific Northwest",pr:2},
+"Il Terrazzo Carmine":{cu:"Italian",pr:3},
+"Luigis Italian Eatery":{cu:"Italian",pr:2},
+"Salt Harvest":{cu:"Pacific Northwest",pr:4},
+"Public House":{cu:"Sports bar",pr:2},
+"Darkalino's":{cu:"Italian",pr:2},
+"13 Coins Pioneer Square":{cu:"American",pr:2},
+"Caffe Umbria":{cu:"Coffee",pr:2},
+"Occidental Hall":{cu:"Sports bar",pr:2,hh:"15-18"},
+"Saigon Drip Cafe":{cu:"Vietnamese",pr:1,nw:1},
+"Good Bar":{cu:"Cocktails",pr:2},
+"The Meyer":{cu:"Dive bar",pr:1},
+"The Pharmacy":{cu:"Cocktails",pr:2},
+"Underbelly":{cu:"Cocktails",pr:2},
+"Flatstick Pub Pioneer Square":{cu:"Beer bar",pr:2},
+"Merchant's Cafe and Saloon":{cu:"Saloon",pr:1},
+"Day Made Kaffe Bar":{cu:"Coffee",pr:1},
+"gloom coffee":{cu:"Coffee",pr:1},
+"Zeitgeist Coffee":{cu:"Coffee",pr:2},
+"Caffé D'arte Pioneer Square":{cu:"Coffee",pr:1},
+"Louie's Deli":{cu:"Deli",pr:1,ln:"Sells out"},
+"BÉ MI Vietnamese Sandwich Bar":{cu:"Vietnamese",pr:1,ln:"Sells out",nw:1},
+"Tat's Deli":{cu:"Sandwiches",pr:1},
+"Deli Cut Subs":{cu:"Deli",pr:1},
+"Bottega Gabriele":{cu:"Italian deli",pr:2,nw:1},
+"Salumi":{cu:"Italian deli",pr:1,ln:"20 minute wait at lunch"},
+"Hole In the Wall BBQ":{cu:"Barbecue",pr:2},
+"SuperKim Thai Kitchen & Bar":{cu:"Thai",pr:2},
+"Cafe Paloma":{cu:"Turkish",pr:2,nw:1},
+"Casa Gabriele":{cu:"Italian",pr:2},
+"MOTO Pizza Pioneer Square":{cu:"Pizza",pr:1},
+"Shawn O'Donnell's":{cu:"Irish pub",pr:2},
+"Asia Ginger Teriyaki":{cu:"Seattle teriyaki",pr:2},
+"Tendon Kohaku":{cu:"Japanese tempura",pr:2,nw:1},
+"Matsu":{cu:"Japanese",pr:2},
+"Jufeng Noodle House":{cu:"Chinese",pr:2},
+"Jade Garden":{cu:"Cantonese dim sum",pr:2,nw:1},
+"Gan Bei Eatery and Bar":{cu:"Chinese",pr:2,nw:1},
+"Maneki Restaurant":{cu:"Japanese",pr:2,ln:"Reserve by text"},
+"Tai Tung":{cu:"Chinese",pr:2,nw:1},
+"Onibaba by Tsukushinbo":{cu:"Japanese",pr:2,ln:"Small, expect a wait",nw:1},
+"Honey Court Seafood":{cu:"Cantonese",pr:2,nw:1},
+"Argentum Bakery & Coffee":{cu:"Argentinian bakery",pr:2,nw:1},
+"The Pastry Project":{cu:"Bakery",pr:2,ln:"Sells out"},
+"Lady Yum Pioneer Square":{cu:"Macarons",pr:2},
+"Le Macaron French Pastries":{cu:"French pastry",pr:2},
+"Hood Famous Bakeshop":{cu:"Filipino bakery",pr:2,nw:1},
+"TOUS les JOURS Union Station":{cu:"Korean bakery",pr:2},
+"The Fig & The Judge":{cu:"American",pr:2},
+"Ferry Noodle House":{cu:"Thai",pr:2},
+"Piroshky Piroshky Columbia Center":{cu:"Russian bakery",pr:1},
+"Elemental Pizza":{cu:"Pizza",pr:1},
+"Dim Sum King":{cu:"Cantonese dim sum",pr:1},
+"Itsumono":{cu:"Japanese izakaya",pr:2,nw:1},
+"KAKURENBO":{cu:"Japanese omakase",pr:4,ln:"Reserve by phone"},
+"A+ HK Restaurant":{cu:"Cantonese",pr:1},
+"Kau Kau BBQ":{cu:"Cantonese BBQ",pr:1,nw:1},
+"Chengdu Memory Hot Pot":{cu:"Sichuan hot pot",pr:2,nw:1},
+"Diamond Bay":{cu:"Cantonese dim sum",pr:2},
+"Harmony Palace":{cu:"Hong Kong cafe",pr:1,nw:1},
+"King's Kitchen":{cu:"Cantonese BBQ",pr:2},
+"Homestyle Dim Sum":{cu:"Cantonese dim sum",pr:2},
+"Hong Kong Bistro":{cu:"Cantonese",pr:2},
+"Dough Zone International District":{cu:"Taiwanese",pr:2,ln:"QR-code waitlist"},
+"Phở Ba":{cu:"Vietnamese",pr:1},
+"Saigon Streets":{cu:"Vietnamese",pr:1},
+"Oasis Tea Zone":{cu:"Boba",pr:1},
+"Panda Yogurt":{cu:"Yogurt drinks",pr:1,nw:1},
+"Xing Fu Tang":{cu:"Boba",pr:1},
+"GAGA TEA":{cu:"Boba",pr:1},
+"Jollidaze Cafe":{cu:"Vietnamese coffee",pr:1},
+"Fuji Bakery":{cu:"Japanese bakery",pr:1,nw:1},
+"Sharetea Chinatown":{cu:"Boba",pr:1},
+"Fuji Sushi":{cu:"Japanese",pr:2},
+"Uwajimaya":{cu:"Asian grocery",pr:2},
+"Aloha Plates":{cu:"Hawaiian",pr:1},
+"BeanFish":{cu:"Taiyaki",pr:1,nw:1},
+"Thai Place":{cu:"Thai",pr:2},
+"Tidal+":{cu:"Seafood",pr:2},
+"Nyc Deli Market":{cu:"Deli",pr:1},
+"Bombo Italian Kitchen":{cu:"Italian",pr:2},
+"The Carlile Room":{cu:"American",pr:2},
+"Le Caviste":{cu:"Wine bar",pr:2,nw:1},
+"King Leroy":{cu:"Bar food",pr:2},
+"The Dressing Room by Can Can":{cu:"Bistro",pr:2},
+"Anchorhead Coffee":{cu:"Coffee",pr:1},
+"Mr West Cafe Bar Downtown":{cu:"Cafe",pr:2},
+"Caffe Umbria Olive Way":{cu:"Coffee",pr:2},
+"Cherry Street Coffee Olive Way":{cu:"Coffee",pr:2},
+"Made Coffee":{cu:"Coffee",pr:1},
+"Grumpy Bean":{cu:"Coffee",pr:2},
+"Victrola Coffee Roasters Pine":{cu:"Coffee",pr:1},
+"Olympia Coffee Roasting":{cu:"Coffee",pr:1},
+"House of Eve":{cu:"American",pr:2},
+"Andare Kitchen & Bar":{cu:"Italian",pr:2},
+"Andaluca":{cu:"Spanish-Moroccan",pr:3,nw:1},
+"Just Poke Olive Way":{cu:"Hawaiian",pr:2},
+"Mendocino Farms":{cu:"Sandwiches",pr:2},
+"Mainstay Provisions":{cu:"Cafe",pr:2},
+"Cafe Madeline":{cu:"Korean-American",pr:2},
+"rachel's ginger beer at the Spheres":{cu:"Ginger beer",pr:1,nw:1},
+"Willmott's Ghost":{cu:"Italian",pr:2},
+"Charlotte Restaurant & Lounge":{cu:"Pacific Northwest",pr:4},
+"TRACE Market":{cu:"Hawaiian",pr:2},
+"Gyro First":{cu:"Greek",pr:2,nw:1},
+"Eighteen15 Bar & Restaurant":{cu:"Bar food",pr:2},
+"Thai Thani Kitchen":{cu:"Thai",pr:2},
+"Metropolitan Cafe":{cu:"Deli",pr:1},
+"Gold Coast Kitchen":{cu:"West African",pr:2,nw:1},
+"La Loba":{cu:"Spanish",pr:4},
+"Di Fiora":{cu:"Asian fusion",pr:2},
+"Founders Club":{cu:"Speakeasy",pr:3,ln:"Reserve well ahead"},
+"Pine Box":{cu:"Beer bar",pr:2,nw:1},
+"Dahlia Bakery":{cu:"Bakery",pr:2,nw:1},
+"R+M Dessert Bar":{cu:"Desserts",pr:2},
+"TOUS les JOURS Terry Ave":{cu:"Korean bakery",pr:2},
+"Get Baked Seattle Cookie Co.":{cu:"Cookies",pr:1},
+"La Parisienne French Bakery":{cu:"French bakery",pr:2},
+"Pub 70":{cu:"Pub",pr:2},
+"Six Seven Restaurant":{cu:"Pacific Northwest",pr:3},
+"Anthony's Fish Bar":{cu:"Seafood",pr:2},
+"AQUA by El Gaucho":{cu:"Seafood",pr:4},
+"Ivar's Acres of Clams":{cu:"Seafood",pr:2},
+"Hook & Plow":{cu:"Breakfast",pr:2},
+"Here Today Brewery & Kitchen":{cu:"Brewpub",pr:2},
+"Chennai Express":{cu:"South Indian",pr:2,nw:1},
+"Evoke Cafe Bar":{cu:"Cafe",pr:1},
+"Monorail Espresso Westlake":{cu:"Coffee",pr:1},
+"Chaco Coffee & Tea":{cu:"Coffee & tea",pr:1,nw:1},
+"Zeeks Pizza":{cu:"Pizza",pr:2},"Zig Zag Cafe":{cu:"Cocktails",pr:2},
+"Spice King Seattle":{cu:"North Indian",pr:2},
+"White Heron Cellars":{cu:"Wine bar",pr:2},
+"Pike Place Market":{cu:"Public market",pr:2},
+"Verve Bowls Downtown":{cu:"Açaí bowls",pr:2,nw:1},
+"Kastoori Grill":{cu:"Pakistani",pr:2,nw:1},
+"Wines of Washington":{cu:"Wine bar",pr:2},
+"Zuba":{cu:"Middle Eastern",pr:1},
+"Westlake Center":{cu:"Mall food court",pr:1},
+"Cocoa Banana":{cu:"Smoothies & soup",pr:1,nw:1},
+"Fusion Bistro Indian Cuisine":{cu:"Indian fusion",pr:2,nw:1},
+"BERRY MUCH":{cu:"Açaí bowls",pr:1},
+"Chan Seattle":{cu:"Korean",pr:2,nw:1},
+"Daawat Indian Grill & Bar":{cu:"North Indian",pr:2},
+"Kanak Indian Cuisine":{cu:"North Indian",pr:2},
+"Al Basha Mediterranean Grill":{cu:"Middle Eastern",pr:2},
+"Vindicktive Bar and Wings":{cu:"Wings",pr:2,hh:"15-18"},
+"Fat Shack":{cu:"Burgers",pr:2},
+"Melrose Market":{cu:"Market hall",pr:2,nw:1},
+"District H":{cu:"Korean grocery",pr:2,nw:1},
+"Pluto Organic Cafe":{cu:"Cafe",pr:1},
+"Pure Green Juice Bar":{cu:"Juice & açaí",pr:1},
+};
+const RS=new Set(["13 Coins Pioneer Square", "AQUA by El Gaucho", "Aerlume", "Alder & Ash", "Andaluca", "Andare Kitchen & Bar", "Anthony's Pier 66 & Bell St Diner", "Bangrak Market", "Barolo Ristorante", "Bombo Italian Kitchen", "Cafe Campagne", "Carmine's", "Casa Gabriele", "Chan Seattle", "Charlotte Restaurant & Lounge", "Chengdu Memory Hot Pot", "Cinque Terre Ristorante", "Conversation", "Cortina", "Cotto Belltown", "Cut Club Seattle", "Cutters Crabhouse", "Daawat Indian Grill & Bar", "Damn the Weather", "Di Fiora", "Din Tai Fung", "Dough Zone Dumpling House", "El Gaucho Seattle", "Elephant & Castle", "Elliott's Oyster House", "Founders Club", "Fuji Sushi", "Fusion Bistro Indian Cuisine", "Gold Coast Kitchen", "Half Shell", "Hatch Cantina", "House of Eve", "IL Bistro", "Il Terrazzo Carmine", "Ivar's Acres of Clams", "KAKURENBO", "KAYAVA Belltown", "Kalabaw Bar & Thai Kitchen", "Kanak Indian Cuisine", "Kedai Makan Belltown", "La Loba", "La Vita E Bella", "Le Pichet", "Lenox", "Limoncello Belltown", "Lingon Restaurant", "Lonely Siren", "Lune Cafe", "Maiz Molino", "Maneki Restaurant", "Margaux", "Matsu", "Matt's in the Market", "Mirabelle by Orphée", "Momiji South Lake Union", "Neb Italian Restaurant", "Noi Thai Cuisine", "Ohana Belltown", "Palace Kitchen", "Place Pigalle", "Queen City", "Radiator Whiskey", "Rider", "Salt Harvest", "Seattle Rooftop by Fogo de Chão", "Serious Pie Downtown", "Shiro's Sushi", "ShoMon Kappo Sushi", "Six Seven Restaurant", "Sugo Hand Roll Bar", "Tavolàta Belltown", "Tendon Kohaku", "The Carlile Room", "The Crab Pot", "The Dressing Room by Can Can", "The George", "The Pink Door", "Tidal+", "Tilikum Place Cafe", "Tulio", "Umi Sake House", "Virginia Inn", "Vivienne's Bistro", "Von's 1000Spirits", "Wasabi Sushi & Izakaya", "Wild Ginger", "Willmott's Ghost", "Zig Zag Cafe"]);
+P.forEach(p=>{Object.assign(p,X[p.n]||{}); if(RS.has(p.n)) p.rs=1;});
+
+/* ---------- glossary: dish and cuisine terms, plain English ---------- */
+const G={
+"pastéis de nata":"Portuguese custard tart: flaky pastry cup, creamy egg custard, blistered top.",
+"moroccan lamb roll":"Spiced ground lamb wrapped in crisp pastry, like a savory cigar.",
+"jamaican beef patty":"Flaky turmeric-yellow pastry pocket filled with spiced ground beef.",
+"porchetta":"Italian slow-roasted pork belly rolled around herbs and garlic, sliced thin.",
+"hom bao":"Chinese steamed or baked bun with a savory filling. Also spelled hom bow or humbow.",
+"curry beef":"Beef filling seasoned with mild curry spices, usually inside a bun.",
+"crumpet":"British griddle cake, spongy with holes on top that soak up butter. Toasted, then topped.",
+"ube":"Purple yam from the Philippines, mildly sweet and nutty, used in desserts.",
+"silog":"Filipino breakfast plate: garlic fried rice plus a fried egg plus a meat (longganisa sausage, tocino, etc.).",
+"musubi":"Hawaiian snack: a block of rice with a slice of grilled Spam, wrapped in seaweed.",
+"poke":"Hawaiian raw fish salad, usually cubed tuna or salmon with soy, sesame, and onion over rice.",
+"banh mi":"Vietnamese sandwich on a light crisp baguette with meat, pickled carrot, cucumber, cilantro, jalapeño.",
+"teriyaki":"Seattle-style: grilled chicken in a sweet soy glaze over rice with a side salad. A local staple.",
+"bulgogi":"Korean thin-sliced beef marinated in soy, sugar, garlic, and sesame, then grilled.",
+"xlb":"Xiao long bao: Chinese soup dumplings. Thin dough holding pork and hot broth. Bite, sip, then eat.",
+"nasi goreng":"Indonesian/Malaysian fried rice with sweet soy, usually topped with a fried egg.",
+"roti canai":"Malaysian flaky, buttery flatbread torn and dipped in curry.",
+"rusuk kedai":"Malaysian ribs marinated in sweet soy with a little chili kick.",
+"swedish meatballs":"Small beef-pork meatballs in cream gravy, served with lingonberry jam.",
+"toast skagen":"Swedish open-faced toast piled with shrimp in dill mayo, topped with fish roe.",
+"pancake flight":"Several thin Swedish pancakes, each with a different topping like lingonberry or lemon curd.",
+"pan con chicharrón":"Peruvian sandwich: crispy fried pork belly with sweet potato and red onion salsa on a roll.",
+"lomo saltado":"Peruvian stir-fry of beef strips, onion, tomato, and fries, in soy sauce, over rice.",
+"tres leches":"Latin sponge cake soaked in three milks, very moist and sweet.",
+"cassoulet":"French slow-baked stew of white beans, sausage, and duck confit.",
+"sipping chocolate":"Thick, rich drinking chocolate, closer to melted chocolate than cocoa.",
+"pâté":"French spread of finely ground seasoned meat, usually pork or liver, eaten with bread.",
+"gratin lyonnaise":"French onion soup, Lyon style: rich onion broth under a cap of melted cheese and bread.",
+"fries with eyes":"Lonely Siren's signature: fries topped with tiny fried fish, eyes and all.",
+"patatas bravas":"Spanish fried potato chunks with spicy tomato sauce and garlic aioli.",
+"cioppino":"Italian-American seafood stew in tomato broth: fish, shellfish, crab, mussels.",
+"fishwich":"Fish sandwich. At Matt's it's whatever fish came in that day, often halibut.",
+"cacao nib":"Crushed roasted cocoa beans. Crunchy, bitter, chocolate flavor without sugar.",
+"kālua pork":"Hawaiian slow-roasted shredded pork, smoky and salty, traditionally cooked in an underground oven.",
+"kimchi cheesesteak":"Philly cheesesteak with spicy fermented Korean cabbage added.",
+"katsu":"Japanese breaded, deep-fried cutlet, usually pork or chicken, with a tangy brown sauce.",
+"karaage":"Japanese fried chicken: marinated bite-size pieces with a light, crackly coating.",
+"hand roll":"Sushi rolled into a cone of crisp seaweed, eaten right away by hand.",
+"hokkaido scallop":"Large sweet scallop from northern Japan, often served raw.",
+"uni":"Sea urchin. Creamy, briny, custard-like, orange. An acquired taste people either love or avoid.",
+"beef cheeks":"Slow-braised cheek muscle, falls apart, very rich.",
+"negroni":"Italian cocktail: equal parts gin, Campari, sweet vermouth. Bitter and strong.",
+"sazerac":"New Orleans cocktail: rye whiskey, sugar, bitters, absinthe rinse.",
+"gyro":"Greek-style meat sliced off a rotating spit, wrapped in pita with tomato, onion, and sauce.",
+"falafel":"Fried chickpea balls, crisp outside, herby inside. Usually in pita.",
+"po'boy":"New Orleans sandwich on soft French bread, usually fried shrimp or oysters with lettuce and mayo.",
+"chowder":"Thick creamy soup. New England style has clams and potato; smoked salmon is the Seattle twist.",
+"oyster shooter":"A raw oyster in a shot glass with cocktail sauce, taken in one go.",
+"dungeness crab":"The big sweet Pacific Northwest crab. In season here, it's the local standard.",
+"crab cocktail":"Chilled crab meat with cocktail sauce, eaten with a fork from a cup.",
+"seafood boil":"Crab, shrimp, sausage, corn, and potatoes boiled in spice and dumped on the table.",
+"açaí":"Purple Amazon berry blended into a thick sorbet-like bowl, topped with fruit and granola.",
+"chckn":"Plantiful's plant-based fried chicken sandwich.",
+"biscoff":"Belgian caramelized spice cookie, often blended into lattes.",
+"cortado":"Espresso cut with an equal amount of steamed milk. Small, strong, little foam.",
+"pour-over":"Coffee brewed by hand, hot water poured slowly over grounds in a filter. Cleaner, lighter cup.",
+"affogato":"Scoop of gelato drowned in a shot of hot espresso.",
+"gelato":"Italian ice cream: less air and fat, denser and more intense than American ice cream.",
+"crème brûlée":"Vanilla custard with a crackly torched sugar top. Here, as a gelato flavor.",
+"cruffin":"Croissant dough baked in a muffin tin. Churro version is rolled in cinnamon sugar.",
+"quiche":"French savory custard pie with eggs, cream, and fillings like cheese or leek.",
+"spritz":"Light Italian aperitif: prosecco, bitter liqueur like Aperol, and soda.",
+"burrata":"Fresh mozzarella shell filled with cream and curd. Cut it open, it spills.",
+"gnocchi":"Small soft Italian potato dumplings.",
+"ravioli":"Filled pasta pockets.",
+"trottole":"Spiral-shaped pasta that holds sauce well.",
+"bruschetta":"Grilled bread rubbed with garlic, topped with tomatoes and olive oil.",
+"pie flight":"Sampler of small British savory pies, like chicken, steak, and pork.",
+"guinness":"Irish dry stout, dark and creamy. Should be poured slowly in a proper pint glass.",
+"reuben":"Corned beef, sauerkraut, Swiss, and Russian dressing grilled on rye.",
+"fried polenta":"Cornmeal porridge set, cut, and fried crisp. Creamy inside.",
+"mimosa tower":"A tall dispenser of champagne and orange juice for the table.",
+"turkish latte":"Latte spiced with cardamom and sweetened, nodding to Turkish coffee.",
+"matcha":"Powdered Japanese green tea whisked into water or milk. Grassy, slightly bitter.",
+"horchata":"Sweet Mexican rice-and-cinnamon drink, here blended into a latte.",
+"focaccia":"Thick, airy Italian flatbread with olive oil and salt.",
+"grits":"Southern ground-corn porridge, savory, often with cheese.",
+"biscuits and gravy":"Southern: fluffy buttermilk biscuits under white sausage gravy.",
+"butterhole":"Honest Biscuits' plain biscuit with butter and jam.",
+"hash":"Chopped meat and potatoes fried together, usually with an egg on top.",
+"eggs benedict":"Poached eggs on an English muffin with ham and hollandaise sauce.",
+"bang bang shrimp":"Fried shrimp tossed in a creamy sweet-chili sauce.",
+"basil beef":"Thai-style stir-fried beef with holy basil and chili.",
+"malay chicken":"Wild Ginger's satay-style grilled chicken with peanut sauce and pickles.",
+"duck with buns":"Crispy roast duck wrapped in soft steamed buns with plum sauce.",
+"sourdough":"Bread leavened with a wild yeast starter. Tangy, chewy. Von's starter is 75 years old.",
+"king salmon":"The richest, fattiest Pacific salmon. Chinook.",
+"spam":"Canned pork, a Hawaiian staple. Sliced and grilled it's salty and crisp.",
+"lasagna":"Layered pasta sheets with meat sauce, béchamel or ricotta, and cheese, baked.",
+"crab roll":"Chilled crab meat, lightly dressed, in a buttered split-top bun.",
+"lobster roll":"Same idea with lobster. Connecticut style is warm with butter, Maine style is cold with mayo.",
+"fish and chips":"Battered fried fish, usually cod, with thick fries. British origin.",
+"macarons":"French almond meringue sandwich cookies in many flavors.",
+"croissant":"French laminated pastry: many thin layers of butter and dough.",
+"pizza slice":"DeLaurenti's is a big New York-style slice for $5.",
+"firecracker roll":"Spicy sushi roll, usually with tuna, jalapeño, and sriracha.",
+"katsu curry":"Fried cutlet over rice with mild, thick Japanese curry sauce.",
+"lamb lollipops":"Small grilled lamb chops eaten by the bone.",
+"tartare":"Finely chopped raw beef or fish, seasoned, eaten cold.",
+"crudo":"Italian-style raw fish, sliced and dressed with olive oil and citrus.",
+"noodle box":"oh dang's takeout box of stir-fried noodles with a fried egg on top.",
+"mushroom risotto":"Creamy Italian rice slowly cooked with stock and mushrooms.",
+"french onion soup":"Rich beef broth with caramelized onions under toasted bread and melted cheese.",
+"smoked salmon":"Salmon cured and smoked. Lox is cold-smoked and silky; alder-smoked is firmer and flaky.",
+"salmon sandwich":"Grilled or blackened salmon fillet on a roll. A Market Grill signature.",
+"garlic fries":"Fries tossed in raw garlic, parsley, and oil.",
+"calamari":"Fried squid rings.",
+"clam chowder":"See chowder.",
+"cheesesteak":"Philly sandwich: thin-sliced griddled beef with melted cheese on a long roll.",
+"mac salad":"Hawaiian plate-lunch side: macaroni in mayo, served cold.",
+"sliders":"Small sandwiches, two or three to an order.",
+"apple fritter":"Fried dough with apple chunks and cinnamon, glazed.",
+"texas donut":"An oversized glazed donut, plate-sized.",
+"hot link":"Spicy smoked sausage.",
+"pain au chocolat":"Croissant dough wrapped around dark chocolate batons.",
+"tartine":"French open-faced sandwich on a thick slice of bread.",
+"canelés":"Small French pastries with a caramelized crust and custardy center, rum and vanilla.",
+"lox":"Cold-smoked, silky salmon. On a bagel with cream cheese.",
+"crepe":"Thin French pancake, folded around sweet or savory fillings.",
+"dosa":"Thin, crisp South Indian crepe of fermented rice and lentil batter, usually wrapped around spiced potato.",
+"medu vada":"South Indian savory doughnut made from lentil batter, crisp outside, soft inside. Dunked in sambar.",
+"sambar":"South Indian lentil and tamarind stew, soupy and tangy, for dipping.",
+"paratha":"Flaky layered flatbread, pan-fried. Malabar style is especially flaky.",
+"jollof rice":"West African rice cooked in a spiced tomato base. Every country claims the best version.",
+"suya":"Nigerian grilled skewers crusted in a peanut and chili spice mix.",
+"fufu":"West African dough of pounded starch, torn by hand and dipped in soup. Swallowed, not chewed.",
+"kelewele":"Ghanaian fried plantain cubes with ginger and chili.",
+"mofongo":"Puerto Rican mashed fried green plantain with garlic and pork cracklings.",
+"lechón":"Slow-roasted pork with crackling skin.",
+"alcapurria":"Puerto Rican fritter of mashed root vegetable stuffed with seasoned meat.",
+"alfajores":"Argentinian cookies sandwiching dulce de leche, often rolled in coconut.",
+"sandwiches de miga":"Argentinian thin crustless layered sandwiches, delicate and cold.",
+"milanesa":"Breaded fried cutlet, Argentinian style, often in a sandwich.",
+"char siu":"Cantonese barbecue pork, red-glazed and sweet, sliced over rice.",
+"har gow":"Dim sum shrimp dumpling in a translucent wrapper.",
+"siu mai":"Open-topped dim sum pork and shrimp dumpling.",
+"rice roll":"Cheung fun. Silky steamed rice sheets rolled around shrimp, beef, or a crisp fritter.",
+"egg tart":"Cantonese custard tart in a flaky or cookie crust.",
+"pineapple bun":"Hong Kong sweet bun with a crackly sugar top. No pineapple in it.",
+"chow fun":"Wide rice noodles stir-fried over high heat. Beef chow fun is the standard.",
+"clay pot rice":"Rice cooked in a clay pot with meat on top until the bottom crisps. Scrape it.",
+"milk tea":"Hong Kong style: strong black tea with evaporated milk, smooth and slightly bitter.",
+"tteokbokki":"Korean chewy rice cakes in sweet-spicy red sauce.",
+"bibingka":"Filipino rice cake, slightly sweet, traditionally baked in banana leaf.",
+"arroz caldo":"Filipino rice porridge with chicken, ginger, and fried garlic.",
+"tapsilog":"Filipino plate: cured beef tapa, garlic rice, fried egg.",
+"malasada":"Portuguese-Hawaiian fried dough, no hole, rolled in sugar or filled.",
+"kouign amann":"Breton pastry of laminated dough caramelized in sugar and butter. Crunchy, chewy, very rich.",
+"piroshky":"Russian filled bun, baked. Savory like salmon pâté, or sweet.",
+"dutch baby":"Big puffy oven-baked pancake served in the skillet it cooked in. Collapses as it cools.",
+"tagine":"North African stew cooked in a conical clay pot. Slow, spiced, often with dried fruit.",
+"b'stilla":"Moroccan pie of shredded chicken in flaky pastry, dusted with cinnamon and sugar.",
+"shawarma":"Middle Eastern meat shaved off a vertical spit, served in a wrap or on a plate.",
+"baba ganoush":"Smoky roasted eggplant dip with tahini and lemon.",
+"köfte":"Middle Eastern and Turkish seasoned ground meat, shaped and grilled.",
+"mezze":"A spread of small Middle Eastern dishes meant for sharing and dipping.",
+"tsukemen":"Ramen served with the noodles and broth separate. You dip.",
+"loco moco":"Hawaiian plate: rice, hamburger patty, fried egg, brown gravy.",
+"onigiri":"Japanese rice ball wrapped in seaweed, with a filling in the middle.",
+"mentaiko":"Marinated spicy pollock roe. Salty, savory, a little spicy.",
+"chirashi":"Bowl of sushi rice scattered with assorted raw fish.",
+"chutoro":"Medium-fatty tuna belly. Richer than lean tuna, less than otoro.",
+"gyoza":"Pan-fried Japanese dumplings, crisp on the bottom.",
+"tendon":"Tempura over rice with a sweet soy glaze.",
+"cheesesteak":"Philly sandwich: thin griddled beef with melted cheese on a long roll.",
+"smash burger":"Burger patty pressed hard on the griddle for a crisp brown crust.",
+"duck fat fries":"Fries cooked in duck fat. Richer and crisper than oil.",
+"empanada":"Latin American filled pastry pocket, baked or fried.",
+"spaetzle":"Small soft German-style egg noodles, often pan-crisped.",
+"crab roll":"Chilled crab meat, lightly dressed, in a buttered split-top bun.",
+"geoduck":"Large Pacific Northwest clam. Crunchy, sweet, often served raw or in soup.",
+"cardamom bun":"Scandinavian twisted bun with cardamom sugar. Chewier than a cinnamon roll.",
+"banh khot":"Vietnamese mini coconut rice pancakes, crisp outside, wrapped in herbs and dipped.",
+"bo ne":"Vietnamese sizzling steak plate with egg and pâté, eaten with a baguette.",
+"bún bò huế":"Spicy Vietnamese beef noodle soup with thick round noodles. More intense than pho.",
+"pho":"Vietnamese beef noodle soup. The broth is simmered for hours; the rest is toppings.",
+"ube latte":"Latte made with purple yam. Mildly sweet, nutty, bright purple.",
+"karahi":"Pakistani curry cooked and served in a wok-like karahi. Tomato, ginger, green chili.",
+"thali":"Indian platter of several small dishes around rice and bread. A sampler meal.",
+"chaat":"Indian street snack: crisp bits, chutneys, yogurt, spice. Sweet, sour, and crunchy at once.",
+"chicken 65":"South Indian spicy fried chicken, red from chili, curry leaves on top.",
+"pakora":"Vegetables in spiced chickpea batter, deep fried.",
+"seekh kebab":"Spiced ground meat pressed onto a skewer and grilled.",};
+const CU={
+"African fusion":"Pastries and snacks drawn from across Africa: Ethiopian, Moroccan, Mozambican, Jamaican-influenced.",
+"Filipino":"Philippines. Garlic rice, sweet-savory meats, vinegar and soy, big breakfasts (silog), ube desserts.",
+"Swedish":"Sweden. Meatballs with lingonberry, seafood on toast, dill, cream sauces, thin pancakes.",
+"Malaysian":"Malaysia. Coconut, chili, lemongrass, and turmeric; fried rice, flaky roti, rich curries.",
+"Peruvian":"Peru. Ceviche, lomo saltado (beef stir-fry with fries), crispy pork sandwiches, lots of lime and chili.",
+"Hawaiian":"Hawaii plate-lunch food: Spam musubi, poke, kālua pork, rice, mac salad. Japanese and Portuguese influence.",
+"Hawaiian-Korean":"Hawaiian plate lunch crossed with Korean flavors like kimchi and kalbi.",
+"Hawaiian sushi":"Sushi rolls plus Hawaiian plates like katsu curry and poke.",
+"Vietnamese":"Vietnam. Banh mi sandwiches, pho, fresh herbs, fish sauce, pickled vegetables.",
+"Korean":"Korea. Marinated grilled meats (bulgogi, kalbi), kimchi, rice bowls, spicy-sweet sauces.",
+"Seattle teriyaki":"A Seattle invention: grilled chicken in sweet soy glaze, rice, salad. Cheap and everywhere.",
+"Taiwanese":"Taiwan. Soup dumplings, pork chops over rice, stir-fried greens, light and precise.",
+"Chinese":"Broad. Here mostly dumplings, buns, noodle soups, stir-fries.",
+"Cantonese":"Southern Chinese: lighter sauces, seafood, dim sum, roast meats.",
+"Thai":"Thailand. Curries with coconut milk, pad thai, basil stir-fries, sweet-sour-spicy balance.",
+"Pan-Asian":"Mix of Thai, Vietnamese, Chinese, Malaysian dishes on one menu.",
+"Asian comfort":"Wings, katsu, noodles, fried rice. Late-night style, not tied to one country.",
+"Japanese":"Japan. Sushi, hand rolls, karaage fried chicken, katsu.",
+"Spanish":"Spain. Small plates (tapas): fried potatoes with aioli, cured meats, seafood, cider.",
+"French":"France. Bistro classics: onion soup, pâté, cassoulet, mussels, steak frites, wine.",
+"French bakery":"Croissants, macarons, tarts, baguette sandwiches.",
+"French-American":"French technique on an American hotel menu.",
+"Scandinavian bakery":"Nordic pastries and quiche, cardamom, rye, lighter sweetness.",
+"Italian":"Pasta, pizza, meatballs, tiramisu. Most of these are casual trattorias.",
+"Italian deli":"Cured meats, cheeses, imported groceries, sandwiches and slices to go.",
+"Brazilian":"Brazil. Here it's churrasco: skewered grilled meats carved at the table.",
+"Mexican":"Burritos, tacos, bowls.",
+"Vegan Mexican":"Mexican menu with no animal products. Tacos, nachos, barbacoa bowls made plant-based.",
+"Turkish":"Turkey. Falafel, gyro, shawarma, kebabs, hummus, pita.",
+"British":"Crumpets and tea here. At the pubs: fish and chips, meat pies, bangers.",
+"British pub":"English pub food and beer: fish and chips, pies, Guinness.",
+"Irish pub":"Irish pub food and beer: Reuben, shepherd's pie, Guinness.",
+"Southern":"American South. Biscuits, gravy, grits, fried chicken.",
+"Pacific Northwest":"Local seasonal cooking: salmon, halibut, oysters, mushrooms, berries.",
+"Seafood":"Fish, crab, oysters, chowder. Seattle's home turf.",
+"Seafood market":"Fresh and smoked fish to buy, plus a few ready-to-eat items.",
+"Oysters":"Raw bar. Local Puget Sound oysters, usually with a happy hour.",
+"American":"Burgers, sandwiches, salads, brunch.",
+"Chicken":"Fried chicken sandwiches and frozen custard.",
+"Pizza":"Pizza.",
+"Deli":"Sandwiches made to order, corner-store style.",
+"Sandwiches":"Sandwiches.",
+"Salads":"Build-your-own salads and grain bowls.",
+"Vegan":"No animal products. Burgers, bowls, smoothies.",
+"Coffee":"Espresso drinks, drip, pastries.",
+"Coffee & bakery":"Coffee plus baked goods and ice cream.",
+"Matcha & coffee":"Known for matcha lattes as much as coffee.",
+"American bakery":"Donuts, croissants, cookies, sandwiches.",
+"Gelato":"Italian-style ice cream.",
+"Ice cream":"Ice cream.",
+"Frozen yogurt":"Cultured Greek-style frozen yogurt with fresh toppings.",
+"Chocolate":"Bean-to-bar chocolate, drinking chocolate, cookies.",
+"Candy":"Candy and chocolate to take away.",
+"Cocktails":"Cocktail bar, some small plates.",
+"Whiskey bar":"Bar built around a deep whiskey and bourbon list.",
+"Beer bar":"Local craft beer, light snacks.",
+"Brewpub":"Brewery with a full food menu.",
+"Pub":"Small bar, few food options.",
+"Dive bar":"Cheap drinks, pinball, no pretense.",
+"Wine bar":"Wine by the glass, small plates.",
+"Lounge":"Dim lounge, DJ, cocktails, shareable food.",
+"Japanese ramen":"Japan. Wheat noodles in a long-simmered broth with pork, egg, and toppings. Tsukemen is the dipping version.",
+"Japanese omakase":"Chef's choice sushi, course by course. You don't order; the chef decides and serves you piece by piece.",
+"Japanese tempura":"Japan. Seafood and vegetables in a light, lacy batter, fried fast. Tendon is tempura over rice.",
+"Japanese izakaya":"Japanese pub. Small plates meant to go with beer and sake, ordered a few at a time.",
+"Japanese bakery":"Japanese takes on European pastry: milk bread, malasada, curry buns, kouign amann.",
+"Puerto Rican":"Puerto Rico. Mofongo (mashed fried plantain), slow-roasted pork, rice with pigeon peas.",
+"New Mexican":"New Mexico, not Mexico. Built on hatch chiles, red or green, in rellenos, enchiladas, and stews.",
+"Sichuan hot pot":"You cook thin-sliced meat and vegetables yourself in a bubbling pot at your table. Sichuan broth is numbing-spicy from peppercorns.",
+"Cantonese dim sum":"Southern Chinese small plates: steamed dumplings, buns, rice rolls, egg tarts. Traditionally a late-morning meal.",
+"Cantonese BBQ":"Chinese roast meats hanging in the window: char siu pork, crispy pork belly, roast duck. Usually over rice.",
+"Hong Kong cafe":"Cha chaan teng. Hong Kong diner food: milk tea, pork chop over fried rice, macaroni soup, French toast.",
+"South Indian":"Southern India. Dosas (thin fermented crepes), idli, sambar, coconut chutney. Lighter and tangier than northern Indian food.",
+"Indian pizza":"Pizza with Indian toppings like butter chicken or tikka.",
+"West African":"Ghana and Nigeria mostly. Jollof rice, grilled suya with peanut spice, fufu, peanut soup, fried plantain.",
+"Spanish-Moroccan":"Spain crossed with North Africa: tagines, b'stilla pastry pie, saffron, preserved lemon.",
+"Greek":"Greece. Gyro off the spit, souvlaki, feta, tzatziki, lemon and oregano.",
+"Korean-American":"Korean flavors in American formats: street toast, kimchi burritos, bulgogi bowls.",
+"Korean bakery":"Soft, airy, lightly sweet: cloud cake, cream-filled donuts, milk bread.",
+"Filipino bakery":"Philippines. Ube everything, bibingka, pandan, plus Filipino breakfast plates.",
+"Argentinian bakery":"Argentina. Alfajores (dulce de leche sandwich cookies), crustless sandwiches de miga, facturas.",
+"Russian bakery":"Piroshky: soft filled buns, savory or sweet, baked not fried.",
+"French pastry":"Macarons, tarts, éclairs, chocolates.",
+"Asian fusion":"Asian techniques and flavors mixed across countries or with Western dishes.",
+"Asian grocery":"Full Asian supermarket: produce, fish counter, imported snacks, plus a food court.",
+"Taiyaki":"Japanese fish-shaped waffle with a filling, sweet or savory. Made to order.",
+"Boba":"Bubble tea. Milk or fruit tea with chewy tapioca pearls. Pick your sweetness level.",
+"Yogurt drinks":"Chinese-style drinkable yogurt with fruit and purple rice. Tart, not very sweet.",
+"Vietnamese coffee":"Strong dark-roast coffee dripped over sweetened condensed milk. Usually iced.",
+"Ginger beer":"Spicy non-alcoholic ginger soda, mixed into mules and spritzes.",
+"Steakhouse":"Dry-aged steaks, tableside service, big wine list. Dress up a little.",
+"Barbecue":"Smoked meats: brisket, pulled pork, ribs, with sides like beans and slaw.",
+"Diner":"All-day American: eggs, pancakes, burgers, bottomless coffee.",
+"Breakfast":"Eggs, potatoes, pastries. Morning only.",
+"Brunch":"Late-morning menu: eggs, pancakes, benedicts, cocktails.",
+"Bistro":"Small French-style restaurant, short menu, wine.",
+"Cafe":"Coffee plus a real food menu, sandwiches and salads.",
+"Coffee & tea":"Espresso and a serious tea or matcha program.",
+"Bakery":"Breads, pastries, cakes.",
+"Doughnuts":"Doughnuts and coffee.",
+"Cookies":"Warm cookies, often à la mode.",
+"Desserts":"Plated desserts, cakes, tarts.",
+"Macarons":"French almond meringue sandwich cookies.",
+"Bar food":"Burgers, wings, fries, nachos.",
+"Sports bar":"Screens everywhere, beer, bar food, game-day crowds.",
+"Self-pour beer":"You get a card, pour your own from a wall of taps, and pay by the ounce.",
+"Tiki":"Rum-heavy tropical cocktails, umbrellas and carved mugs.",
+"Speakeasy":"Hidden bar with an unmarked door, 1920s styling, careful cocktails.",
+"Tavern":"Neighborhood bar with a short food menu.",
+"Saloon":"Old-style bar, usually with history attached.",
+"North Indian":"Northern India. Creamy curries, tandoori meats, naan, biryani. What most people picture as Indian food.",
+"Pakistani":"Pakistan. Karahi curries, seekh kebabs, biryani. Close to North Indian with more grilled meat.",
+"Indian fusion":"Indian flavors in non-Indian formats: butter chicken sliders, chaat plates, cocktails.",
+"Middle Eastern":"Shawarma, falafel, hummus, kebabs, rice plates.",
+"Açaí bowls":"Thick purple Amazon-berry sorbet in a bowl, topped with granola and fruit.",
+"Juice & açaí":"Cold-pressed juice, smoothies, açaí bowls.",
+"Smoothies & soup":"Fresh fruit smoothies plus homemade soup.",
+"Wings":"Chicken wings with a long sauce list.",
+"Burgers":"Burgers and fries.",
+"Public market":"Seattle's 1907 farmers market: produce, fish, crafts, and dozens of food stalls.",
+"Mall food court":"A mix of fast-casual counters in one seating area.",
+"Market hall":"A building of independent food vendors and small shops.",
+"Korean grocery":"Korean supermarket with a hot food counter.",};
+const GTERMS=Object.keys(G).sort((a,b)=>b.length-a.length);
+// terms that should win even when a longer/other term overlaps them
+const GPRI={"crab roll":2,"lobster roll":2,"katsu curry":2,"kimchi cheesesteak":2,"clam chowder":2,"salmon sandwich":2};
+function dishify(g){
+  if(!g) return "";
+  const low=g.toLowerCase(); const hits=[];
+  for(const t of GTERMS){ const re=new RegExp("(^|[^a-zà-ú])("+t.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+")(?![a-zà-ú])","g"); let m;
+    while((m=re.exec(low))){ hits.push({s:m.index+m[1].length,e:m.index+m[1].length+t.length,t,p:(GPRI[t]||0)*1000+t.length}); } }
+  hits.sort((a,b)=>b.p-a.p);                       // priority, then longest
+  const taken=[]; const keep=[];
+  for(const h of hits){ if(taken.some(x=>h.s<x.e&&h.e>x.s)) continue; taken.push(h); keep.push(h); }
+  keep.sort((a,b)=>a.s-b.s);
+  let out="",i=0;
+  for(const h of keep){ out+=esc(g.slice(i,h.s))+`<button class="dish" data-t="${h.t}">${esc(g.slice(h.s,h.e))}</button>`; i=h.e; }
+  return out+esc(g.slice(i));
+}
+function terrain(p){const [x]=mproj(p.la,p.lo); return x>160?"uphill":x<-90?"stairs down":"";}
+function priceTxt(pr){return pr?"$".repeat(pr):"";}
+function hhNow(p,now){ if(!p.hh) return false; now=now||seattleNow(); const d=now.getDay(), t=now.getHours()+now.getMinutes()/60;
+  const r=dayRanges(p.hh,DK[d])||[]; return r.some(([s,e])=>t>=s&&t<e); }
+
+
+/* ---------- live data: data/places.json is refreshed weekly by GitHub Actions ---------- */
+let UPDATED=null;
+async function loadLive(){
+  try{
+    const r=await fetch("data/places.json",{cache:"no-store"}); if(!r.ok) return;
+    const j=await r.json(); const byId={}; for(const e of j.places||[]) byId[e.id]=e;
+    let n=0;
+    for(const p of P){ const e=byId[p.p]; if(!e) continue;
+      if(typeof e.rating==="number") p.r=e.rating; if(typeof e.count==="number") p.k=e.count;
+      if(e.hours!==undefined) p.h=e.hours; p.gone=e.status&&e.status!=="OPERATIONAL"; n++; }
+    UPDATED=j.updated||null; if(n) setUpdated();
+  }catch(e){}
+}
+function setUpdated(){ const w=document.getElementById("whereTxt"); const base=`Distances from ${origin.name}`;
+  w.textContent=UPDATED?`${base} · ratings ${UPDATED}`:base; }
+
+
+/* ---------- Seattle time, no matter where the phone is ---------- */
+function seattleNow(){
+  const parts=new Intl.DateTimeFormat("en-US",{timeZone:"America/Los_Angeles",year:"numeric",month:"numeric",day:"numeric",hour:"numeric",minute:"numeric",second:"numeric",hour12:false}).formatToParts(new Date());
+  const v={}; for(const p of parts) v[p.type]=p.value;
+  return new Date(+v.year, +v.month-1, +v.day, +v.hour%24, +v.minute, +v.second);
+}
+
+/* ---------- state ---------- */
+const HOME={la:47.607132,lo:-122.339179,name:"Harbor Steps, 1st & University"};
+let origin={...HOME}, sort="best", cat="", flt={open:true,w5:false,w10:false,w15:false,unv:false,hh:false,nw:false,cheap:false,w20:false}, meal="", q="", marks={}, expanded=new Set();
+const PRIOR_W=100, PRIOR_M=4.41, FLOOR=100, FT_PER_MIN=275;
+const DK=['u','m','t','w','r','f','s'];
+const MEALS={breakfast:{cats:["Coffee","Bakery & dessert","Quick bite"]},lunch:{cats:["Restaurant","Quick bite"]},dinner:{cats:["Restaurant","Quick bite"]},
+  dessert:{cats:["Bakery & dessert"]},drinks:{cats:["Bar"]},late:{cats:["Bar","Restaurant","Quick bite"],late:true},snacks:{cats:["Market & candy","Bakery & dessert"]}};
+function mealNow(){const h=seattleNow().getHours(); return h<5?"late":h<11?"breakfast":h<15?"lunch":h<21?"dinner":"late";}
+const DN={m:"Mon",t:"Tue",w:"Wed",r:"Thu",f:"Fri",s:"Sat",u:"Sun"};
+
+/* ---------- helpers ---------- */
+function dist(p){const R=6371000,a=Math.PI/180,dl=(p.la-origin.la)*a,dn=(p.lo-origin.lo)*a,
+  h=Math.sin(dl/2)**2+Math.cos(origin.la*a)*Math.cos(p.la*a)*Math.sin(dn/2)**2;
+  return 2*R*Math.asin(Math.sqrt(h))*3.28084;}
+function score(p){return (p.r*p.k+PRIOR_W*PRIOR_M)/(p.k+PRIOR_W);}
+function dayRanges(h,key){
+  if(!h) return null; const s=typeof h==="string"?h:(h[key]!==undefined?h[key]:h.d);
+  if(!s||s==="x") return [];
+  return s.split(",").map(r=>r.split("-").map(Number));
+}
+function fmtT(t){ if(t>=24) t-=24; if(t===0||t===24) return "midnight"; if(t===12) return "noon";
+  const hr=Math.floor(t), mn=Math.round((t-hr)*60), ap=hr>=12?"PM":"AM", h12=hr%12||12;
+  return mn? `${h12}:${String(mn).padStart(2,"0")} ${ap}` : `${h12} ${ap}`; }
+function status(p,now){
+  if(!p.h) return {open:null,txt:"Hours not listed",soon:false};
+  const d=now.getDay(), t=now.getHours()+now.getMinutes()/60;
+  const today=dayRanges(p.h,DK[d]), yest=dayRanges(p.h,DK[(d+6)%7]);
+  // open from yesterday past midnight?
+  for(const [s,e] of yest||[]) if(e>24 && t+24>=s && t+24<e) return mk(e-24);
+  for(const [s,e] of today||[]) if(t>=s && t<e) return mk(e);
+  // next opening today
+  for(const [s] of today||[]) if(s>t) return {open:false,txt:`Closed · opens ${fmtT(s)}`,soon:false};
+  // tomorrow
+  const tom=dayRanges(p.h,DK[(d+1)%7]);
+  if(tom&&tom.length) return {open:false,txt:`Closed · opens ${fmtT(tom[0][0])} tomorrow`,soon:false};
+  return {open:false,txt:"Closed today and tomorrow",soon:false};
+  function mk(e){const left=(e-t)*60; if(left<=60) return {open:true,txt:`Closes in ${Math.max(1,Math.round(left))} min`,soon:true};
+    return {open:true,txt:`Open · closes ${fmtT(e)}`,soon:false};}
+}
+function hoursTable(p,now){
+  if(!p.h) return "";
+  const d=now.getDay(); return `<div class="hrs">`+['m','t','w','r','f','s','u'].map(k=>{
+    const r=dayRanges(p.h,k); const txt=!r.length?"closed":r.map(([s,e])=>`${fmtT(s)} to ${fmtT(e)}`).join(", ");
+    return `<div class="${DK[d]===k?"today":""}"><span>${DN[k]}</span><span>${txt}</span></div>`;}).join("")+`</div>`;
+}
+function rsv(p){return `https://www.google.com/search?q=${encodeURIComponent(p.n+" Seattle reservations")}`;}
+function gmapsdir(p){return `https://www.google.com/maps/dir/?api=1&destination=${p.la},${p.lo}&destination_place_id=${p.p}&travelmode=walking`;}
+function gmaps(p){return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.n+" Seattle")}&query_place_id=${p.p}`;}
+function amaps(p){return `https://maps.apple.com/?daddr=${p.la},${p.lo}&dirflg=w&q=${encodeURIComponent(p.n)}`;}
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;");}
+function fmtK(n){return n.toLocaleString();}
+
+/* ---------- storage ---------- */
+function saveState(){ try{ localStorage.setItem("sb:state",JSON.stringify({sort,cat,meal,flt})); }catch(e){} }
+function loadState(){ try{ const v=JSON.parse(localStorage.getItem("sb:state")||"null"); if(!v) return false;
+  sort=v.sort||"best"; cat=v.cat||""; meal=v.meal!==undefined?v.meal:mealNow(); Object.assign(flt,v.flt||{}); return true; }catch(e){ return false; } }
+function paintControls(){
+  [...document.getElementById("sort").children].forEach(x=>x.classList.toggle("on",x.dataset.s===sort));
+  [...document.getElementById("cats").children].forEach(x=>x.classList.toggle("on",x.dataset.c===cat));
+  [...document.getElementById("meals").children].forEach(x=>x.classList.toggle("on",x.dataset.m===meal));
+  [...document.getElementById("flt").children].forEach(x=>x.classList.toggle("on",!!flt[x.dataset.f]));
+}
+async function loadMarks(){
+  try{ if(window.storage){const r=await window.storage.get("sb:marks",false); if(r&&r.value){marks=JSON.parse(r.value); return;}} }catch(e){}
+  try{ const v=localStorage.getItem("sb:marks"); if(v) marks=JSON.parse(v); }catch(e){}
+}
+async function saveMarks(){
+  const v=JSON.stringify(marks);
+  try{ if(window.storage){ await window.storage.set("sb:marks",v,false); return; } }catch(e){}
+  try{ localStorage.setItem("sb:marks",v); }catch(e){}
+}
+
+/* ---------- filtering ---------- */
+function current(){
+  const now=seattleNow(); let list=P.map(p=>({p,d:dist(p),s:status(p,now),sc:score(p)}));
+  if(sort==="mine") list=list.filter(x=>marks[x.p.n]);
+  if(cat) list=list.filter(x=>x.p.c===cat);
+  if(meal&&MEALS[meal]){const M=MEALS[meal]; list=list.filter(x=>M.cats.includes(x.p.c));
+    if(M.late){const d=seattleNow().getDay(); list=list.filter(x=>{const r=dayRanges(x.p.h,DK[d])||[]; return r.some(([s,e])=>e>=23);});}}
+  if(sort==="best" && !flt.unv) list=list.filter(x=>x.p.k>=FLOOR && !x.p.gone);
+  if(flt.open && sort!=="mine") list=list.filter(x=>x.s.open!==false);
+  if(flt.hh){const now2=seattleNow(); list=list.filter(x=>hhNow(x.p,now2));}
+  if(flt.nw) list=list.filter(x=>x.p.nw);
+  if(flt.cheap) list=list.filter(x=>x.p.pr&&x.p.pr<=2);
+  const cap=flt.w5?5:flt.w10?10:flt.w15?15:flt.w20?20:null; if(cap) list=list.filter(x=>x.d/FT_PER_MIN<=cap);
+  if(q){const qq=q.toLowerCase(); list=list.filter(x=>(x.p.n+" "+(x.p.g||"")+" "+x.p.c+" "+(x.p.cu||"")).toLowerCase().includes(qq));}
+  if(sort==="near") list.sort((a,b)=>a.d-b.d);
+  else if(sort==="pop") list.sort((a,b)=>b.p.k-a.p.k);
+  else list.sort((a,b)=>b.sc-a.sc||b.p.k-a.p.k);
+  return list;
+}
+
+/* ---------- render ---------- */
+let view="list", mapSel=null;
+function render(){
+  const list=current(), board=document.getElementById("board");
+  if(view==="map") drawMap(list);
+  const openN=P.filter(p=>status(p,seattleNow()).open).length;
+  const beenN=Object.values(marks).filter(m=>m.been).length, wantN=Object.values(marks).filter(m=>m.want).length;
+  document.getElementById("count").textContent=`${list.length} of ${P.length} places · ${openN} open right now`+(beenN?` · been to ${beenN}`:"")+(wantN&&sort!=="mine"?`, saved ${wantN}`:"")+(sort==="best"?" · Best = rating weighted by review count":"");
+  if(!list.length){
+    const on=[]; if(flt.open&&sort!=="mine") on.push("Open now"); if(meal) on.push(document.querySelector(`#meals button[data-m="${meal}"]`).textContent); if(cat) on.push(cat);
+    if(flt.w5) on.push("≤5 min"); if(flt.w10) on.push("≤10 min"); if(flt.w15) on.push("≤15 min"); if(flt.w20) on.push("≤20 min"); if(flt.hh) on.push("Happy hour now"); if(flt.nw) on.push("Try something new"); if(flt.cheap) on.push("$ and $$"); if(q) on.push(`search "${esc(q)}"`);
+    board.innerHTML=`<div class="empty"><b>Nothing matches</b>${sort==="mine"?"Tap ♥ on a place to save it here.":`Active: ${on.join(", ")||"none"}.`}${flt.open&&sort!=="mine"?`<div style="margin-top:14px"><button class="share" id="offopen">Turn off Open now</button></div>`:""}</div>`;
+    const b=document.getElementById("offopen"); if(b) b.addEventListener("click",()=>{flt.open=false; document.querySelector('#flt button[data-f="open"]').classList.remove("on"); render();});
+    return;}
+  board.innerHTML=list.map(({p,d,s,sc},i)=>{
+    const mins=Math.max(1,Math.round(d/FT_PER_MIN)), m=marks[p.n]||{}, unv=p.k<FLOOR;
+    return `<article class="rowp ${s.open===false?"closed":""} ${expanded.has(p.n)?"x":""}" data-n="${esc(p.n)}">
+      <div class="min"><b>${mins}</b><small>min walk</small><small>${Math.round(d)} ft</small>${terrain(p)?`<small class="terr">${terrain(p)}</small>`:""}</div>
+      <div>
+        <div class="hd"><div class="name">${esc(p.n)}</div><div class="rate"><b>★ ${p.r.toFixed(1)}</b> <small>${fmtK(p.k)}</small></div></div>
+        <div class="meta"><span class="tag">${esc(p.c)}</span>${p.cu?`<button class="tag t" data-cu="${esc(p.cu)}">${esc(p.cu)}</button>`:""}<span class="pr">${priceTxt(p.pr)}</span>${esc(p.a)}${unv?` <span class="unv">· under 100 reviews</span>`:""}${sort==="best"?` · score ${sc.toFixed(2)}`:""}</div>
+        ${p.g?`<div class="get">${dishify(p.g)}</div>`:""}
+        ${p.gone?`<span class="ln">Google lists this as closed or temporarily closed</span> `:""}${p.ln?`<span class="ln">${esc(p.ln)}</span>`:""}${hhNow(p,seattleNow())?` <span class="hhon">Happy hour now</span>`:""}
+        <button class="stat ${s.open===true?(s.soon?"soon":"o"):s.open===false?"c":""}" data-x="${esc(p.n)}" aria-expanded="${expanded.has(p.n)}">${s.txt} ▾${m.note?`<span class="hasnote">✎ note</span>`:""}</button>
+        ${hoursTable(p,seattleNow())}
+        ${expanded.has(p.n)?`<textarea class="note" data-note="${esc(p.n)}" placeholder="Your note (saves automatically)">${esc(m.note||"")}</textarea>`:""}
+        <div class="acts">
+          <a class="dir" href="${amaps(p)}" target="_blank" rel="noopener">Directions</a>
+          <a href="${gmaps(p)}" target="_blank" rel="noopener">Google</a>${p.rs?`<a href="${rsv(p)}" target="_blank" rel="noopener">Reserve</a>`:""}
+          <button class="showmap" data-map="${esc(p.n)}">Map</button>
+          <button class="showmap" data-share="${esc(p.n)}">Share</button>
+          ${p.w?`<a href="https://${p.w}" target="_blank" rel="noopener">Site</a>`:""}
+          <div class="mk">
+            <button class="h ${m.want?"on":""}" data-m="want" data-n="${esc(p.n)}" title="Want to try" aria-label="Want to try">♥</button>
+            <button class="${m.been?"on":""}" data-m="been" data-n="${esc(p.n)}" title="Been here" aria-label="Been here">✓</button>
+          </div>
+        </div>
+      </div></article>`;}).join("");
+}
+
+/* ---------- events ---------- */
+document.getElementById("sort").addEventListener("click",e=>{const b=e.target.closest("button"); if(!b) return;
+  sort=b.dataset.s; [...e.currentTarget.children].forEach(x=>x.classList.toggle("on",x===b)); render();});
+document.getElementById("meals").addEventListener("click",e=>{const b=e.target.closest("button"); if(!b) return;
+  meal=b.dataset.m; [...e.currentTarget.children].forEach(x=>x.classList.toggle("on",x===b));
+  cat=""; [...document.getElementById("cats").children].forEach(x=>x.classList.toggle("on",x.dataset.c==="")); render();});
+document.getElementById("cats").addEventListener("click",e=>{const b=e.target.closest("button"); if(!b) return;
+  cat=b.dataset.c; if(cat){meal=""; [...document.getElementById("meals").children].forEach(x=>x.classList.toggle("on",x.dataset.m===""));} [...e.currentTarget.children].forEach(x=>x.classList.toggle("on",x===b)); render();});
+document.getElementById("flt").addEventListener("click",e=>{const b=e.target.closest("button"); if(!b) return;
+  const f=b.dataset.f; if(f.startsWith("w")){const was=flt[f]; flt.w5=flt.w10=flt.w15=false; flt[f]=!was;
+    [...e.currentTarget.children].forEach(x=>{if(x.dataset.f.startsWith("w")) x.classList.toggle("on",flt[x.dataset.f]);});}
+  else {flt[f]=!flt[f]; b.classList.toggle("on",flt[f]);} render();});
+document.getElementById("q").addEventListener("input",e=>{q=e.target.value.trim(); render();});
+["sort","cats","meals","flt"].forEach(id=>document.getElementById(id).addEventListener("click",()=>saveState()));
+let noteT; document.getElementById("board").addEventListener("input",e=>{const t=e.target.closest("textarea[data-note]"); if(!t) return;
+  const n=t.dataset.note; marks[n]=marks[n]||{}; marks[n].note=t.value; if(!t.value.trim()){delete marks[n].note; if(!marks[n].want&&!marks[n].been) delete marks[n];}
+  const st=t.closest(".rowp").querySelector("button[data-x]"); let mk=st.querySelector(".hasnote");
+  if(t.value.trim()){ if(!mk){ mk=document.createElement("span"); mk.className="hasnote"; mk.textContent="✎ note"; st.appendChild(mk);} } else if(mk) mk.remove();
+  clearTimeout(noteT); noteT=setTimeout(()=>saveMarks(),500);});
+document.getElementById("board").addEventListener("click",async e=>{
+  const mb=e.target.closest("button[data-m]"); if(mb){const n=mb.dataset.n, k=mb.dataset.m; marks[n]=marks[n]||{}; marks[n][k]=!marks[n][k];
+    if(!marks[n].want&&!marks[n].been) delete marks[n]; await saveMarks(); render(); toast(k==="want"?(marks[n]?.want?"Saved":"Removed"):(marks[n]?.been?"Marked as been":"Unmarked")); return;}
+  const db=e.target.closest("button.dish"); if(db){openSheet(db.textContent,G[db.dataset.t],"Tap any dotted word for a definition."); return;}
+  const cb=e.target.closest("button[data-cu]"); if(cb){openSheet(cb.dataset.cu,CU[cb.dataset.cu]||"",""); return;}
+  const sm=e.target.closest("button[data-map]"); if(sm){ showOnMap(sm.dataset.map); return; }
+  const sh1=e.target.closest("button[data-share]"); if(sh1){ shareOne(sh1.dataset.share); return; }
+  const xb=e.target.closest("button[data-x]"); if(xb){const n=xb.dataset.x; expanded.has(n)?expanded.delete(n):expanded.add(n); render();}
+});
+function useMyLocation(recenter){
+  if(!navigator.geolocation){toast("Location not available in this browser"); return;}
+  toast("Finding you…");
+  navigator.geolocation.getCurrentPosition(pos=>{
+      const o0=origin; origin={...HOME}; const far=dist({la:pos.coords.latitude,lo:pos.coords.longitude})/5280; origin=o0;
+      if(far>5){ toast(`You're ${Math.round(far)} miles from downtown Seattle. Keeping Harbor Steps as the start.`); origin={...HOME}; setWhere(); render(); return; }
+      origin={la:pos.coords.latitude,lo:pos.coords.longitude,name:"your location"}; setWhere();
+      if(recenter){const [ox,oy]=mproj(origin.la,origin.lo); vb={x:ox-vb.w/2,y:oy-vb.h/2,w:vb.w,h:vb.h};} render(); toast("Location updated");},
+    ()=>toast("Couldn't get location. Still using Harbor Steps."),{enableHighAccuracy:true,timeout:8000});
+}
+document.getElementById("geo").addEventListener("click",()=>{
+  if(origin.name!==HOME.name){origin={...HOME}; setWhere(); render(); return;}
+  useMyLocation(false);
+});
+function setWhere(){const b=document.getElementById("geo"), live=origin.name!==HOME.name;
+  setUpdated(); b.textContent=live?"Back to Harbor Steps":"Use my location"; b.classList.toggle("on",live);}
+
+
+/* ---------- share as text ---------- */
+function shareText(){
+  const list=current().slice(0,10); if(!list.length){toast("Nothing to share. Loosen a filter."); return "";}
+  const head=`Sound Bites, near Harbor Steps (${sort==="best"?"best rated":sort==="near"?"closest":sort==="pop"?"most reviewed":"saved"}${cat?", "+cat.toLowerCase():""})`;
+  const lines=list.map(({p,d,s},i)=>`${i+1}. ${p.n}, ${p.r.toFixed(1)} stars (${fmtK(p.k)}), ${Math.max(1,Math.round(d/FT_PER_MIN))} min walk. ${p.g?"Get: "+p.g+". ":""}${s.txt}. ${amaps(p)}`);
+  return head+"\n\n"+lines.join("\n\n");
+}
+async function shareOne(name){
+  const p=P.find(x=>x.n===name); if(!p) return;
+  const s=status(p,seattleNow()), mins=Math.max(1,Math.round(dist(p)/FT_PER_MIN));
+  const t=`${p.n}\n${p.r.toFixed(1)} stars (${fmtK(p.k)}) · ${p.cu||p.c} · ${mins} min walk\n${p.g?p.g+"\n":""}${s.txt}\n${amaps(p)}`;
+  if(navigator.share){ try{ await navigator.share({title:p.n,text:t}); return; }catch(e){ if(e.name==="AbortError") return; } }
+  try{ await navigator.clipboard.writeText(t); toast("Copied"); }catch(e){ openSheet(p.n,t,""); }
+}
+document.getElementById("share").addEventListener("click",async()=>{
+  const t=shareText(); if(!t) return;
+  if(navigator.share){ try{ await navigator.share({title:"Sound Bites",text:t}); return; }catch(e){ if(e.name==="AbortError") return; } }
+  try{ await navigator.clipboard.writeText(t); toast("Copied. Paste it into a text."); }catch(e){ openSheet("Copy this",t,""); }
+});
+
+
+/* ---------- map: hand-drawn schematic, no tiles needed ---------- */
+const STREETS=[
+ ["1st Ave",[[47.6027,-122.3342],[47.6073,-122.3389],[47.6109,-122.3426],[47.6140,-122.3470]]],
+ ["2nd Ave",[[47.6045,-122.3355],[47.6065,-122.3376],[47.6116,-122.3412],[47.6145,-122.3460]]],
+ ["3rd Ave",[[47.6047,-122.3343],[47.6089,-122.3368],[47.6120,-122.3398],[47.6132,-122.3426]]],
+ ["4th Ave",[[47.6055,-122.3318],[47.6075,-122.3349],[47.6105,-122.3374],[47.6125,-122.3387],[47.6150,-122.3428]]],
+ ["5th Ave",[[47.6060,-122.3302],[47.6076,-122.3324],[47.6099,-122.3355],[47.6146,-122.3400]]],
+ ["6th Ave",[[47.6070,-122.3300],[47.6092,-122.3329],[47.6112,-122.3340],[47.6146,-122.3383],[47.6154,-122.3403]]],
+ ["Western Ave",[[47.6062,-122.3385],[47.6082,-122.3406],[47.6095,-122.3430],[47.6106,-122.3442],[47.6140,-122.3492]]],
+ ["Alaskan Way",[[47.6025,-122.3365],[47.6039,-122.3378],[47.6054,-122.3406],[47.6061,-122.3414],[47.6108,-122.3482],[47.6147,-122.3547]]],
+ ["Pike Pl",[[47.6083,-122.3407],[47.6103,-122.3431]]],
+ ["Pike St",[[47.6084,-122.3409],[47.6085,-122.3400],[47.6094,-122.3393],[47.6113,-122.3334]]],
+ ["Pine St",[[47.6103,-122.3425],[47.6099,-122.3403],[47.6123,-122.3344],[47.6133,-122.3324]]],
+ ["Union St",[[47.6074,-122.3400],[47.6081,-122.3388],[47.6090,-122.3368],[47.6093,-122.3346],[47.6103,-122.3328]]],
+ ["University St",[[47.6068,-122.3390],[47.6084,-122.3347],[47.6081,-122.3335],[47.6098,-122.3320]]],
+ ["Seneca St",[[47.6060,-122.3385],[47.6079,-122.3310]]],
+ ["Stewart St",[[47.6106,-122.3413],[47.6114,-122.3400],[47.6141,-122.3367],[47.6151,-122.3371]]],
+ ["Virginia St",[[47.6118,-122.3440],[47.6129,-122.3405],[47.6155,-122.3345]]],
+ ["Lenora St",[[47.6128,-122.3455],[47.6139,-122.3409],[47.6165,-122.3350]]],
+
+ ["Alaskan Way S",[[47.5975,-122.3327],[47.6000,-122.3355],[47.6025,-122.3365]]],
+ ["1st Ave S",[[47.5925,-122.3335],[47.5985,-122.3345],[47.6013,-122.3345],[47.6027,-122.3342]]],
+ ["2nd Ave S",[[47.5975,-122.3315],[47.6005,-122.3318],[47.6021,-122.3320],[47.6046,-122.3336]]],
+ ["Occidental Ave S",[[47.5947,-122.3313],[47.5990,-122.3326],[47.6006,-122.3327]]],
+ ["4th Ave S",[[47.5975,-122.3271],[47.6020,-122.3274],[47.6046,-122.3306]]],
+ ["Yesler Way",[[47.6016,-122.3354],[47.6016,-122.3323],[47.6021,-122.3272]]],
+ ["S Jackson St",[[47.5999,-122.3347],[47.5991,-122.3318],[47.5990,-122.3256],[47.5989,-122.3164]]],
+ ["S King St",[[47.5985,-122.3338],[47.5982,-122.3247],[47.5981,-122.3218]]],
+ ["5th Ave S",[[47.5974,-122.3280],[47.6020,-122.3273]]],
+ ["6th Ave S",[[47.5968,-122.3267],[47.5997,-122.3262]]],
+ ["7th Ave S",[[47.5985,-122.3235],[47.5990,-122.3232]]],
+ ["Columbia St",[[47.6035,-122.3372],[47.6055,-122.3300]]],
+ ["Madison St",[[47.6045,-122.3385],[47.6068,-122.3308],[47.6083,-122.3250]]],
+ ["Boren Ave",[[47.6083,-122.3262],[47.6120,-122.3300],[47.6164,-122.3320],[47.6200,-122.3361]]],
+ ["Terry Ave",[[47.6100,-122.3288],[47.6155,-122.3329],[47.6182,-122.3373]]],
+ ["8th Ave",[[47.6088,-122.3305],[47.6137,-122.3343],[47.6163,-122.3379]]],
+ ["9th Ave",[[47.6095,-122.3295],[47.6139,-122.3319],[47.6169,-122.3363]]],
+ ["7th Ave",[[47.6082,-122.3316],[47.6121,-122.3337],[47.6155,-122.3387],[47.6172,-122.3414]]],
+ ["Olive Way",[[47.6110,-122.3388],[47.6128,-122.3367],[47.6146,-122.3332]]],
+ ["Howell St",[[47.6134,-122.3383],[47.6144,-122.3340],[47.6160,-122.3300]]],
+ ["Blanchard St",[[47.6124,-122.3457],[47.6148,-122.3396],[47.6172,-122.3340]]],
+ ["Bell St",[[47.6143,-122.3456],[47.6166,-122.3426],[47.6177,-122.3405]]],
+ ["Battery St",[[47.6155,-122.3482],[47.6177,-122.3446],[47.6192,-122.3406]]],
+ ["Wall St",[[47.6164,-122.3495],[47.6171,-122.3444]]],
+ ["Cedar St",[[47.6179,-122.3477],[47.6184,-122.3455]]],
+ ["Denny Way",[[47.6185,-122.3479],[47.6193,-122.3420],[47.6199,-122.3360]]],
+ ["Westlake Ave",[[47.6122,-122.3389],[47.6146,-122.3375],[47.6187,-122.3374]]],
+ ["Elliott Ave",[[47.6140,-122.3492],[47.6150,-122.3540],[47.6168,-122.3576]]],
+];
+const MP={ready:false};
+function mproj(la,lo){ // meters east/north of HOME, rotated so avenues run vertical
+  if(!MP.ready){ const a=Math.PI/180; MP.kx=Math.cos(HOME.la*a)*111320; MP.ky=110540;
+    const p1=STREETS[0][1][1], p2=STREETS[0][1][2]; const dx=(p2[1]-p1[1])*MP.kx, dy=(p2[0]-p1[0])*MP.ky;
+    MP.th=Math.atan2(dy,dx)-Math.PI/2; MP.ready=true; }
+  const x=(lo-HOME.lo)*MP.kx, y=(la-HOME.la)*MP.ky, c=Math.cos(-MP.th), s=Math.sin(-MP.th);
+  return [x*c-y*s, -(x*s+y*c)]; // svg y down
+}
+let vb={x:-450,y:-450,w:900,h:900}; // meters
+function drawMap(list){
+  const svg=document.getElementById("msvg"); const R=0.3048; // ft->m
+  const [ox,oy]=mproj(origin.la,origin.lo);
+  let out=``;
+  for(const [name,pts] of STREETS){ const d=pts.map(([la,lo])=>mproj(la,lo)).map(([x,y],i)=>(i?"L":"M")+x.toFixed(1)+" "+y.toFixed(1)).join(" ");
+    out+=`<path class="st" d="${d}"/>`; }
+  for(const [name,pts] of STREETS){ const m=pts[Math.floor(pts.length/2)]; const [x,y]=mproj(m[0],m[1]); const p0=mproj(pts[0][0],pts[0][1]),p1=mproj(pts[pts.length-1][0],pts[pts.length-1][1]);
+    const ang=Math.atan2(p1[1]-p0[1],p1[0]-p0[0])*180/Math.PI; const a2=ang>90||ang<-90?ang+180:ang;
+    out+=`<text class="stl" x="${x.toFixed(1)}" y="${(y-5).toFixed(1)}" text-anchor="middle" transform="rotate(${a2.toFixed(1)} ${x.toFixed(1)} ${y.toFixed(1)})">${name}</text>`; }
+  out+=`<circle class="ring" cx="${ox}" cy="${oy}" r="${1320*R}"/><circle class="ring" cx="${ox}" cy="${oy}" r="${2640*R}"/><circle class="ring" cx="${ox}" cy="${oy}" r="${5280*R}"/>`;
+  out+=`<text class="stl" x="${ox}" y="${(oy-1320*R-4).toFixed(1)}" text-anchor="middle">1/4 mile</text><text class="stl" x="${ox}" y="${(oy-2640*R-4).toFixed(1)}" text-anchor="middle">1/2 mile</text><text class="stl" x="${ox}" y="${(oy-5280*R-4).toFixed(1)}" text-anchor="middle">1 mile</text>`;
+  let sel=list.find(x=>x.p.n===mapSel);
+  if(!sel && mapSel){ const p0=P.find(x=>x.n===mapSel); if(p0) sel={p:p0,d:dist(p0),s:status(p0,seattleNow()),sc:score(p0)}; }
+  const sorted=[...list].sort((a,b)=>a.sc-b.sc); // best drawn last (on top)
+  const seen={};
+  for(const x of sorted){ let [px,py]=mproj(x.p.la,x.p.lo); const key=px.toFixed(0)+","+py.toFixed(0); const n=(seen[key]=(seen[key]||0)+1); if(n>1){ px+=12*Math.cos(n*2.1); py+=12*Math.sin(n*2.1); } const cls=x.s.open===true?(x.s.soon?"s":"o"):x.s.open===false?"c":"n";
+    const r=x.p.k>=FLOOR&&x.sc>=4.6?8:x.sc>=4.4?6:5;
+    out+=`<circle class="hit" data-n="${esc(x.p.n)}" cx="${px.toFixed(1)}" cy="${py.toFixed(1)}" r="${Math.max(r*2.2,14)}"></circle><circle class="dot ${cls} ${mapSel===x.p.n?"sel":""}" data-n="${esc(x.p.n)}" cx="${px.toFixed(1)}" cy="${py.toFixed(1)}" r="${r}"><title>${esc(x.p.n)}</title></circle>`; }
+  if(sel){const [sx,sy]=mproj(sel.p.la,sel.p.lo); out+=`<circle class="selring" cx="${sx.toFixed(1)}" cy="${sy.toFixed(1)}" r="18"/><circle class="dot ${sel.s.open===true?(sel.s.soon?"s":"o"):sel.s.open===false?"c":"n"}" cx="${sx.toFixed(1)}" cy="${sy.toFixed(1)}" r="7"/>`;}
+  out+=`<circle class="youring" cx="${ox}" cy="${oy}" r="14"/><circle class="you" cx="${ox}" cy="${oy}" r="7"/><text class="youl" x="${(ox+11).toFixed(1)}" y="${(oy+5).toFixed(1)}">${origin.name===HOME.name?"You (Harbor Steps)":"You"}</text>`;
+  svg.innerHTML=out; svg.setAttribute("viewBox",`${vb.x} ${vb.y} ${vb.w} ${vb.h}`);
+  const pop=document.getElementById("mpop");
+  if(sel){ const {p,d,s}=sel; const m=marks[p.n]||{};
+    pop.innerHTML=`<button class="popx" id="popx" aria-label="Close">×</button>
+      <div class="hd"><div class="name">${esc(p.n)}</div><div class="rate"><b>★ ${p.r.toFixed(1)}</b> <small>${fmtK(p.k)}</small></div></div>
+      <div class="meta"><span class="tag">${esc(p.c)}</span>${p.cu?esc(p.cu)+" · ":""}${priceTxt(p.pr)} · ${Math.max(1,Math.round(d/FT_PER_MIN))} min walk${terrain(p)?" "+terrain(p):""} · ${esc(p.a)}</div>
+      <div class="stat ${s.open===true?(s.soon?"soon":"o"):s.open===false?"c":""}">${s.txt}</div>
+      ${p.g?`<div class="get">${esc(p.g)}</div>`:""}
+      <div class="acts"><a class="dir" href="${amaps(p)}" target="_blank" rel="noopener">Apple Maps</a><a href="${gmapsdir(p)}" target="_blank" rel="noopener">Google Maps</a><a href="${gmaps(p)}" target="_blank" rel="noopener">Menu &amp; photos</a>${p.rs?`<a href="${rsv(p)}" target="_blank" rel="noopener">Reserve</a>`:""}
+      <div class="mk"><button class="h ${m.want?"on":""}" data-m="want" data-n="${esc(p.n)}">♥</button><button class="${m.been?"on":""}" data-m="been" data-n="${esc(p.n)}">✓</button></div></div>`;
+    pop.classList.add("on"); } else pop.classList.remove("on");
+}
+function showOnMap(name){
+  const p=P.find(x=>x.n===name); if(!p) return;
+  mapSel=name;
+  const [px,py]=mproj(p.la,p.lo); vb={x:px-220,y:py-220,w:440,h:440};
+  if(view!=="map"){ view="map"; const b=document.getElementById("view"); b.textContent="List"; b.classList.add("on");
+    document.getElementById("map").classList.add("on"); document.getElementById("board").style.display="none"; }
+  render(); try{window.scrollTo(0,0);}catch(e){}
+}
+(function mapEvents(){
+  const map=document.getElementById("map"), svg=document.getElementById("msvg");
+  function tapAt(cx,cy){
+    const el=document.elementFromPoint(cx,cy);
+    let n=el&&el.dataset?el.dataset.n:null;
+    if(!n){ // widen the net a little for fat fingers
+      for(const [dx,dy] of [[0,-14],[0,14],[-14,0],[14,0],[-10,-10],[10,10],[-10,10],[10,-10]]){
+        const e2=document.elementFromPoint(cx+dx,cy+dy);
+        if(e2&&e2.dataset&&e2.dataset.n){ n=e2.dataset.n; break; }
+      }
+    }
+    mapSel=n||null; drawMap(current());
+  }
+  document.getElementById("mpop").addEventListener("click",async e=>{ if(e.target.id==="popx"){ mapSel=null; drawMap(current()); return; } const mb=e.target.closest("button[data-m]"); if(!mb) return;
+    const n=mb.dataset.n,k=mb.dataset.m; marks[n]=marks[n]||{}; marks[n][k]=!marks[n][k]; if(!marks[n].want&&!marks[n].been&&!marks[n].note) delete marks[n]; await saveMarks(); drawMap(current());});
+  const zoom=(f,cx,cy)=>{ cx=cx??vb.x+vb.w/2; cy=cy??vb.y+vb.h/2; const nw=Math.min(2400,Math.max(150,vb.w*f)); const k=nw/vb.w;
+    vb={x:cx-(cx-vb.x)*k, y:cy-(cy-vb.y)*k, w:nw, h:nw}; drawMap(current()); };
+  document.getElementById("zi").addEventListener("click",()=>zoom(0.6));
+  document.getElementById("zo").addEventListener("click",()=>zoom(1/0.6));
+  document.getElementById("zl").addEventListener("click",()=>useMyLocation(true));
+  document.getElementById("zc").addEventListener("click",()=>{const [ox,oy]=mproj(origin.la,origin.lo); vb={x:ox-vb.w/2,y:oy-vb.h/2,w:vb.w,h:vb.h}; drawMap(current());});
+  const pts=new Map(); let last=null, moved=false;
+  const toSvg=(px,py)=>{const r=svg.getBoundingClientRect(); const s=vb.w/r.width; return [vb.x+(px-r.left)*s, vb.y+(py-r.top)*s];};
+  map.addEventListener("pointerdown",e=>{pts.set(e.pointerId,[e.clientX,e.clientY]); map.setPointerCapture(e.pointerId); last=null; moved=false;});
+  map.addEventListener("pointermove",e=>{ if(!pts.has(e.pointerId)) return; pts.set(e.pointerId,[e.clientX,e.clientY]); const arr=[...pts.values()];
+    if(arr.length===1){ if(last){ const r=svg.getBoundingClientRect(), s=vb.w/r.width; const dx=(arr[0][0]-last[0])*s, dy=(arr[0][1]-last[1])*s;
+        if(Math.abs(dx)+Math.abs(dy)>0.5) moved=true; vb.x-=dx; vb.y-=dy; svg.setAttribute("viewBox",`${vb.x} ${vb.y} ${vb.w} ${vb.h}`);} last=[arr[0][0],arr[0][1]]; }
+    else if(arr.length===2){ const d=Math.hypot(arr[0][0]-arr[1][0],arr[0][1]-arr[1][1]); if(last&&last.d){ const f=last.d/d; if(Math.abs(f-1)>0.01){ const [cx,cy]=toSvg((arr[0][0]+arr[1][0])/2,(arr[0][1]+arr[1][1])/2); zoom(f,cx,cy);} } last={d}; moved=true; } });
+  const up=e=>{ if(!moved && pts.size===1) tapAt(e.clientX,e.clientY); pts.delete(e.pointerId); last=null; }; map.addEventListener("pointerup",up); map.addEventListener("pointercancel",up);
+  map.addEventListener("wheel",e=>{e.preventDefault(); const [cx,cy]=toSvg(e.clientX,e.clientY); zoom(e.deltaY>0?1.2:1/1.2,cx,cy);},{passive:false});
+  document.getElementById("view").addEventListener("click",e=>{ view=view==="list"?"map":"list"; e.target.textContent=view==="list"?"Map":"List"; e.target.classList.toggle("on",view==="map");
+    document.getElementById("map").classList.toggle("on",view==="map"); document.getElementById("board").style.display=view==="map"?"none":""; render(); });
+})();
+
+/* pick for me */
+const ov=document.getElementById("ov"); let lastPick=null;
+function pick(){
+  let pool=current().filter(x=>x.s.open!==false && x.p.k>=FLOOR);
+  if(!pool.length) pool=current(); if(!pool.length){toast("Nothing to pick from. Loosen a filter."); return;}
+  pool=pool.slice(0,Math.min(8,pool.length)); let c; do{c=pool[Math.floor(Math.random()*pool.length)];}while(pool.length>1&&c===lastPick); lastPick=c;
+  document.getElementById("ovk").textContent=`${c.p.cu||c.p.c} ${priceTxt(c.p.pr)} · ${Math.max(1,Math.round(c.d/FT_PER_MIN))} min walk · ★ ${c.p.r.toFixed(1)} (${fmtK(c.p.k)})`;
+  document.getElementById("ovn").textContent=c.p.n; document.getElementById("ovg").textContent=c.p.g||"";
+  document.getElementById("ovs").textContent=c.s.txt; document.getElementById("ovgo").href=amaps(c.p); ov.classList.add("on");
+}
+document.getElementById("pick").addEventListener("click",pick);
+document.getElementById("ovagain").addEventListener("click",pick);
+document.getElementById("ovx").addEventListener("click",()=>ov.classList.remove("on"));
+ov.addEventListener("click",e=>{if(e.target===ov) ov.classList.remove("on");});
+
+function openSheet(t,body,foot){document.getElementById("sht").textContent=t; document.getElementById("shp").textContent=body||"No description yet."; document.getElementById("shs").textContent=foot||""; document.getElementById("sheet").classList.add("on"); document.getElementById("scrim").classList.add("on");}
+function closeSheet(){document.getElementById("sheet").classList.remove("on"); document.getElementById("scrim").classList.remove("on");}
+document.getElementById("sheetx").addEventListener("click",closeSheet);
+document.getElementById("help").addEventListener("click",()=>openSheet("How to use this",
+  "Dark mode follows your phone. Your filters are remembered next time. Everything runs on Seattle time even if you open it from another state. Top row picks the meal for the time of day (it preselects the current one, tap Any time to clear). Open now is on by default. Big number on the left is minutes to walk there. Green means open, red means it closes within the hour, grey means closed. Tap the status line to see the week's hours and add a note. Dotted words are dishes you can tap for a plain-English definition. Green cuisine tag explains the food. Best sorts by rating and review count together and hides places with under 100 reviews. Pick for me grabs one of the top open places. Share sends the current list as a text. Map shows everything as dots; pinch to zoom, tap a dot for Apple or Google Maps directions, 📍 updates your location. The Map button on a card jumps straight to it. Share sends one place; the Share button up top sends the whole list.",
+  "Directions opens Apple Maps walking. Google opens the place page with menu, photos, and recent reviews.")); document.getElementById("scrim").addEventListener("click",closeSheet);
+let tt; function toast(m){const t=document.getElementById("toast"); t.textContent=m; t.classList.add("on"); clearTimeout(tt); tt=setTimeout(()=>t.classList.remove("on"),1600);}
+function tick(){const n=new Date(); const local=n.toLocaleTimeString([],{hour:"numeric",minute:"2-digit"}); const sea=n.toLocaleTimeString("en-US",{hour:"numeric",minute:"2-digit",timeZone:"America/Los_Angeles"}); document.getElementById("clock").textContent=(local===sea)?sea:sea+" Seattle";}
+tick(); setInterval(()=>{tick(); markMeal(); render();},60000);
+
+function maybeFirstRun(){
+  try{ if(localStorage.getItem("sb:seen")) return; }catch(e){ return; }
+  const el=document.getElementById("firstrun"); el.classList.add("on");
+  document.getElementById("frok").addEventListener("click",()=>{ el.classList.remove("on"); try{localStorage.setItem("sb:seen","1");}catch(e){} });
+}
+function markMeal(){const n=mealNow(); [...document.getElementById("meals").children].forEach(x=>x.classList.toggle("now",x.dataset.m===n));}
+(async()=>{await loadMarks(); if(!loadState()) meal=mealNow(); paintControls(); markMeal(); setWhere(); render(); maybeFirstRun(); await loadLive(); render();})();
+if("serviceWorker" in navigator && location.protocol.startsWith("http")){ navigator.serviceWorker.register("sw.js").catch(()=>{}); }
+</script>
+</body>
+</html>
