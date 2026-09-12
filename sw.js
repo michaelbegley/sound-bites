@@ -1,4 +1,4 @@
-const C="sb-2026-09-11b";  // bump this string whenever you change index.html so returning visitors get the new version
+const C="sb-2026-09-12";  // bump this string whenever you change index.html so returning visitors get the new version
 self.addEventListener("install",e=>{e.waitUntil(caches.open(C).then(c=>c.addAll(["./","index.html","manifest.json","icon.png"])));self.skipWaiting();});
 self.addEventListener("activate",e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==C).map(k=>caches.delete(k)))));self.clients.claim();});
 self.addEventListener("fetch",e=>{const u=new URL(e.request.url); if(u.origin!==location.origin) return;

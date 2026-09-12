@@ -2,7 +2,7 @@
 
 368 places to eat within one mile of Harbor Steps (1st & University), Seattle. Pike Place Market, the 1st Ave corridor, downtown core, Belltown, Denny Triangle, Pioneer Square, Chinatown-International District, and the waterfront. Live open/closed status, walk times, what to order, a map, and a share button. Ratings and hours refresh themselves on the 1st and 15th of each month.
 
-Live site: https://YOUR-USERNAME.github.io/sound-bites/
+Live site: https://michaelbegley.github.io/sound-bites/
 
 ## How it works
 
@@ -17,7 +17,7 @@ Live site: https://YOUR-USERNAME.github.io/sound-bites/
 1. Create a new repo called `sound-bites` (public).
 2. Upload everything in this folder, keeping the folder structure (`data/`, `scripts/`, `.github/workflows/`).
 3. Settings → Pages → Source: **Deploy from a branch** → Branch: `main`, folder `/ (root)` → Save.
-4. In a minute the site is at `https://YOUR-USERNAME.github.io/sound-bites/`. Fix the link at the top of this file.
+4. In a minute the site is at https://michaelbegley.github.io/sound-bites/
 
 ### 2. Get a Google Places API key
 1. Go to https://console.cloud.google.com and create a project (any name).
