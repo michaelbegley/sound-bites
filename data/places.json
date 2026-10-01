@@ -1,12 +1,12 @@
 {
- "updated": "2026-09-15",
+ "updated": "2026-10-01",
  "source": "Google Places API (New)",
  "places": [
   {
    "id": "ChIJWVEDTl9rkFQRyIAIfZBXEtw",
    "name": "Lands of Origin",
    "rating": 5,
-   "count": 673,
+   "count": 679,
    "hours": {
     "d": "10-19",
     "t": "x"
@@ -17,7 +17,7 @@
    "id": "ChIJhYEpTjlrkFQRZdWZY7cpYk0",
    "name": "Riccio's Sausage Co.",
    "rating": 5,
-   "count": 55,
+   "count": 61,
    "hours": "11-17",
    "status": "OPERATIONAL"
   },
@@ -25,8 +25,8 @@
    "id": "ChIJSZYmxLJqkFQRw_JlbdtkVBE",
    "name": "Le Panier",
    "rating": 4.7,
-   "count": 3108,
-   "hours": "7-18",
+   "count": 3122,
+   "hours": "7-17",
    "status": "OPERATIONAL"
   },
   {
@@ -45,7 +45,7 @@
    "id": "ChIJmd0iYmRrkFQR9pe53GcMmEQ",
    "name": "Hellenika Cultured Creamery",
    "rating": 4.7,
-   "count": 1226,
+   "count": 1242,
    "hours": {
     "d": "10.5-18",
     "u": "10.5-18.5",
@@ -58,7 +58,7 @@
    "id": "ChIJ-cM_wrJqkFQR-c9Pb593-yk",
    "name": "Beecher's Handmade Cheese",
    "rating": 4.6,
-   "count": 2697,
+   "count": 2716,
    "hours": "9-19",
    "status": "OPERATIONAL"
   },
@@ -66,7 +66,7 @@
    "id": "ChIJU2Vb9rJqkFQR9JH9oyUp8ns",
    "name": "Market Grill",
    "rating": 4.6,
-   "count": 1003,
+   "count": 1010,
    "hours": {
     "d": "7.5-17",
     "u": "10-16",
@@ -78,7 +78,7 @@
    "id": "ChIJmbBY97JqkFQR5yrPXS_EquU",
    "name": "Three Girls Bakery",
    "rating": 4.6,
-   "count": 607,
+   "count": 613,
    "hours": "7-17",
    "status": "OPERATIONAL"
   },
@@ -86,7 +86,7 @@
    "id": "ChIJMzk46rJqkFQRTlQqS_3l1aI",
    "name": "City Fish Co.",
    "rating": 4.6,
-   "count": 203,
+   "count": 206,
    "hours": {
     "d": "7-17",
     "u": "7-19",
@@ -99,7 +99,7 @@
    "id": "ChIJK0uFvJVrkFQR-haxTbufpPI",
    "name": "Chukar Cherries",
    "rating": 4.6,
-   "count": 93,
+   "count": 97,
    "hours": "9-18",
    "status": "OPERATIONAL"
   },
@@ -120,7 +120,7 @@
    "id": "ChIJFTNZ9rJqkFQRGhB_g8Zdu5o",
    "name": "Lowell's Restaurant",
    "rating": 4.4,
-   "count": 4047,
+   "count": 4060,
    "hours": {
     "d": "8-16",
     "u": "8-17",
@@ -133,7 +133,7 @@
    "id": "ChIJjQjo9rJqkFQRrGSWuC3TVzk",
    "name": "Mee Sum Pastry",
    "rating": 4.4,
-   "count": 1243,
+   "count": 1252,
    "hours": "8-19",
    "status": "OPERATIONAL"
   },
@@ -149,7 +149,7 @@
    "id": "ChIJmbBY97JqkFQR4ok9vvlmBpw",
    "name": "Jack's Fish Spot",
    "rating": 4.1,
-   "count": 1315,
+   "count": 1322,
    "hours": {
     "d": "7.5-18",
     "u": "8-17"
@@ -160,7 +160,7 @@
    "id": "ChIJg4Rb9rJqkFQRj4k1Qm1KhvQ",
    "name": "Pure Food Fish Market",
    "rating": 4.1,
-   "count": 270,
+   "count": 273,
    "hours": "7-17",
    "status": "OPERATIONAL"
   },
@@ -168,7 +168,7 @@
    "id": "ChIJTyZkO8BrkFQR15Kb1Bl0c6c",
    "name": "Seattle Dumpling Co.",
    "rating": 4.1,
-   "count": 396,
+   "count": 399,
    "hours": {
     "d": "10-17",
     "t": "x"
@@ -187,7 +187,7 @@
    "id": "ChIJkX3s-LJqkFQR8DuBOOTQ8uo",
    "name": "Pike Place Bakery",
    "rating": 3.6,
-   "count": 102,
+   "count": 105,
    "hours": {
     "d": "8-17",
     "m": "x",
@@ -200,7 +200,7 @@
    "id": "ChIJyyT09rJqkFQRLLYe2Nl0orA",
    "name": "Pike Place Chinese Cuisine",
    "rating": 3.1,
-   "count": 401,
+   "count": 405,
    "hours": "9-21",
    "status": "OPERATIONAL"
   },
@@ -208,7 +208,7 @@
    "id": "ChIJt6GM-bJqkFQRE8bmHiV_3ws",
    "name": "Radiator Whiskey",
    "rating": 4.7,
-   "count": 1435,
+   "count": 1444,
    "hours": {
     "d": "15-22",
     "u": "x",
@@ -221,7 +221,7 @@
    "id": "ChIJH3w22oprkFQR6Y9YPFCH50Q",
    "name": "Lonely Siren",
    "rating": 4.7,
-   "count": 367,
+   "count": 371,
    "hours": {
     "d": "15-24",
     "u": "12-24",
@@ -234,7 +234,7 @@
    "id": "ChIJBR3G8LJqkFQRWD2Wzn0qG3c",
    "name": "Storyville Coffee",
    "rating": 4.6,
-   "count": 3194,
+   "count": 3216,
    "hours": {
     "d": "6.98-17",
     "u": "6.98-18",
@@ -247,7 +247,7 @@
    "id": "ChIJAaWYV7JqkFQREsNb5jEo0sE",
    "name": "Pike Place Fish Market",
    "rating": 4.6,
-   "count": 4489,
+   "count": 4500,
    "hours": "7-17",
    "status": "OPERATIONAL"
   },
@@ -255,7 +255,7 @@
    "id": "ChIJfR_RWLJqkFQRnuNtvUDfw-4",
    "name": "Alibi Room",
    "rating": 4.6,
-   "count": 2281,
+   "count": 2297,
    "hours": "11.5-26",
    "status": "OPERATIONAL"
   },
@@ -263,7 +263,7 @@
    "id": "ChIJ55YGcLhrkFQRWRDWep6UdAU",
    "name": "The Rabbit Box",
    "rating": 4.6,
-   "count": 141,
+   "count": 142,
    "hours": {
     "d": "14-24",
     "m": "x"
@@ -274,7 +274,7 @@
    "id": "ChIJAdP3V7JqkFQRh3g6UpDngzY",
    "name": "Pasta Casalinga",
    "rating": 4.6,
-   "count": 1000,
+   "count": 1004,
    "hours": "11-16.75",
    "status": "OPERATIONAL"
   },
@@ -282,7 +282,7 @@
    "id": "ChIJPQG7WLJqkFQRUXVHLnb3Lro",
    "name": "Ghost Alley Espresso",
    "rating": 4.6,
-   "count": 764,
+   "count": 767,
    "hours": "7-16",
    "status": "OPERATIONAL"
   },
@@ -290,7 +290,7 @@
    "id": "ChIJt6GM-bJqkFQRnqQLxHoXr4w",
    "name": "Matt's in the Market",
    "rating": 4.5,
-   "count": 1306,
+   "count": 1312,
    "hours": {
     "d": "11.5-14.5,17.5-22",
     "u": "11.5-14.5"
@@ -301,7 +301,7 @@
    "id": "ChIJIeFF9rJqkFQRTqf19QZYftY",
    "name": "Place Pigalle",
    "rating": 4.5,
-   "count": 701,
+   "count": 706,
    "hours": {
     "d": "11.5-21",
     "f": "11.5-21.5",
@@ -313,7 +313,7 @@
    "id": "ChIJI2kVWLJqkFQRoNhAi2fjAz0",
    "name": "IL Bistro",
    "rating": 4.3,
-   "count": 897,
+   "count": 904,
    "hours": "17-26",
    "status": "OPERATIONAL"
   },
@@ -321,7 +321,7 @@
    "id": "ChIJWalY97JqkFQR03-hwcBDefo",
    "name": "Pike Place Bar & Grill",
    "rating": 4.1,
-   "count": 1348,
+   "count": 1356,
    "hours": {
     "d": "10-22",
     "f": "9-23",
@@ -332,8 +332,8 @@
   {
    "id": "ChIJK0kBtAtrkFQREu1svJlo_d4",
    "name": "Chef Joe Brunch",
-   "rating": 4.9,
-   "count": 144,
+   "rating": 4.8,
+   "count": 147,
    "hours": {
     "d": "x",
     "u": "10-15",
@@ -346,7 +346,7 @@
    "id": "ChIJldHS8bJqkFQRJ3mW7Hb1pQ0",
    "name": "Pike Place Chowder",
    "rating": 4.6,
-   "count": 8364,
+   "count": 8410,
    "hours": "11-17",
    "status": "OPERATIONAL"
   },
@@ -354,7 +354,7 @@
    "id": "ChIJ91YOzrJqkFQRKmSW0B1qrbo",
    "name": "The Pink Door",
    "rating": 4.6,
-   "count": 7352,
+   "count": 7406,
    "hours": {
     "d": "11.5-23.5",
     "u": "x",
@@ -366,7 +366,7 @@
    "id": "ChIJWfoS3bJqkFQRe8w36H6VslI",
    "name": "Cafe Campagne",
    "rating": 4.5,
-   "count": 1571,
+   "count": 1575,
    "hours": {
     "d": "9-21",
     "u": "8-20",
@@ -378,7 +378,7 @@
    "id": "ChIJ1T6s2rJqkFQRptgjf0YL9_8",
    "name": "White Horse Tavern",
    "rating": 4.5,
-   "count": 433,
+   "count": 436,
    "hours": {
     "d": "17-24",
     "u": "x"
@@ -389,14 +389,14 @@
    "id": "ChIJmT4pzrJqkFQRGIQO7h3UiMY",
    "name": "Kells Irish Restaurant & Pub",
    "rating": 4.3,
-   "count": 2155,
+   "count": 2172,
    "hours": {
-    "d": "10-22",
+    "d": "10-26",
+    "u": "10-22",
+    "m": "11-22",
     "t": "11-23",
     "w": "11-24",
-    "r": "10-24",
-    "f": "10-26",
-    "s": "10-26"
+    "r": "10-24"
    },
    "status": "OPERATIONAL"
   },
@@ -412,7 +412,7 @@
    "id": "ChIJy5yh7LJqkFQRwDkAcw9At84",
    "name": "Old Stove Brewing Co.",
    "rating": 4.5,
-   "count": 5636,
+   "count": 5668,
    "hours": "11-22",
    "status": "OPERATIONAL"
   },
@@ -420,7 +420,7 @@
    "id": "ChIJv1QuXrJqkFQRyZmyvORKlQY",
    "name": "indi chocolate",
    "rating": 4.5,
-   "count": 347,
+   "count": 349,
    "hours": {
     "d": "8-19",
     "m": "8.5-17.5",
@@ -433,7 +433,7 @@
    "id": "ChIJ20YiR9hrkFQRy2tadLeY5I0",
    "name": "Freya Bakery & Cafe",
    "rating": 4.5,
-   "count": 397,
+   "count": 399,
    "hours": {
     "d": "7-16",
     "u": "8-16",
@@ -445,7 +445,7 @@
    "id": "ChIJAdP3V7JqkFQRLJz9zbHtfVs",
    "name": "Honest Biscuits",
    "rating": 4.3,
-   "count": 975,
+   "count": 979,
    "hours": {
     "d": "8-14",
     "u": "8-15",
@@ -458,11 +458,11 @@
    "id": "ChIJL6-LM7VrkFQRQP58nbHU4lE",
    "name": "Pike Street Coffee",
    "rating": 4.2,
-   "count": 251,
+   "count": 253,
    "hours": {
     "d": "7.5-17.5",
     "u": "7.5-18",
-    "w": "7-18",
+    "w": "7-17.5",
     "r": "7-18",
     "f": "7-18.5",
     "s": "7-18.5"
@@ -473,7 +473,7 @@
    "id": "ChIJbUAe611rkFQR_EFtZDsxaT4",
    "name": "Ludi's Restaurant",
    "rating": 4.6,
-   "count": 2505,
+   "count": 2519,
    "hours": "7-14.5",
    "status": "OPERATIONAL"
   },
@@ -493,7 +493,7 @@
    "id": "ChIJ8wI-LE0VkFQRBVlGBWsOp0k",
    "name": "Virginia Inn",
    "rating": 4.4,
-   "count": 1047,
+   "count": 1056,
    "hours": {
     "d": "11.5-21",
     "u": "9-21",
@@ -505,7 +505,7 @@
    "id": "ChIJLWKDK00VkFQRQaHHVu-CZ1g",
    "name": "Le Pichet",
    "rating": 4.4,
-   "count": 1717,
+   "count": 1724,
    "hours": {
     "d": "10-21",
     "r": "10-22",
@@ -518,7 +518,7 @@
    "id": "ChIJ9Z7V1rJqkFQR4PQw1WfZh3M",
    "name": "Biscuit Bitch",
    "rating": 4.4,
-   "count": 3889,
+   "count": 3902,
    "hours": "7.5-13",
    "status": "OPERATIONAL"
   },
@@ -526,7 +526,7 @@
    "id": "ChIJmVeu_rJqkFQRz8kW3M6doE8",
    "name": "El Borracho",
    "rating": 4.2,
-   "count": 1995,
+   "count": 1999,
    "hours": {
     "d": "11-22",
     "u": "11-20"
@@ -537,7 +537,7 @@
    "id": "ChIJgbiD5rJqkFQRI-lpw4TzU8Q",
    "name": "The Taproom at Pike Place",
    "rating": 4.2,
-   "count": 719,
+   "count": 725,
    "hours": {
     "d": "11-22",
     "f": "11-23",
@@ -549,10 +549,11 @@
    "id": "ChIJs2QCcgBrkFQRXUBfh0k8uXI",
    "name": "Social Grounds Coffee & Tea",
    "rating": 4.1,
-   "count": 86,
+   "count": 88,
    "hours": {
-    "d": "7-18",
-    "f": "7-18.5",
+    "d": "6.5-18",
+    "u": "7-17",
+    "f": "6.5-18.5",
     "s": "7-18.5"
    },
    "status": "OPERATIONAL"
@@ -560,8 +561,8 @@
   {
    "id": "ChIJRV1pNXRrkFQRmLQjWMmJkcc",
    "name": "Plantiful First & Union",
-   "rating": 4.8,
-   "count": 159,
+   "rating": 4.7,
+   "count": 161,
    "hours": "8-20",
    "status": "OPERATIONAL"
   },
@@ -569,7 +570,7 @@
    "id": "ChIJBx-J_rJqkFQRlLepwvXHbuo",
    "name": "The Crumpet Shop",
    "rating": 4.7,
-   "count": 1565,
+   "count": 1576,
    "hours": "7-16",
    "status": "OPERATIONAL"
   },
@@ -577,12 +578,14 @@
    "id": "ChIJ7b60pSFrkFQRRQQkeDQYOtQ",
    "name": "Baxter & Frost",
    "rating": 4.7,
-   "count": 294,
+   "count": 297,
    "hours": {
-    "d": "10-19",
-    "u": "10-20",
-    "f": "10-20",
-    "s": "10-21"
+    "d": "9-19",
+    "m": "10-18",
+    "t": "11-18",
+    "w": "11-18",
+    "r": "10-19",
+    "s": "9-20"
    },
    "status": "OPERATIONAL"
   },
@@ -590,7 +593,7 @@
    "id": "ChIJbWSJ-LJqkFQR96t3ak16578",
    "name": "DeLaurenti Food & Wine",
    "rating": 4.7,
-   "count": 697,
+   "count": 699,
    "hours": "9-17",
    "status": "OPERATIONAL"
   },
@@ -598,20 +601,19 @@
    "id": "ChIJFwOJ-LJqkFQReAbSXHUAqI8",
    "name": "Bottega Gelato",
    "rating": 4.6,
-   "count": 639,
+   "count": 646,
    "hours": {
-    "d": "10-21",
-    "u": "10-22",
-    "f": "10-22",
-    "s": "10-22"
+    "d": "11-21",
+    "f": "11-22",
+    "s": "11-22"
    },
    "status": "OPERATIONAL"
   },
   {
    "id": "ChIJJ12nCqlrkFQRhX1lL1olRTc",
    "name": "Salt & Straw",
-   "rating": 4.5,
-   "count": 183,
+   "rating": 4.4,
+   "count": 194,
    "hours": "11-23",
    "status": "OPERATIONAL"
   },
@@ -619,7 +621,7 @@
    "id": "ChIJERKJ-LJqkFQRjnLQYdXmeSY",
    "name": "La Vaca",
    "rating": 4.4,
-   "count": 123,
+   "count": 124,
    "hours": {
     "d": "11-17.5",
     "u": "x"
@@ -630,7 +632,7 @@
    "id": "ChIJHT8jULJqkFQRbWUzOe5ZHHk",
    "name": "Blarney Stone Pub",
    "rating": 4.2,
-   "count": 1296,
+   "count": 1297,
    "hours": {
     "d": "14-26",
     "u": "10-26",
@@ -644,7 +646,7 @@
    "id": "ChIJb4pG-7JqkFQRvsbImcPOiZs",
    "name": "Falafel King",
    "rating": 3.9,
-   "count": 471,
+   "count": 473,
    "hours": {
     "d": "11-20",
     "u": "11-19",
@@ -656,8 +658,8 @@
   {
    "id": "ChIJJ7opW15rkFQRpE4PHo9qP7A",
    "name": "CU Urban Market & Cafe",
-   "rating": 4.8,
-   "count": 214,
+   "rating": 4.7,
+   "count": 217,
    "hours": {
     "d": "6.5-19",
     "u": "8-16"
@@ -668,7 +670,7 @@
    "id": "ChIJYSjPILJqkFQRE-m7s1g6K0Y",
    "name": "Von's 1000Spirits",
    "rating": 4.6,
-   "count": 7743,
+   "count": 7801,
    "hours": {
     "d": "11-24",
     "f": "11-25",
@@ -680,7 +682,7 @@
    "id": "ChIJcUvNJ7JqkFQR_qdDVl2ZRfo",
    "name": "Diller Room",
    "rating": 4.6,
-   "count": 2556,
+   "count": 2585,
    "hours": "14-26",
    "status": "OPERATIONAL"
   },
@@ -688,9 +690,9 @@
    "id": "ChIJx_rKPrJqkFQR7OliFT0Jk-A",
    "name": "Fonté Coffee",
    "rating": 4.4,
-   "count": 1341,
+   "count": 1347,
    "hours": {
-    "d": "7-19",
+    "d": "7-18",
     "m": "7-17",
     "t": "7-17",
     "w": "7-17"
@@ -701,7 +703,7 @@
    "id": "ChIJe-eSIrJqkFQRgqI9cdi2xwc",
    "name": "Noi Thai Cuisine",
    "rating": 4.4,
-   "count": 3046,
+   "count": 3062,
    "hours": {
     "d": "12-21.5",
     "f": "12-22.5",
@@ -712,8 +714,8 @@
   {
    "id": "ChIJuRd6ryBrkFQRgM7rGsivREs",
    "name": "Musubi Kai",
-   "rating": 4.7,
-   "count": 363,
+   "rating": 4.6,
+   "count": 369,
    "hours": "9-20",
    "status": "OPERATIONAL"
   },
@@ -721,7 +723,7 @@
    "id": "ChIJNVSfl7NqkFQR_xwx9YUxm04",
    "name": "Pane Pane Sandwiches",
    "rating": 4.6,
-   "count": 200,
+   "count": 202,
    "hours": {
     "d": "8-16",
     "u": "x",
@@ -733,11 +735,11 @@
    "id": "ChIJ_ZS9l7NqkFQRfgE2Hnj2VeE",
    "name": "Gelatiamo",
    "rating": 4.6,
-   "count": 1478,
+   "count": 1481,
    "hours": {
-    "d": "11-21",
-    "f": "11-22",
-    "s": "11-22"
+    "d": "11-20",
+    "f": "11-21",
+    "s": "11-21"
    },
    "status": "OPERATIONAL"
   },
@@ -745,7 +747,7 @@
    "id": "ChIJL0zcZMprkFQRpiWglnqZ5zE",
    "name": "The Hart and the Hunter",
    "rating": 4.3,
-   "count": 640,
+   "count": 652,
    "hours": {
     "d": "8-21",
     "u": "8-15",
@@ -757,7 +759,7 @@
    "id": "ChIJHUQoo7NqkFQRj20DssNIn8c",
    "name": "Wild Ginger",
    "rating": 4.3,
-   "count": 2364,
+   "count": 2369,
    "hours": {
     "d": "16-21",
     "t": "11.5-14,16-21",
@@ -782,7 +784,7 @@
    "id": "ChIJFwk9MVNrkFQRfGmwef3WlEE",
    "name": "Little Ben's Rooftop Bar",
    "rating": 4.3,
-   "count": 8,
+   "count": 9,
    "hours": {
     "d": "16-20",
     "m": "x",
@@ -794,7 +796,7 @@
    "id": "ChIJtRCZSe9rkFQRxl4Y_upZoF0",
    "name": "Ben Paris",
    "rating": 4.2,
-   "count": 1170,
+   "count": 1179,
    "hours": {
     "d": "7-21",
     "f": "7-22",
@@ -805,8 +807,8 @@
   {
    "id": "ChIJkSxTm_xrkFQRyBwGa8MfLvQ",
    "name": "The George",
-   "rating": 4.2,
-   "count": 825,
+   "rating": 4.3,
+   "count": 852,
    "hours": {
     "d": "6.5-11,11.5-13.5,17-21",
     "u": "7-11.5,12-14,17-21",
@@ -821,7 +823,7 @@
    "id": "ChIJkTO9sUwVkFQR-2S50boraf8",
    "name": "Third Avenue Cafe",
    "rating": 4.8,
-   "count": 95,
+   "count": 97,
    "hours": {
     "d": "8-14.5",
     "u": "x",
@@ -833,7 +835,7 @@
    "id": "ChIJGQfqXwBrkFQR1cBllDTeQvQ",
    "name": "Nom House Vietnamese Kitchen",
    "rating": 4.7,
-   "count": 69,
+   "count": 70,
    "hours": {
     "d": "10.5-17.5",
     "u": "x",
@@ -845,7 +847,7 @@
    "id": "ChIJ1xiXVrBqkFQRgTH5jcL_57I",
    "name": "Homegrown",
    "rating": 4.1,
-   "count": 313,
+   "count": 314,
    "hours": {
     "d": "7-15",
     "u": "x",
@@ -857,7 +859,7 @@
    "id": "ChIJYTsF4rNqkFQRY0yKbRAG0Oo",
    "name": "Original Deli",
    "rating": 4.9,
-   "count": 477,
+   "count": 483,
    "hours": {
     "d": "7-14",
     "u": "x",
@@ -869,7 +871,7 @@
    "id": "ChIJYyrSB8drkFQRcvRwEF_ujZw",
    "name": "Lingon Restaurant",
    "rating": 4.9,
-   "count": 158,
+   "count": 170,
    "hours": {
     "d": "14-22",
     "m": "x"
@@ -880,7 +882,7 @@
    "id": "ChIJAb0KE0RrkFQRuI4X0By5Mcw",
    "name": "Howdy Y'all Coffee",
    "rating": 4.9,
-   "count": 122,
+   "count": 127,
    "hours": {
     "d": "10-16",
     "u": "x"
@@ -891,7 +893,7 @@
    "id": "ChIJuWpchLNqkFQR5R69vy9sQj8",
    "name": "Harbor Cafe",
    "rating": 4.8,
-   "count": 191,
+   "count": 192,
    "hours": {
     "d": "9-14.5",
     "u": "x",
@@ -903,7 +905,7 @@
    "id": "ChIJ_enN2XNrkFQRp8o_z9a515o",
    "name": "Monorail Espresso (4th Ave)",
    "rating": 4.4,
-   "count": 47,
+   "count": 50,
    "hours": {
     "d": "7-14",
     "u": "x",
@@ -927,7 +929,7 @@
    "id": "ChIJSxHAcbNqkFQRimpTht7bPsM",
    "name": "Yard House",
    "rating": 4.4,
-   "count": 6538,
+   "count": 6564,
    "hours": {
     "d": "11-22",
     "u": "10-22",
@@ -940,7 +942,7 @@
    "id": "ChIJv-fjWUsVkFQR-BkLFs20m00",
    "name": "Urban Coffee House",
    "rating": 4.3,
-   "count": 149,
+   "count": 150,
    "hours": {
     "d": "7-12",
     "u": "8-12",
@@ -953,7 +955,7 @@
    "id": "ChIJe1rOQUhrkFQR5uBjsMBMCmQ",
    "name": "W Living Room Bar",
    "rating": 4.2,
-   "count": 84,
+   "count": 91,
    "hours": {
     "d": "15-23",
     "u": "14-23",
@@ -978,7 +980,7 @@
    "id": "ChIJNV5JFvRrkFQRU87TjTVOLas",
    "name": "1928 Tap and Grill",
    "rating": 4.1,
-   "count": 223,
+   "count": 238,
    "hours": {
     "d": "11-22",
     "u": "11-23",
@@ -991,7 +993,7 @@
    "id": "ChIJB9c1hrRqkFQRAdly96gziZ4",
    "name": "Elephant & Castle",
    "rating": 4.5,
-   "count": 3462,
+   "count": 3527,
    "hours": {
     "d": "11.5-24",
     "f": "11.5-26",
@@ -1003,7 +1005,7 @@
    "id": "ChIJYxnjaXZrkFQRFuGhseoJc24",
    "name": "Carmine's",
    "rating": 4.5,
-   "count": 259,
+   "count": 261,
    "hours": {
     "d": "11.5-22",
     "u": "x",
@@ -1015,7 +1017,7 @@
    "id": "ChIJJ6iYtLZqkFQRPwfAHFSulgg",
    "name": "Tulio",
    "rating": 4.3,
-   "count": 1185,
+   "count": 1196,
    "hours": {
     "d": "7-10,11.5-14,17-21",
     "u": "8-12,17-21",
@@ -1028,7 +1030,7 @@
    "id": "ChIJ8c7QfbRqkFQRZQie8I5SLwI",
    "name": "Frolik Kitchen + Cocktails",
    "rating": 3.8,
-   "count": 1130,
+   "count": 1131,
    "hours": "6.5-23",
    "status": "OPERATIONAL"
   },
@@ -1036,7 +1038,7 @@
    "id": "ChIJiVf-BUdrkFQRhM2ZIYzk1os",
    "name": "Downtowndelimarket",
    "rating": 4.8,
-   "count": 103,
+   "count": 105,
    "hours": {
     "d": "8-23",
     "u": "10-20"
@@ -1047,7 +1049,7 @@
    "id": "ChIJ5UKL6shrkFQRtxy6YOJYK2w",
    "name": "Vivienne's Bistro",
    "rating": 4.6,
-   "count": 230,
+   "count": 240,
    "hours": "11-15,16-21",
    "status": "OPERATIONAL"
   },
@@ -1055,7 +1057,7 @@
    "id": "ChIJiajxot1rkFQRemLl_XPhBoo",
    "name": "Alder & Ash",
    "rating": 4.4,
-   "count": 900,
+   "count": 913,
    "hours": "6-22",
    "status": "OPERATIONAL"
   },
@@ -1076,7 +1078,7 @@
    "id": "ChIJTyQoov1rkFQRZYHgoMIeSxw",
    "name": "Cortina",
    "rating": 4.3,
-   "count": 642,
+   "count": 651,
    "hours": {
     "d": "11-21",
     "u": "x",
@@ -1101,7 +1103,7 @@
    "id": "ChIJE2F8FLRqkFQREDtIoA4fBTs",
    "name": "Redtrees Restaurant and Bar",
    "rating": 3.9,
-   "count": 96,
+   "count": 99,
    "hours": "7-10.5,16-23",
    "status": "OPERATIONAL"
   },
@@ -1117,7 +1119,7 @@
    "id": "ChIJt0eaMThrkFQRDLLMicShGng",
    "name": "Seattle Rooftop by Fogo de Chão",
    "rating": 4.5,
-   "count": 392,
+   "count": 410,
    "hours": {
     "d": "16-22",
     "u": "11-21",
@@ -1129,8 +1131,8 @@
   {
    "id": "ChIJWVBFYDBrkFQRe3izcKdQSYg",
    "name": "Olympic Bar",
-   "rating": 4.4,
-   "count": 240,
+   "rating": 4.3,
+   "count": 241,
    "hours": {
     "d": "12-23",
     "u": "11-23",
@@ -1155,7 +1157,7 @@
    "id": "ChIJPemT0bRqkFQREiTAzMgdB0M",
    "name": "Din Tai Fung",
    "rating": 4.5,
-   "count": 5749,
+   "count": 5779,
    "hours": "11-21",
    "status": "OPERATIONAL"
   },
@@ -1174,7 +1176,7 @@
    "id": "ChIJLSDL0bRqkFQRuNacMrcI15A",
    "name": "Pike Place Chowder (Pacific Place)",
    "rating": 4.3,
-   "count": 1386,
+   "count": 1394,
    "hours": {
     "d": "11-20",
     "u": "11-18",
@@ -1187,7 +1189,7 @@
    "id": "ChIJoSxoXp1rkFQRCGgq6rhU78U",
    "name": "Dough Zone Dumpling House",
    "rating": 4.3,
-   "count": 1875,
+   "count": 1876,
    "hours": "11-22",
    "status": "OPERATIONAL"
   },
@@ -1195,7 +1197,7 @@
    "id": "ChIJud5oVw9rkFQRyfFQG59KZGI",
    "name": "Rider",
    "rating": 4.1,
-   "count": 977,
+   "count": 979,
    "hours": "12-22",
    "status": "OPERATIONAL"
   },
@@ -1203,7 +1205,7 @@
    "id": "ChIJZ6GRvsdrkFQRRiCuvUgWU-4",
    "name": "Super Chix",
    "rating": 4.9,
-   "count": 1122,
+   "count": 1170,
    "hours": "11-22",
    "status": "OPERATIONAL"
   },
@@ -1211,7 +1213,7 @@
    "id": "ChIJfToLAa5qkFQRRKwO4L3kGUU",
    "name": "Elliott's Oyster House",
    "rating": 4.3,
-   "count": 7231,
+   "count": 7268,
    "hours": {
     "d": "11-21",
     "f": "11-22",
@@ -1223,7 +1225,7 @@
    "id": "ChIJZ6RlD1IVkFQRVwMuo0FAzyA",
    "name": "Anthony's Pier 66 & Bell St Diner",
    "rating": 4.3,
-   "count": 2610,
+   "count": 2628,
    "hours": "11.5-21",
    "status": "OPERATIONAL"
   },
@@ -1231,7 +1233,7 @@
    "id": "ChIJs-Di-61qkFQRca-vbJs-L2o",
    "name": "The Crab Pot",
    "rating": 4.2,
-   "count": 11944,
+   "count": 11971,
    "hours": {
     "d": "11-21",
     "f": "11-21.5",
@@ -1243,7 +1245,7 @@
    "id": "ChIJk_rHFwBrkFQRCkO3Mg6SldA",
    "name": "Ivar's Pier 54 Fish Bar",
    "rating": 4.1,
-   "count": 339,
+   "count": 347,
    "hours": "10-21",
    "status": "OPERATIONAL"
   },
@@ -1259,7 +1261,7 @@
    "id": "ChIJs-Di-61qkFQRlo6i3JGwHqA",
    "name": "The Fisherman's Restaurant",
    "rating": 3.9,
-   "count": 2710,
+   "count": 2718,
    "hours": {
     "d": "11.5-20.5",
     "u": "11-20.5",
@@ -1272,7 +1274,7 @@
    "id": "ChIJu7etpnAVkFQRVxcLsAKUXsY",
    "name": "Sugo Hand Roll Bar",
    "rating": 4.5,
-   "count": 1027,
+   "count": 1032,
    "hours": "11-21",
    "status": "OPERATIONAL"
   },
@@ -1280,7 +1282,7 @@
    "id": "ChIJVVWpN00VkFQRo_7o0uSZsVA",
    "name": "Half Shell",
    "rating": 4.5,
-   "count": 378,
+   "count": 386,
    "hours": "15-21",
    "status": "OPERATIONAL"
   },
@@ -1288,7 +1290,7 @@
    "id": "ChIJ-42sd3QVkFQRuLT1DqxuGsM",
    "name": "Aerlume",
    "rating": 4.6,
-   "count": 872,
+   "count": 882,
    "hours": {
     "d": "16-21",
     "u": "x",
@@ -1300,11 +1302,12 @@
    "id": "ChIJ-yhc6gkUkFQRTFqpRaFdjxc",
    "name": "Cutters Crabhouse",
    "rating": 4.3,
-   "count": 3397,
+   "count": 3429,
    "hours": {
     "d": "11.5-21",
-    "f": "11.5-21.5",
-    "s": "11.5-21.5"
+    "m": "16-21",
+    "t": "16-21",
+    "w": "16-21"
    },
    "status": "OPERATIONAL"
   },
@@ -1312,7 +1315,7 @@
    "id": "ChIJV3tW4I4VkFQR1qKBKMANv84",
    "name": "Mr. Fish Chips & Chowder",
    "rating": 4.2,
-   "count": 270,
+   "count": 281,
    "hours": "11.5-19",
    "status": "OPERATIONAL"
   },
@@ -1320,15 +1323,20 @@
    "id": "ChIJSckubO0VkFQRnkeJFKmZxgY",
    "name": "Cut Club Seattle",
    "rating": 4.7,
-   "count": 31,
-   "hours": null,
+   "count": 54,
+   "hours": {
+    "d": "7-22",
+    "u": "7-21",
+    "f": "7-23",
+    "s": "7-23"
+   },
    "status": "OPERATIONAL"
   },
   {
    "id": "ChIJl0E_zkwVkFQRczdVGbfpPvI",
    "name": "Moore Coffee Shop",
    "rating": 4.6,
-   "count": 1089,
+   "count": 1090,
    "hours": {
     "d": "x",
     "u": "8-15",
@@ -1342,7 +1350,7 @@
    "id": "ChIJZXzsp_5rkFQRbN2ATdDzqEE",
    "name": "The Shop by Porter",
    "rating": 4.5,
-   "count": 143,
+   "count": 144,
    "hours": {
     "d": "7-19",
     "u": "x",
@@ -1354,7 +1362,7 @@
    "id": "ChIJB_s4tUwVkFQRmjJhGfNaMiw",
    "name": "Retro Restaurant & Lounge",
    "rating": 4.3,
-   "count": 865,
+   "count": 868,
    "hours": "12-26",
    "status": "OPERATIONAL"
   },
@@ -1374,7 +1382,7 @@
    "id": "ChIJbXcZ2LJqkFQRpTSIOx58B4w",
    "name": "Conversation",
    "rating": 4.1,
-   "count": 622,
+   "count": 623,
    "hours": {
     "d": "7-11,17-22",
     "u": "8-13,17-22",
@@ -1398,7 +1406,7 @@
    "id": "ChIJWYRg8X4VkFQRyvCWzAeGqCI",
    "name": "oh dang",
    "rating": 4.9,
-   "count": 96,
+   "count": 122,
    "hours": {
     "d": "15-23.5",
     "u": "15-22.5",
@@ -1413,7 +1421,7 @@
    "id": "ChIJ-5JmonoVkFQR_L6iSomni80",
    "name": "Herkimer Coffee",
    "rating": 4.8,
-   "count": 155,
+   "count": 156,
    "hours": {
     "d": "7.5-14",
     "u": "x",
@@ -1425,7 +1433,7 @@
    "id": "ChIJ4T003D4VkFQRVOqUoEZKMrc",
    "name": "Anchor & Bloom Cafe",
    "rating": 4.8,
-   "count": 174,
+   "count": 179,
    "hours": {
     "d": "7.5-15",
     "u": "8-15",
@@ -1437,7 +1445,7 @@
    "id": "ChIJ03xz90gVkFQRiGHmJ9tT910",
    "name": "Slow Day Coffee",
    "rating": 4.8,
-   "count": 176,
+   "count": 181,
    "hours": "7-14",
    "status": "OPERATIONAL"
   },
@@ -1445,7 +1453,7 @@
    "id": "ChIJgXWjmUwVkFQR3XUWCH0rUTk",
    "name": "Neb Italian Restaurant",
    "rating": 4.5,
-   "count": 127,
+   "count": 131,
    "hours": {
     "d": "16-21",
     "u": "x",
@@ -1457,7 +1465,7 @@
    "id": "ChIJlUkh1-wVkFQRp7_A3iHwu-w",
    "name": "Eva's Cafe and Bar",
    "rating": 4.5,
-   "count": 39,
+   "count": 40,
    "hours": {
     "d": "7-19",
     "f": "7-21",
@@ -1469,7 +1477,7 @@
    "id": "ChIJTTRNRiAVkFQROY5bpEvuFSU",
    "name": "Kedai Makan Belltown",
    "rating": 4.5,
-   "count": 537,
+   "count": 540,
    "hours": {
     "d": "11-21",
     "f": "11-22",
@@ -1481,7 +1489,7 @@
    "id": "ChIJ2XMlcTAVkFQR5YN08JZfdlA",
    "name": "Provisions",
    "rating": 4.5,
-   "count": 298,
+   "count": 303,
    "hours": {
     "d": "17-26",
     "u": "11-24",
@@ -1495,7 +1503,7 @@
    "id": "ChIJkQm5kEsVkFQR6b6A73k2XI0",
    "name": "Palace Kitchen",
    "rating": 4.4,
-   "count": 1259,
+   "count": 1261,
    "hours": {
     "d": "17-24",
     "u": "x",
@@ -1507,7 +1515,7 @@
    "id": "ChIJX6U7AksVkFQRrEjQU0XxtsQ",
    "name": "Barolo Ristorante",
    "rating": 4.4,
-   "count": 1782,
+   "count": 1788,
    "hours": "15-23",
    "status": "OPERATIONAL"
   },
@@ -1515,7 +1523,7 @@
    "id": "ChIJ1SMKqUsVkFQRLqd5ovPxvuE",
    "name": "Cinque Terre Ristorante",
    "rating": 4.4,
-   "count": 1849,
+   "count": 1859,
    "hours": {
     "d": "11.5-22",
     "u": "15-22",
@@ -1527,7 +1535,7 @@
    "id": "ChIJXamgB00VkFQRFR1CIeWqlws",
    "name": "Black Cat Bar",
    "rating": 4.4,
-   "count": 555,
+   "count": 557,
    "hours": "14-26",
    "status": "OPERATIONAL"
   },
@@ -1535,7 +1543,7 @@
    "id": "ChIJSzFUr0sVkFQRsxbiyJvLEKM",
    "name": "Marination",
    "rating": 4.3,
-   "count": 1336,
+   "count": 1339,
    "hours": "11-20",
    "status": "OPERATIONAL"
   },
@@ -1543,9 +1551,9 @@
    "id": "ChIJXUznpU0VkFQRcc35QzkAM7w",
    "name": "Ohana Belltown",
    "rating": 4.3,
-   "count": 1767,
+   "count": 1774,
    "hours": {
-    "d": "15-25",
+    "d": "16.5-25",
     "u": "13-25",
     "f": "13-26",
     "s": "13-26"
@@ -1555,8 +1563,8 @@
   {
    "id": "ChIJkdswoXAVkFQRlIvnAxHuwvs",
    "name": "Amber Seattle",
-   "rating": 4.1,
-   "count": 71,
+   "rating": 4.6,
+   "count": 161,
    "hours": {
     "d": "18-25",
     "m": "x",
@@ -1569,12 +1577,12 @@
    "id": "ChIJW2wzfksVkFQRYbtMOjuVnfc",
    "name": "Margaux",
    "rating": 4.1,
-   "count": 437,
+   "count": 440,
    "hours": {
-    "d": "7-22",
-    "u": "7-14,15-22",
-    "f": "7-23",
-    "s": "7-14,15-23"
+    "d": "7-11,15-22",
+    "u": "7-12,15-22",
+    "f": "7-11,15-23",
+    "s": "7-12,15-23"
    },
    "status": "OPERATIONAL"
   },
@@ -1582,7 +1590,7 @@
    "id": "ChIJ2fJh2RoVkFQRm2sEB9TX1bo",
    "name": "The Victor Tavern",
    "rating": 4,
-   "count": 530,
+   "count": 537,
    "hours": {
     "d": "11-22",
     "u": "11-21"
@@ -1593,7 +1601,7 @@
    "id": "ChIJtYraB00VkFQRaTJwt4R1enc",
    "name": "Taco Del Mar",
    "rating": 3.8,
-   "count": 305,
+   "count": 303,
    "hours": {
     "d": "10-21",
     "u": "11-18"
@@ -1604,15 +1612,18 @@
    "id": "ChIJ2_2xyNprkFQRIBYhiL1uE74",
    "name": "Mirabelle by Orphée",
    "rating": 4.9,
-   "count": 856,
-   "hours": "8-15",
+   "count": 859,
+   "hours": {
+    "d": "8-15",
+    "r": "8-20"
+   },
    "status": "OPERATIONAL"
   },
   {
    "id": "ChIJAyi_C7BqkFQRrBhr-KrrtOc",
    "name": "Cherry Street Coffee House",
    "rating": 4.4,
-   "count": 1192,
+   "count": 1199,
    "hours": {
     "d": "6.5-17",
     "u": "7.5-16",
@@ -1624,7 +1635,7 @@
    "id": "ChIJ280jDwBrkFQRMwWVpJWaUx4",
    "name": "Molly Moon's Homemade Ice Cream",
    "rating": 4.5,
-   "count": 260,
+   "count": 266,
    "hours": "11-23",
    "status": "OPERATIONAL"
   },
@@ -1632,7 +1643,7 @@
    "id": "ChIJU6O0Y_1rkFQRw0BduR7xyBU",
    "name": "Lune Cafe",
    "rating": 4.5,
-   "count": 1335,
+   "count": 1342,
    "hours": {
     "d": "9-22",
     "u": "10-22",
@@ -1644,8 +1655,8 @@
   {
    "id": "ChIJJU0HRnxrkFQRxnmDkA-rAf0",
    "name": "TOASTED Bagels & Coffee",
-   "rating": 4.6,
-   "count": 100,
+   "rating": 4.7,
+   "count": 103,
    "hours": "7-15",
    "status": "OPERATIONAL"
   },
@@ -1653,13 +1664,13 @@
    "id": "ChIJJfbZ8hAVkFQRIIkA6B0vHw8",
    "name": "KAYAVA Belltown",
    "rating": 4.6,
-   "count": 162,
+   "count": 173,
    "hours": {
-    "d": "12-15,16-22",
-    "u": "12-22",
+    "d": "12-14.5,16-21.5",
+    "u": "12-21.5",
     "m": "x",
-    "f": "12-15,16-23",
-    "s": "12-23"
+    "f": "12-14.5,16-22.5",
+    "s": "12-22.5"
    },
    "status": "OPERATIONAL"
   },
@@ -1667,7 +1678,7 @@
    "id": "ChIJV6YFClwVkFQROdBqbXXybvc",
    "name": "Lenox",
    "rating": 4.6,
-   "count": 312,
+   "count": 317,
    "hours": {
     "d": "x",
     "f": "16-20",
@@ -1679,7 +1690,7 @@
    "id": "ChIJszqRdE4VkFQRU6u6ItQ5u3E",
    "name": "Cyclops",
    "rating": 4.4,
-   "count": 896,
+   "count": 900,
    "hours": {
     "d": "15-24",
     "u": "12-24",
@@ -1693,7 +1704,7 @@
    "id": "ChIJrcLZ3k0VkFQRkXJdDg7Ga30",
    "name": "Belltown Pizza",
    "rating": 4.2,
-   "count": 1412,
+   "count": 1417,
    "hours": {
     "d": "11.5-26",
     "m": "16-26"
@@ -1704,7 +1715,7 @@
    "id": "ChIJs0wbQE4VkFQRXDfBCoEe708",
    "name": "Some Random Bar",
    "rating": 4.6,
-   "count": 1870,
+   "count": 1873,
    "hours": {
     "d": "16-23",
     "u": "16-22",
@@ -1717,7 +1728,7 @@
    "id": "ChIJibX4ME8VkFQRypD16V31l-Q",
    "name": "The 5 Point Cafe",
    "rating": 4.3,
-   "count": 9076,
+   "count": 9122,
    "hours": {
     "d": "x",
     "u": "0-24"
@@ -1728,7 +1739,7 @@
    "id": "ChIJzSyY000VkFQR9bWQhF5ItrE",
    "name": "Tavolàta Belltown",
    "rating": 4.4,
-   "count": 1277,
+   "count": 1289,
    "hours": {
     "d": "16-22",
     "f": "16-23",
@@ -1740,7 +1751,7 @@
    "id": "ChIJJ3CZpDIVkFQRCAdFuUcaJ1A",
    "name": "Cotto Belltown",
    "rating": 4.3,
-   "count": 239,
+   "count": 240,
    "hours": {
     "d": "16-22",
     "f": "16-23",
@@ -1752,7 +1763,7 @@
    "id": "ChIJM5q0fU4VkFQR2RFNXJX7lQ0",
    "name": "La Vita E Bella",
    "rating": 4.4,
-   "count": 1449,
+   "count": 1451,
    "hours": {
     "d": "11.5-14.5,17-21.5",
     "u": "17-21.5",
@@ -1764,7 +1775,7 @@
    "id": "ChIJ5-MKSkwVkFQR6uTnu8Akzf0",
    "name": "ROCCO'S",
    "rating": 4.4,
-   "count": 4304,
+   "count": 4321,
    "hours": "11-24",
    "status": "OPERATIONAL"
   },
@@ -1772,7 +1783,7 @@
    "id": "ChIJgYW-hfEVkFQRC-tTG6s4qDY",
    "name": "Hatch Cantina",
    "rating": 4.3,
-   "count": 804,
+   "count": 820,
    "hours": {
     "d": "11-23",
     "u": "10-22",
@@ -1785,7 +1796,7 @@
    "id": "ChIJqZKYe04VkFQREw6b8VUjwkg",
    "name": "Karaage Setsuna",
    "rating": 4.5,
-   "count": 952,
+   "count": 960,
    "hours": {
     "d": "11.5-14,17-21",
     "u": "12-15,17-21",
@@ -1797,7 +1808,7 @@
    "id": "ChIJyflW1E0VkFQR0ONRNk5ABdQ",
    "name": "Buckley's in Belltown",
    "rating": 4.3,
-   "count": 1750,
+   "count": 1759,
    "hours": {
     "d": "11.5-25",
     "u": "9-24",
@@ -1809,7 +1820,7 @@
    "id": "ChIJ7ff2EmkVkFQRwqnH9wP5eJ8",
    "name": "Just The Tap",
    "rating": 4.5,
-   "count": 550,
+   "count": 554,
    "hours": {
     "d": "11-23",
     "f": "11-25",
@@ -1821,7 +1832,7 @@
    "id": "ChIJbfExOgAVkFQRAUArZsnUf1E",
    "name": "Kalabaw Bar & Thai Kitchen",
    "rating": 4.5,
-   "count": 302,
+   "count": 304,
    "hours": {
     "d": "11-24",
     "u": "11-22",
@@ -1834,7 +1845,7 @@
    "id": "ChIJUwXYrE0VkFQRlWpBzFOkOys",
    "name": "Bathtub Gin & Co.",
    "rating": 4.4,
-   "count": 1423,
+   "count": 1426,
    "hours": "17-26",
    "status": "OPERATIONAL"
   },
@@ -1842,7 +1853,7 @@
    "id": "ChIJx8nBw0wVkFQRejcwK9h2fpg",
    "name": "Pennyroyal",
    "rating": 4.3,
-   "count": 280,
+   "count": 282,
    "hours": {
     "d": "16-22",
     "u": "15-22",
@@ -1855,7 +1866,7 @@
    "id": "ChIJYe79xE0VkFQRj2nte5hIkC0",
    "name": "Screwdriver Bar",
    "rating": 4.6,
-   "count": 593,
+   "count": 595,
    "hours": "16-26",
    "status": "OPERATIONAL"
   },
@@ -1863,7 +1874,7 @@
    "id": "ChIJI7PHf04VkFQRpCaMkS1lfec",
    "name": "Rob Roy",
    "rating": 4.4,
-   "count": 829,
+   "count": 835,
    "hours": {
     "d": "16-24",
     "f": "16-26",
@@ -1875,13 +1886,13 @@
    "id": "ChIJCw3cZU4VkFQRxfg_GTHpmXM",
    "name": "Navy Strength",
    "rating": 4.4,
-   "count": 720,
+   "count": 722,
    "hours": {
     "d": "x",
-    "w": "16-22",
-    "r": "16-24",
-    "f": "16-24",
-    "s": "16-24"
+    "w": "17-23",
+    "r": "17-24",
+    "f": "17-24",
+    "s": "17-24"
    },
    "status": "OPERATIONAL"
   },
@@ -1889,7 +1900,7 @@
    "id": "ChIJAQAAAE0VkFQR25CAVyAwAAs",
    "name": "Shorty's",
    "rating": 4.3,
-   "count": 1199,
+   "count": 1204,
    "hours": "12-26",
    "status": "OPERATIONAL"
   },
@@ -1897,7 +1908,7 @@
    "id": "ChIJl7c2h8IVkFQRIlInTREJSSk",
    "name": "Coffee TAB",
    "rating": 4.7,
-   "count": 623,
+   "count": 632,
    "hours": "7-15",
    "status": "OPERATIONAL"
   },
@@ -1905,7 +1916,7 @@
    "id": "ChIJzVsySHwVkFQRM-KQdrSRUzM",
    "name": "Black Arrows Coffee",
    "rating": 4.6,
-   "count": 302,
+   "count": 304,
    "hours": "7-18",
    "status": "OPERATIONAL"
   },
@@ -1913,15 +1924,20 @@
    "id": "ChIJTUxGxE4VkFQR59zWpPn6SYo",
    "name": "Uptown Espresso Belltown",
    "rating": 4.4,
-   "count": 1048,
-   "hours": "6-18",
+   "count": 1054,
+   "hours": {
+    "d": "6-17",
+    "r": "6-18",
+    "f": "6-18",
+    "s": "6-18"
+   },
    "status": "OPERATIONAL"
   },
   {
    "id": "ChIJhUYpdTEVkFQRyXPEzyPjJiY",
    "name": "Fulcrum Café",
    "rating": 4.4,
-   "count": 722,
+   "count": 727,
    "hours": {
     "d": "7-18",
     "u": "8-18",
@@ -1932,8 +1948,8 @@
   {
    "id": "ChIJ3X6BA08VkFQRqC7NsOPY5Ps",
    "name": "Street Bean Cafe",
-   "rating": 4.6,
-   "count": 367,
+   "rating": 4.7,
+   "count": 369,
    "hours": {
     "d": "7-15",
     "u": "x",
@@ -1946,7 +1962,7 @@
    "id": "ChIJteL-1U4VkFQRk3iALSegYlQ",
    "name": "Artisan Cafe",
    "rating": 4.7,
-   "count": 325,
+   "count": 326,
    "hours": {
     "d": "9-14.5",
     "u": "x",
@@ -1957,8 +1973,8 @@
   {
    "id": "ChIJD6b88OUVkFQRIHkbNRlxM8A",
    "name": "Menya Muso Tsukemen & Ramen",
-   "rating": 4.6,
-   "count": 55,
+   "rating": 4.5,
+   "count": 61,
    "hours": {
     "d": "11.5-21",
     "f": "11.5-22",
@@ -1970,7 +1986,7 @@
    "id": "ChIJrRIczU0VkFQRCy-ASSOUXHY",
    "name": "Wasabi Sushi & Izakaya",
    "rating": 4.5,
-   "count": 2482,
+   "count": 2485,
    "hours": {
     "d": "16-23",
     "f": "16-24",
@@ -1982,7 +1998,7 @@
    "id": "ChIJlwUFuk0VkFQRzdTvH0McgL0",
    "name": "Umi Sake House",
    "rating": 4.6,
-   "count": 4761,
+   "count": 4778,
    "hours": {
     "d": "16-23",
     "f": "16-24",
@@ -1994,7 +2010,7 @@
    "id": "ChIJ4TMxOAAVkFQRO2_HC_U741A",
    "name": "ShoMon Kappo Sushi",
    "rating": 4.8,
-   "count": 191,
+   "count": 194,
    "hours": {
     "d": "17.5-22.5",
     "m": "x",
@@ -2006,7 +2022,7 @@
    "id": "ChIJ4RRLcFUVkFQRv3D3JV4bwPE",
    "name": "Momiji South Lake Union",
    "rating": 4.4,
-   "count": 871,
+   "count": 873,
    "hours": {
     "d": "11-21",
     "u": "16-21",
@@ -2019,7 +2035,7 @@
    "id": "ChIJt7OYoFBrkFQRNnREW4oMMs4",
    "name": "Sushi Blossom",
    "rating": 4.5,
-   "count": 172,
+   "count": 174,
    "hours": {
     "d": "16.5-20.5",
     "u": "x"
@@ -2030,7 +2046,7 @@
    "id": "ChIJx2um8c9rkFQRTzpY4k_0Dic",
    "name": "Good Shape Pizza",
    "rating": 4.7,
-   "count": 75,
+   "count": 74,
    "hours": {
     "d": "16-24",
     "f": "16-25",
@@ -2050,7 +2066,7 @@
    "id": "ChIJx9kQZNMVkFQRqlurRR5i8Ww",
    "name": "BAMBINOS PIZZERIA",
    "rating": 4.3,
-   "count": 822,
+   "count": 829,
    "hours": "11.5-22",
    "status": "OPERATIONAL"
   },
@@ -2058,15 +2074,15 @@
    "id": "ChIJsz7XdiMVkFQR1Ce6e81GqLs",
    "name": "Seattle Pizza and Bar",
    "rating": 4.4,
-   "count": 614,
+   "count": 629,
    "hours": "11-27",
    "status": "OPERATIONAL"
   },
   {
    "id": "ChIJITbnyEAVkFQRn1bmyyorreg",
    "name": "Pho Viet Anh",
-   "rating": 4.6,
-   "count": 1189,
+   "rating": 4.5,
+   "count": 1201,
    "hours": "11-20",
    "status": "OPERATIONAL"
   },
@@ -2074,7 +2090,7 @@
    "id": "ChIJ56BP6k8VkFQReKu3ugBHpeo",
    "name": "Thai On 1 Belltown",
    "rating": 4.4,
-   "count": 552,
+   "count": 554,
    "hours": {
     "d": "11-21",
     "u": "12-21",
@@ -2087,13 +2103,13 @@
    "id": "ChIJ6XUB204VkFQRhpfMZkdf3ZI",
    "name": "Ti22 Thai Cookery and Bar",
    "rating": 4.4,
-   "count": 515,
+   "count": 514,
    "hours": {
     "d": "x",
-    "t": "11-15,16-20.75",
-    "w": "16-20.5",
-    "r": "11-15,16-20.75",
-    "f": "11-15,16-20",
+    "t": "11-15,16-20.25",
+    "w": "11-14.75,16-20.25",
+    "r": "11-15,16-20.25",
+    "f": "11-15,16-21",
     "s": "16-21"
    },
    "status": "OPERATIONAL"
@@ -2102,7 +2118,7 @@
    "id": "ChIJS1YeVrJqkFQRTmxxi2l1Eks",
    "name": "Pho 25",
    "rating": 4.2,
-   "count": 509,
+   "count": 512,
    "hours": {
     "d": "11-19",
     "u": "x"
@@ -2113,7 +2129,7 @@
    "id": "ChIJI-BoPiQVkFQR4oyXmWwhGbI",
    "name": "Bangrak Market",
    "rating": 4.3,
-   "count": 2720,
+   "count": 2746,
    "hours": {
     "d": "11-15,16-24",
     "u": "12-23",
@@ -2126,7 +2142,7 @@
    "id": "ChIJnR5-504VkFQRU73v8xTw2Z8",
    "name": "Meekong Kitchen",
    "rating": 4.5,
-   "count": 760,
+   "count": 762,
    "hours": "11-20.5",
    "status": "OPERATIONAL"
   },
@@ -2142,7 +2158,7 @@
    "id": "ChIJ6TtIO08VkFQRRNn6uHOo27g",
    "name": "Tilikum Place Cafe",
    "rating": 4.6,
-   "count": 2016,
+   "count": 2022,
    "hours": {
     "d": "x",
     "u": "9-14",
@@ -2156,7 +2172,7 @@
    "id": "ChIJ5Y74B04VkFQRvoWKWLoETmA",
    "name": "Bang Bang Cafe",
    "rating": 4.4,
-   "count": 807,
+   "count": 812,
    "hours": {
     "d": "7-17",
     "u": "8-17",
@@ -2168,7 +2184,7 @@
    "id": "ChIJozoAJUwVkFQR9ZsSDbW7CwY",
    "name": "Biscuit Bitch Belltown",
    "rating": 4.5,
-   "count": 2124,
+   "count": 2137,
    "hours": "7.5-13",
    "status": "OPERATIONAL"
   },
@@ -2176,7 +2192,7 @@
    "id": "ChIJxbeJhFIVkFQRJXdfn17jAsk",
    "name": "Cafe Opla",
    "rating": 4.3,
-   "count": 492,
+   "count": 493,
    "hours": "7-14",
    "status": "OPERATIONAL"
   },
@@ -2184,7 +2200,7 @@
    "id": "ChIJsQlQ3NwVkFQROJ1o7pQPYCc",
    "name": "Mama Chavez's Tamales",
    "rating": 4.6,
-   "count": 202,
+   "count": 208,
    "hours": {
     "d": "17-26",
     "u": "17-24",
@@ -2198,7 +2214,7 @@
    "id": "ChIJYbBctQ0VkFQRdHZc0P9HrBk",
    "name": "La Llorona Taqueria",
    "rating": 4.4,
-   "count": 289,
+   "count": 292,
    "hours": {
     "d": "8-23",
     "r": "8-25.5",
@@ -2211,7 +2227,7 @@
    "id": "ChIJOzjfpk0VkFQRmRjtqDxmzlU",
    "name": "Villa Escondida",
    "rating": 4.5,
-   "count": 707,
+   "count": 711,
    "hours": {
     "d": "x",
     "t": "11-20",
@@ -2226,12 +2242,11 @@
    "id": "ChIJD9qH4UUVkFQRSD5K9TrQwow",
    "name": "Maiz Molino",
    "rating": 4.4,
-   "count": 389,
+   "count": 393,
    "hours": {
     "d": "11-15,17-21",
     "u": "10-14,17-21",
     "m": "11-15",
-    "w": "11-15",
     "s": "10-14,17-21"
    },
    "status": "OPERATIONAL"
@@ -2240,7 +2255,7 @@
    "id": "ChIJ5W7wFhcVkFQRa80_sBpKPBc",
    "name": "Casco Antiguo",
    "rating": 4.3,
-   "count": 2124,
+   "count": 2131,
    "hours": {
     "d": "11.5-21",
     "u": "x",
@@ -2252,7 +2267,7 @@
    "id": "ChIJgeOaXXsVkFQRp5rGLz49h4U",
    "name": "Limoncello Belltown",
    "rating": 4.4,
-   "count": 593,
+   "count": 597,
    "hours": {
     "d": "16-21",
     "f": "16-22",
@@ -2264,11 +2279,11 @@
    "id": "ChIJ5zV-zE8VkFQRv7i9Q1zAzBo",
    "name": "Cherry Street Coffee Belltown",
    "rating": 4.3,
-   "count": 456,
+   "count": 459,
    "hours": {
-    "d": "7-15",
-    "u": "8-15",
-    "s": "8-15"
+    "d": "6.5-16",
+    "u": "7.5-16",
+    "s": "7.5-16"
    },
    "status": "OPERATIONAL"
   },
@@ -2276,7 +2291,7 @@
    "id": "ChIJd4EJdk4VkFQRcE5sxKy08ww",
    "name": "Macrina Bakery & Cafe",
    "rating": 4.5,
-   "count": 1360,
+   "count": 1364,
    "hours": "7-17",
    "status": "OPERATIONAL"
   },
@@ -2284,7 +2299,7 @@
    "id": "ChIJUwKffU4VkFQRVMTVWrCtcLE",
    "name": "Shiro's Sushi",
    "rating": 4.6,
-   "count": 2590,
+   "count": 2598,
    "hours": "16.5-21.5",
    "status": "OPERATIONAL"
   },
@@ -2292,7 +2307,7 @@
    "id": "ChIJ0XNlhkQVkFQREV8k0zjrj3s",
    "name": "El Gaucho Seattle",
    "rating": 4.6,
-   "count": 2006,
+   "count": 2010,
    "hours": {
     "d": "16-21",
     "u": "x",
@@ -2306,7 +2321,7 @@
    "id": "ChIJSXeVvUwVkFQRcNZSuiadHdA",
    "name": "Serious Pie Downtown",
    "rating": 4.5,
-   "count": 4704,
+   "count": 4718,
    "hours": {
     "d": "11.5-21",
     "f": "11.5-22",
@@ -2318,7 +2333,7 @@
    "id": "ChIJZ3fV7EsVkFQRyXzzrkx3iDs",
    "name": "Top Pot Doughnuts",
    "rating": 4.5,
-   "count": 2949,
+   "count": 2959,
    "hours": {
     "d": "6-19",
     "u": "7-19",
@@ -2360,7 +2375,7 @@
    "id": "ChIJ-2iVw0wVkFQRWsDII6LOrq8",
    "name": "The Whisky Bar",
    "rating": 4.4,
-   "count": 1277,
+   "count": 1279,
    "hours": "12-26",
    "status": "OPERATIONAL"
   },
@@ -2368,7 +2383,7 @@
    "id": "ChIJr7ePtbpqkFQR-Q44duvMqLo",
    "name": "Dead Line",
    "rating": 4.5,
-   "count": 679,
+   "count": 683,
    "hours": {
     "d": "16-23",
     "u": "16-21",
@@ -2383,7 +2398,7 @@
    "id": "ChIJUfxntbpqkFQRxoN_1GvKcTU",
    "name": "Damn the Weather",
    "rating": 4.3,
-   "count": 1631,
+   "count": 1635,
    "hours": {
     "d": "11-22",
     "u": "11-21",
@@ -2396,7 +2411,7 @@
    "id": "ChIJM0ls76RqkFQRXb9WD2irbCo",
    "name": "Il Terrazzo Carmine",
    "rating": 4.6,
-   "count": 1046,
+   "count": 1051,
    "hours": {
     "d": "11.5-15,17-22",
     "u": "x",
@@ -2422,8 +2437,8 @@
   {
    "id": "ChIJMVCF66RqkFQRA63Tz7JMF1k",
    "name": "Salt Harvest",
-   "rating": 4.3,
-   "count": 90,
+   "rating": 4.4,
+   "count": 92,
    "hours": {
     "d": "7-22",
     "u": "9-22",
@@ -2435,7 +2450,7 @@
    "id": "ChIJN4c5U7ZrkFQR3DAWF5IiimM",
    "name": "Public House",
    "rating": 4.8,
-   "count": 101,
+   "count": 106,
    "hours": {
     "d": "10-23.5",
     "r": "10-25",
@@ -2447,8 +2462,8 @@
   {
    "id": "ChIJHQ4m3uxrkFQRCSOCaTcUecA",
    "name": "Darkalino's",
-   "rating": 4.2,
-   "count": 228,
+   "rating": 4.1,
+   "count": 235,
    "hours": "11-20",
    "status": "OPERATIONAL"
   },
@@ -2456,7 +2471,7 @@
    "id": "ChIJF7ZkqaRqkFQRbhNt6fDQljQ",
    "name": "13 Coins Pioneer Square",
    "rating": 4.1,
-   "count": 5031,
+   "count": 5054,
    "hours": {
     "d": "7-23",
     "f": "7-25",
@@ -2468,7 +2483,7 @@
    "id": "ChIJs4w00KRqkFQRvAKL6ThuLiA",
    "name": "Caffe Umbria",
    "rating": 4.6,
-   "count": 789,
+   "count": 791,
    "hours": {
     "d": "7-17",
     "u": "8-16",
@@ -2480,7 +2495,7 @@
    "id": "ChIJD1ka5mBrkFQRsWvCDoIU518",
    "name": "Occidental Hall",
    "rating": 4.6,
-   "count": 353,
+   "count": 355,
    "hours": {
     "d": "11-21",
     "f": "11-24",
@@ -2492,7 +2507,7 @@
    "id": "ChIJo_oHZdxrkFQRBGQajOZ1PCU",
    "name": "Saigon Drip Cafe",
    "rating": 4.9,
-   "count": 1882,
+   "count": 1901,
    "hours": {
     "d": "9-17",
     "u": "10-16",
@@ -2505,14 +2520,14 @@
    "id": "ChIJG2K5JrtqkFQRsT22hSRqrrc",
    "name": "Good Bar",
    "rating": 4.3,
-   "count": 496,
+   "count": 498,
    "hours": {
-    "d": "11-21",
+    "d": "11.5-21",
     "u": "15-20",
-    "w": "11-22",
-    "r": "11-23",
-    "f": "11-24",
-    "s": "11-24"
+    "w": "11.5-22",
+    "r": "11.5-23",
+    "f": "11.5-24",
+    "s": "11.5-24"
    },
    "status": "OPERATIONAL"
   },
@@ -2541,7 +2556,7 @@
    "id": "ChIJpcYJPktrkFQRR9cLx1UrQCQ",
    "name": "Underbelly",
    "rating": 4.4,
-   "count": 333,
+   "count": 336,
    "hours": {
     "d": "14-24",
     "f": "14-26",
@@ -2553,7 +2568,7 @@
    "id": "ChIJDegKJLtqkFQRTOTyeFUdN6o",
    "name": "Flatstick Pub Pioneer Square",
    "rating": 4.6,
-   "count": 2573,
+   "count": 2574,
    "hours": {
     "d": "12-23",
     "u": "12-21",
@@ -2566,7 +2581,7 @@
    "id": "ChIJY6NHurpqkFQRBNxKBnDfAQA",
    "name": "Merchant's Cafe and Saloon",
    "rating": 4.2,
-   "count": 683,
+   "count": 684,
    "hours": {
     "d": "12-23",
     "u": "x",
@@ -2580,13 +2595,11 @@
    "id": "ChIJ87tNWmRrkFQRigTtj3Lwp2I",
    "name": "Day Made Kaffe Bar",
    "rating": 4.8,
-   "count": 152,
+   "count": 157,
    "hours": {
-    "d": "7-19",
+    "d": "7-16.5",
     "u": "x",
-    "m": "7-16",
-    "t": "7-16",
-    "s": "8-20"
+    "s": "8-17.5"
    },
    "status": "OPERATIONAL"
   },
@@ -2594,7 +2607,7 @@
    "id": "ChIJh8NuvcBrkFQRWGIwAO2DiGU",
    "name": "gloom coffee",
    "rating": 4.9,
-   "count": 82,
+   "count": 85,
    "hours": {
     "d": "8-15",
     "u": "x",
@@ -2606,7 +2619,7 @@
    "id": "ChIJM_73yqRqkFQRgLc2-YKhXr4",
    "name": "Zeitgeist Coffee",
    "rating": 4.5,
-   "count": 1637,
+   "count": 1641,
    "hours": {
     "d": "6-18",
     "u": "8-14"
@@ -2616,8 +2629,8 @@
   {
    "id": "ChIJe7kyrbpqkFQR6hTNFSZRiio",
    "name": "Caffé D'arte Pioneer Square",
-   "rating": 4.3,
-   "count": 426,
+   "rating": 4.2,
+   "count": 428,
    "hours": {
     "d": "6-18",
     "u": "8-17",
@@ -2628,8 +2641,8 @@
   {
    "id": "ChIJJfIJewBrkFQR3Rdv8R7DtCs",
    "name": "Louie's Deli",
-   "rating": 4.5,
-   "count": 53,
+   "rating": 4.4,
+   "count": 61,
    "hours": {
     "d": "9-14",
     "u": "x",
@@ -2641,7 +2654,7 @@
    "id": "ChIJIwMUXkdrkFQRERILNCrmlj8",
    "name": "BÉ MI Vietnamese Sandwich Bar",
    "rating": 4.9,
-   "count": 138,
+   "count": 146,
    "hours": {
     "d": "11-15",
     "u": "x",
@@ -2654,7 +2667,7 @@
    "id": "ChIJBVc-lbpqkFQRaoKWP0nxwnE",
    "name": "Tat's Deli",
    "rating": 4.7,
-   "count": 2756,
+   "count": 2771,
    "hours": {
     "d": "9-14.5",
     "u": "x",
@@ -2666,7 +2679,7 @@
    "id": "ChIJI9eLZbBqkFQRxICXLFwVaPc",
    "name": "Deli Cut Subs",
    "rating": 4.9,
-   "count": 160,
+   "count": 162,
    "hours": {
     "d": "6-15",
     "u": "x",
@@ -2678,7 +2691,7 @@
    "id": "ChIJX3psaOBrkFQRGhVWSpPepfA",
    "name": "Bottega Gabriele",
    "rating": 4.9,
-   "count": 206,
+   "count": 209,
    "hours": "11-16",
    "status": "OPERATIONAL"
   },
@@ -2686,15 +2699,15 @@
    "id": "ChIJtTqQPrtqkFQRNVqKYE0CasQ",
    "name": "Salumi",
    "rating": 4.6,
-   "count": 1558,
-   "hours": "10-18",
+   "count": 1562,
+   "hours": "10-15.5",
    "status": "OPERATIONAL"
   },
   {
    "id": "ChIJv2femrpqkFQRMmskHwd1_xA",
    "name": "Hole In the Wall BBQ",
    "rating": 4.7,
-   "count": 294,
+   "count": 296,
    "hours": {
     "d": "11-14.5",
     "u": "x",
@@ -2706,19 +2719,19 @@
    "id": "ChIJkU9ARuhrkFQRJQb4nUMgqd0",
    "name": "SuperKim Thai Kitchen & Bar",
    "rating": 4,
-   "count": 665,
+   "count": 666,
    "hours": {
     "d": "10-20",
     "u": "x",
     "s": "11-20"
    },
-   "status": "OPERATIONAL"
+   "status": "CLOSED_PERMANENTLY"
   },
   {
    "id": "ChIJS67_rLpqkFQRqaW8c0lZf6s",
    "name": "Cafe Paloma",
    "rating": 4.6,
-   "count": 615,
+   "count": 619,
    "hours": {
     "d": "10.5-17",
     "u": "x",
@@ -2731,8 +2744,8 @@
   {
    "id": "ChIJC3VhGQBrkFQRENpZvK0BrNc",
    "name": "Casa Gabriele",
-   "rating": 4.9,
-   "count": 53,
+   "rating": 4.8,
+   "count": 60,
    "hours": {
     "d": "17-21",
     "m": "x",
@@ -2744,7 +2757,7 @@
    "id": "ChIJ50fNUQBrkFQRIXlAoPrEp58",
    "name": "MOTO Pizza Pioneer Square",
    "rating": 4.6,
-   "count": 77,
+   "count": 81,
    "hours": "11-22",
    "status": "OPERATIONAL"
   },
@@ -2752,7 +2765,7 @@
    "id": "ChIJHVmPk7pqkFQRekQgR8tHgw0",
    "name": "Shawn O'Donnell's",
    "rating": 4.6,
-   "count": 1402,
+   "count": 1416,
    "hours": {
     "d": "11-22",
     "r": "11-23",
@@ -2777,7 +2790,7 @@
    "id": "ChIJj7SyWl1rkFQRJuw3Mk5wQa0",
    "name": "Tendon Kohaku",
    "rating": 4.7,
-   "count": 438,
+   "count": 455,
    "hours": "11-15,17-22",
    "status": "OPERATIONAL"
   },
@@ -2785,7 +2798,7 @@
    "id": "ChIJbQRId-ZrkFQRMdjDxCnlv3A",
    "name": "Matsu",
    "rating": 4.5,
-   "count": 694,
+   "count": 696,
    "hours": {
     "d": "16-22",
     "u": "x",
@@ -2798,7 +2811,7 @@
    "id": "ChIJY3HHgWhrkFQRUikCaEG6ewY",
    "name": "Jufeng Noodle House",
    "rating": 4.7,
-   "count": 222,
+   "count": 223,
    "hours": {
     "d": "11-21",
     "t": "x"
@@ -2809,7 +2822,7 @@
    "id": "ChIJnb9JP7xqkFQR1r8VvSZ-zsY",
    "name": "Jade Garden",
    "rating": 4.3,
-   "count": 2788,
+   "count": 2792,
    "hours": "9-21",
    "status": "OPERATIONAL"
   },
@@ -2817,7 +2830,7 @@
    "id": "ChIJja-Cs3JrkFQRhaqHEXFnaOc",
    "name": "Gan Bei Eatery and Bar",
    "rating": 4.6,
-   "count": 242,
+   "count": 243,
    "hours": {
     "d": "15.98-23",
     "r": "15.98-23.75",
@@ -2830,7 +2843,7 @@
    "id": "ChIJiycRj7tqkFQRA0eEzZouZWc",
    "name": "Maneki Restaurant",
    "rating": 4.6,
-   "count": 1147,
+   "count": 1151,
    "hours": {
     "d": "17-21",
     "m": "x"
@@ -2841,7 +2854,7 @@
    "id": "ChIJp-tsXbxqkFQR1odBHpvf_YY",
    "name": "Tai Tung",
    "rating": 4.4,
-   "count": 2139,
+   "count": 2145,
    "hours": "11-19.5",
    "status": "OPERATIONAL"
   },
@@ -2862,7 +2875,7 @@
    "id": "ChIJFcFOWLxqkFQRMuFR02hPit4",
    "name": "Honey Court Seafood",
    "rating": 4.2,
-   "count": 2674,
+   "count": 2686,
    "hours": {
     "d": "9-26",
     "u": "9-25.5",
@@ -2875,7 +2888,7 @@
    "id": "ChIJQSnAE-hrkFQR8SqqikmZzCE",
    "name": "Argentum Bakery & Coffee",
    "rating": 4.9,
-   "count": 115,
+   "count": 131,
    "hours": {
     "d": "8-19",
     "u": "10-20",
@@ -2888,7 +2901,7 @@
    "id": "ChIJr5H7ZKprkFQRP8NYqnHfEGk",
    "name": "The Pastry Project",
    "rating": 4.7,
-   "count": 121,
+   "count": 125,
    "hours": {
     "d": "8.5-13",
     "u": "x",
@@ -2900,7 +2913,7 @@
    "id": "ChIJB8jhVaZrkFQRff7Z5aTYSm4",
    "name": "Lady Yum Pioneer Square",
    "rating": 4.7,
-   "count": 346,
+   "count": 347,
    "hours": "10-22",
    "status": "OPERATIONAL"
   },
@@ -2908,7 +2921,7 @@
    "id": "ChIJU522ZMNrkFQRThMwY0UAShQ",
    "name": "Le Macaron French Pastries",
    "rating": 4.6,
-   "count": 64,
+   "count": 67,
    "hours": {
     "d": "10.5-21.5",
     "u": "10.5-22",
@@ -2922,7 +2935,7 @@
    "id": "ChIJEWssZr5rkFQRel6OnOIsQog",
    "name": "Hood Famous Bakeshop",
    "rating": 4.6,
-   "count": 674,
+   "count": 678,
    "hours": {
     "d": "8-16",
     "u": "9-16",
@@ -2947,7 +2960,7 @@
    "id": "ChIJ__8v0bZqkFQRCyCkZ5YK2yM",
    "name": "The Fig & The Judge",
    "rating": 3.7,
-   "count": 70,
+   "count": 73,
    "hours": {
     "d": "6.5-21.5",
     "u": "7-10",
@@ -2997,7 +3010,7 @@
    "id": "ChIJw7cve75rkFQR0qu3BOZ421o",
    "name": "Dim Sum King",
    "rating": 4.3,
-   "count": 557,
+   "count": 558,
    "hours": {
     "d": "7-17",
     "w": "x"
@@ -3020,7 +3033,7 @@
    "id": "ChIJY8FJBABrkFQRAr-H7z7n9M8",
    "name": "KAKURENBO",
    "rating": 4.9,
-   "count": 52,
+   "count": 54,
    "hours": {
     "d": "17-22",
     "t": "x",
@@ -3045,7 +3058,7 @@
    "id": "ChIJ_RikQrxqkFQRH1VyS-G5DNI",
    "name": "Kau Kau BBQ",
    "rating": 4.4,
-   "count": 2297,
+   "count": 2302,
    "hours": {
     "d": "10-20",
     "t": "x"
@@ -3056,7 +3069,7 @@
    "id": "ChIJpcnQTZxrkFQRwcYwLkI8ItM",
    "name": "Chengdu Memory Hot Pot",
    "rating": 4.4,
-   "count": 1119,
+   "count": 1124,
    "hours": "12-24",
    "status": "OPERATIONAL"
   },
@@ -3064,7 +3077,7 @@
    "id": "ChIJhzCYbwBrkFQRvY0tB68Tid4",
    "name": "Diamond Bay",
    "rating": 4.2,
-   "count": 502,
+   "count": 506,
    "hours": {
     "d": "10-15,16.5-21.5",
     "u": "10-22",
@@ -3077,7 +3090,7 @@
    "id": "ChIJAZtONKdrkFQR3vB9Wtz3-4A",
    "name": "Harmony Palace",
    "rating": 4.5,
-   "count": 207,
+   "count": 205,
    "hours": {
     "d": "9-15,17-21",
     "w": "x",
@@ -3090,14 +3103,18 @@
    "name": "King's Kitchen",
    "rating": 4,
    "count": 115,
-   "hours": "10-22",
+   "hours": {
+    "d": "10-15,16-22",
+    "u": "10-22",
+    "s": "10-22"
+   },
    "status": "OPERATIONAL"
   },
   {
    "id": "ChIJT8CoVrxqkFQRqv8jKveMxJM",
    "name": "Homestyle Dim Sum",
    "rating": 4.2,
-   "count": 508,
+   "count": 512,
    "hours": "7-17.5",
    "status": "OPERATIONAL"
   },
@@ -3105,7 +3122,7 @@
    "id": "ChIJa2TgWLxqkFQRUHagkFyjJ98",
    "name": "Hong Kong Bistro",
    "rating": 4,
-   "count": 2019,
+   "count": 2029,
    "hours": "10-24",
    "status": "OPERATIONAL"
   },
@@ -3113,7 +3130,7 @@
    "id": "ChIJIfHalrxqkFQRaVg8DKk28po",
    "name": "Dough Zone International District",
    "rating": 4.5,
-   "count": 3278,
+   "count": 3284,
    "hours": {
     "d": "11-21",
     "f": "11-22",
@@ -3125,7 +3142,7 @@
    "id": "ChIJXfniP7xqkFQRQVDMtUOacQk",
    "name": "Phở Ba",
    "rating": 4.6,
-   "count": 828,
+   "count": 831,
    "hours": "11-21",
    "status": "OPERATIONAL"
   },
@@ -3140,8 +3157,8 @@
   {
    "id": "ChIJ99NL7LxqkFQR2sbTmAs3DMU",
    "name": "Oasis Tea Zone",
-   "rating": 4.3,
-   "count": 1910,
+   "rating": 4.2,
+   "count": 1917,
    "hours": {
     "d": "11-24",
     "f": "11-26",
@@ -3153,7 +3170,7 @@
    "id": "ChIJP-6RtiJrkFQR5Eh5tlRbNbA",
    "name": "Panda Yogurt",
    "rating": 4.6,
-   "count": 304,
+   "count": 306,
    "hours": {
     "d": "11-22.5",
     "u": "11-23",
@@ -3166,7 +3183,7 @@
    "id": "ChIJ0_hRRq8VkFQR_yAxLsJcA_Y",
    "name": "Xing Fu Tang",
    "rating": 4.2,
-   "count": 578,
+   "count": 582,
    "hours": {
     "d": "11-22",
     "f": "11-23",
@@ -3178,7 +3195,7 @@
    "id": "ChIJUfCeGWFrkFQRlKS2OHhdYnM",
    "name": "GAGA TEA",
    "rating": 4.7,
-   "count": 404,
+   "count": 406,
    "hours": {
     "d": "17-24",
     "u": "12-24",
@@ -3204,7 +3221,7 @@
    "id": "ChIJ2UIdj7xqkFQRf5OVSNKl2DQ",
    "name": "Fuji Bakery",
    "rating": 4.6,
-   "count": 588,
+   "count": 593,
    "hours": {
     "d": "7.5-17",
     "u": "7.5-16"
@@ -3215,7 +3232,7 @@
    "id": "ChIJ5dqqmPlrkFQRBTeoyt96uus",
    "name": "Sharetea Chinatown",
    "rating": 3.8,
-   "count": 139,
+   "count": 141,
    "hours": "11-22",
    "status": "OPERATIONAL"
   },
@@ -3223,7 +3240,7 @@
    "id": "ChIJPwV0kbtqkFQRYW8ahXSUuVU",
    "name": "Fuji Sushi",
    "rating": 4.5,
-   "count": 1111,
+   "count": 1115,
    "hours": "11-21.5",
    "status": "OPERATIONAL"
   },
@@ -3231,7 +3248,7 @@
    "id": "ChIJq9nX27xqkFQRu05rxkrN7f4",
    "name": "Uwajimaya",
    "rating": 4.6,
-   "count": 10805,
+   "count": 10849,
    "hours": "8-21",
    "status": "OPERATIONAL"
   },
@@ -3239,7 +3256,7 @@
    "id": "ChIJGSo36rxqkFQRObEkHMGnmac",
    "name": "Aloha Plates",
    "rating": 4.5,
-   "count": 675,
+   "count": 678,
    "hours": "9-21.5",
    "status": "OPERATIONAL"
   },
@@ -3247,7 +3264,7 @@
    "id": "ChIJl4LCy2drkFQRliCWDa-rRho",
    "name": "BeanFish",
    "rating": 4.4,
-   "count": 156,
+   "count": 157,
    "hours": {
     "d": "11-18",
     "u": "11-19",
@@ -3267,11 +3284,12 @@
    "id": "ChIJu_VRNLVqkFQRR6qyyVqUSb8",
    "name": "Tidal+",
    "rating": 4,
-   "count": 926,
+   "count": 927,
    "hours": {
-    "d": "7-23",
+    "d": "6.5-22",
     "u": "7-22",
-    "s": "7-22"
+    "f": "6.5-23",
+    "s": "7-23"
    },
    "status": "OPERATIONAL"
   },
@@ -3279,7 +3297,7 @@
    "id": "ChIJMTvW4bRqkFQRQhfHHHxclfA",
    "name": "Nyc Deli Market",
    "rating": 4.3,
-   "count": 349,
+   "count": 350,
    "hours": "7-23",
    "status": "OPERATIONAL"
   },
@@ -3287,7 +3305,7 @@
    "id": "ChIJRWSv5ZRrkFQReM22rzxrgEs",
    "name": "Bombo Italian Kitchen",
    "rating": 4.2,
-   "count": 518,
+   "count": 524,
    "hours": {
     "d": "11-22",
     "u": "x",
@@ -3300,7 +3318,7 @@
    "id": "ChIJJZURTrVqkFQRwzsuIzqfVmo",
    "name": "The Carlile Room",
    "rating": 4.4,
-   "count": 957,
+   "count": 962,
    "hours": {
     "d": "16.5-21",
     "m": "x",
@@ -3314,7 +3332,7 @@
    "id": "ChIJWf0s40oVkFQRSA0HCWXNDwM",
    "name": "Le Caviste",
    "rating": 4.8,
-   "count": 569,
+   "count": 572,
    "hours": {
     "d": "16-24",
     "u": "x"
@@ -3325,7 +3343,7 @@
    "id": "ChIJK_P9xFYVkFQRPq_FmyqZO8w",
    "name": "King Leroy",
    "rating": 4,
-   "count": 120,
+   "count": 121,
    "hours": {
     "d": "11-23",
     "u": "15-22",
@@ -3337,7 +3355,7 @@
    "id": "ChIJhXZj8uRrkFQRVa92sD30N9Q",
    "name": "The Dressing Room by Can Can",
    "rating": 4.4,
-   "count": 141,
+   "count": 142,
    "hours": {
     "d": "x",
     "u": "9.5-15,16-21",
@@ -3351,7 +3369,7 @@
    "id": "ChIJgdrD00oVkFQRbSXCy0wr9RY",
    "name": "Anchorhead Coffee",
    "rating": 4.6,
-   "count": 1957,
+   "count": 1962,
    "hours": "7-18",
    "status": "OPERATIONAL"
   },
@@ -3359,7 +3377,7 @@
    "id": "ChIJnzzCxkoVkFQRTECoVWZJFiA",
    "name": "Mr West Cafe Bar Downtown",
    "rating": 4.3,
-   "count": 1607,
+   "count": 1611,
    "hours": {
     "d": "7-19",
     "u": "8-19",
@@ -3371,7 +3389,7 @@
    "id": "ChIJvwKi10oVkFQR6XaZSD_r2wA",
    "name": "Caffe Umbria Olive Way",
    "rating": 4.7,
-   "count": 456,
+   "count": 458,
    "hours": {
     "d": "7-15",
     "u": "7-12",
@@ -3383,7 +3401,7 @@
    "id": "ChIJW89pNksVkFQR_CVWb71WoPo",
    "name": "Cherry Street Coffee Olive Way",
    "rating": 4.3,
-   "count": 456,
+   "count": 458,
    "hours": {
     "d": "7-16",
     "u": "8-15",
@@ -3403,7 +3421,7 @@
    "id": "ChIJPfCORiwVkFQRdHfqwAP7BNQ",
    "name": "Grumpy Bean",
    "rating": 4.5,
-   "count": 195,
+   "count": 198,
    "hours": {
     "d": "7-15",
     "u": "x",
@@ -3417,7 +3435,7 @@
    "id": "ChIJKR4NPaxrkFQRYYLyfQohDVY",
    "name": "Victrola Coffee Roasters Pine",
    "rating": 4.3,
-   "count": 429,
+   "count": 430,
    "hours": {
     "d": "7-16",
     "u": "8-16",
@@ -3429,7 +3447,7 @@
    "id": "ChIJp77dZ15rkFQRYIEJmZfTJcU",
    "name": "Olympia Coffee Roasting",
    "rating": 4.4,
-   "count": 448,
+   "count": 457,
    "hours": {
     "d": "6-18",
     "u": "7-18",
@@ -3441,7 +3459,7 @@
    "id": "ChIJOSY9beUVkFQRyDs4OHtO8-A",
    "name": "House of Eve",
    "rating": 4.3,
-   "count": 284,
+   "count": 286,
    "hours": {
     "d": "11-21",
     "u": "11-20",
@@ -3455,15 +3473,19 @@
    "id": "ChIJ3c88zo0VkFQRPj6JIWaYzfA",
    "name": "Andare Kitchen & Bar",
    "rating": 4.1,
-   "count": 696,
-   "hours": "6.5-21.5",
+   "count": 698,
+   "hours": {
+    "d": "6.5-24",
+    "f": "6.5-25",
+    "s": "6.5-25"
+   },
    "status": "OPERATIONAL"
   },
   {
    "id": "ChIJR6ebU0sVkFQRLXLxX2C6PL8",
    "name": "Andaluca",
    "rating": 4.4,
-   "count": 464,
+   "count": 465,
    "hours": null,
    "status": "OPERATIONAL"
   },
@@ -3479,7 +3501,7 @@
    "id": "ChIJdVWO3S8VkFQRZZ3dtq-NkeQ",
    "name": "Mendocino Farms",
    "rating": 4,
-   "count": 395,
+   "count": 396,
    "hours": "10-21",
    "status": "OPERATIONAL"
   },
@@ -3487,7 +3509,7 @@
    "id": "ChIJG27hvY8VkFQR1BMdyhB9d2s",
    "name": "Mainstay Provisions",
    "rating": 4.6,
-   "count": 95,
+   "count": 96,
    "hours": {
     "d": "7-18",
     "u": "x",
@@ -3498,8 +3520,8 @@
   {
    "id": "ChIJ604YhmYVkFQRK08f6JNADWk",
    "name": "Cafe Madeline",
-   "rating": 4.3,
-   "count": 127,
+   "rating": 4.4,
+   "count": 128,
    "hours": {
     "d": "7-14",
     "u": "x",
@@ -3510,8 +3532,8 @@
   {
    "id": "ChIJWTKb-0kVkFQRmmkPGMKwC2E",
    "name": "rachel's ginger beer at the Spheres",
-   "rating": 4.7,
-   "count": 182,
+   "rating": 4.6,
+   "count": 184,
    "hours": "11-20",
    "status": "OPERATIONAL"
   },
@@ -3519,7 +3541,7 @@
    "id": "ChIJiQRNuEsVkFQRcV6cAUlcDX4",
    "name": "Willmott's Ghost",
    "rating": 4.2,
-   "count": 539,
+   "count": 540,
    "hours": {
     "d": "11.5-21",
     "u": "x",
@@ -3532,7 +3554,7 @@
    "id": "ChIJMYXksdJrkFQRoQB2nkiNzH0",
    "name": "Charlotte Restaurant & Lounge",
    "rating": 4.4,
-   "count": 479,
+   "count": 497,
    "hours": {
     "d": "7-23",
     "f": "7-24",
@@ -3544,7 +3566,7 @@
    "id": "ChIJT2djT7FqkFQRGYb_BBWPvlE",
    "name": "TRACE Market",
    "rating": 3.9,
-   "count": 244,
+   "count": 250,
    "hours": {
     "d": "7-13",
     "u": "7-14",
@@ -3556,7 +3578,7 @@
    "id": "ChIJG9hVcm1rkFQRKKJkxSFbM-w",
    "name": "Gyro First",
    "rating": 4.8,
-   "count": 335,
+   "count": 334,
    "hours": "11-21",
    "status": "OPERATIONAL"
   },
@@ -3572,7 +3594,7 @@
    "id": "ChIJl8KLQTYVkFQRjHSTewvVVb4",
    "name": "Thai Thani Kitchen",
    "rating": 3.9,
-   "count": 754,
+   "count": 755,
    "hours": {
     "d": "11-20.5",
     "u": "12-20.5",
@@ -3585,7 +3607,7 @@
    "id": "ChIJtf8QEjUVkFQR3CG0RZNL0Yw",
    "name": "Metropolitan Cafe",
    "rating": 4.3,
-   "count": 109,
+   "count": 110,
    "hours": {
     "d": "7-22",
     "u": "8-20",
@@ -3597,7 +3619,7 @@
    "id": "ChIJRyqqYaJrkFQRvNC0hnSHE-A",
    "name": "Gold Coast Kitchen",
    "rating": 4.6,
-   "count": 271,
+   "count": 273,
    "hours": {
     "d": "12-21",
     "m": "x",
@@ -3611,7 +3633,7 @@
    "id": "ChIJwYkOldkVkFQR4v2lxEIqjT4",
    "name": "La Loba",
    "rating": 4.3,
-   "count": 350,
+   "count": 358,
    "hours": {
     "d": "16-22",
     "u": "10-14,16-22"
@@ -3622,7 +3644,7 @@
    "id": "ChIJLUfoDStrkFQR4036u4yjPys",
    "name": "Di Fiora",
    "rating": 4.4,
-   "count": 761,
+   "count": 771,
    "hours": {
     "d": "12-16,17-21.5",
     "f": "12-16,17-22",
@@ -3634,7 +3656,7 @@
    "id": "ChIJQ4qnXp9rkFQROGsO_dzcNxU",
    "name": "Founders Club",
    "rating": 4.2,
-   "count": 131,
+   "count": 132,
    "hours": {
     "d": "17-24",
     "u": "x",
@@ -3646,7 +3668,7 @@
    "id": "ChIJy-JEK8tqkFQRGGiE5pLvCFA",
    "name": "Pine Box",
    "rating": 4.4,
-   "count": 1561,
+   "count": 1568,
    "hours": {
     "d": "15-24",
     "f": "15-26",
@@ -3658,7 +3680,7 @@
    "id": "ChIJG0jTnUwVkFQRawMulmeDYDw",
    "name": "Dahlia Bakery",
    "rating": 4.5,
-   "count": 1315,
+   "count": 1325,
    "hours": "7.5-15",
    "status": "OPERATIONAL"
   },
@@ -3678,7 +3700,7 @@
    "id": "ChIJZ2uMQCkVkFQRVZ13ouf0jgY",
    "name": "TOUS les JOURS Terry Ave",
    "rating": 3.9,
-   "count": 274,
+   "count": 276,
    "hours": "7-20",
    "status": "OPERATIONAL"
   },
@@ -3686,7 +3708,7 @@
    "id": "ChIJWUOKyVBrkFQRQrfNu4KmMI8",
    "name": "Get Baked Seattle Cookie Co.",
    "rating": 4.7,
-   "count": 306,
+   "count": 308,
    "hours": {
     "d": "11.5-18",
     "u": "11.5-17.5",
@@ -3700,7 +3722,7 @@
    "id": "ChIJMf8n3U4VkFQRN3KYYp1tlYA",
    "name": "La Parisienne French Bakery",
    "rating": 4.5,
-   "count": 1935,
+   "count": 1954,
    "hours": {
     "d": "7-19",
     "u": "x",
@@ -3711,8 +3733,8 @@
   {
    "id": "ChIJFWNgXgIVkFQRFnIMzElGH94",
    "name": "Pub 70",
-   "rating": 4.3,
-   "count": 631,
+   "rating": 4.4,
+   "count": 637,
    "hours": {
     "d": "11-24",
     "u": "10-24",
@@ -3724,7 +3746,7 @@
    "id": "ChIJhdZMaVIVkFQRi8VtUoNN7Qo",
    "name": "Six Seven Restaurant",
    "rating": 4.5,
-   "count": 2288,
+   "count": 2297,
    "hours": {
     "d": "7-14,17-21",
     "f": "7-14,17-21.5",
@@ -3736,7 +3758,7 @@
    "id": "ChIJCX1gSekVkFQRwyxDHdIK62Q",
    "name": "Anthony's Fish Bar",
    "rating": 4.3,
-   "count": 342,
+   "count": 348,
    "hours": "11-16",
    "status": "OPERATIONAL"
   },
@@ -3744,7 +3766,7 @@
    "id": "ChIJ25mZrFEVkFQRJvECq4Dl-Ls",
    "name": "AQUA by El Gaucho",
    "rating": 4.5,
-   "count": 1870,
+   "count": 1876,
    "hours": {
     "d": "17-21",
     "u": "x",
@@ -3757,8 +3779,12 @@
    "id": "ChIJh8xzLa5qkFQRc-VyM5h5uuU",
    "name": "Ivar's Acres of Clams",
    "rating": 4.3,
-   "count": 9550,
-   "hours": "11-21",
+   "count": 9569,
+   "hours": {
+    "d": "11-20",
+    "f": "11-21",
+    "s": "11-21"
+   },
    "status": "OPERATIONAL"
   },
   {
@@ -3777,7 +3803,7 @@
    "id": "ChIJWSZSV4MVkFQR0qgvgDNWHMg",
    "name": "Here Today Brewery & Kitchen",
    "rating": 4.7,
-   "count": 278,
+   "count": 282,
    "hours": {
     "d": "11-22",
     "u": "10-22",
@@ -3791,7 +3817,7 @@
    "id": "ChIJWffWy2YVkFQRLzaGTxyVyQc",
    "name": "Chennai Express",
    "rating": 4.5,
-   "count": 358,
+   "count": 373,
    "hours": {
     "d": "10.5-14.5,17-21",
     "m": "x"
@@ -3802,7 +3828,7 @@
    "id": "ChIJq8K12DcVkFQRdPGoNaBvVUQ",
    "name": "Evoke Cafe Bar",
    "rating": 4.5,
-   "count": 519,
+   "count": 520,
    "hours": {
     "d": "7-16",
     "u": "8-16",
@@ -3813,8 +3839,8 @@
   {
    "id": "ChIJ8RVGTEsVkFQRYOi-Hu_IboE",
    "name": "Monorail Espresso Westlake",
-   "rating": 4.7,
-   "count": 407,
+   "rating": 4.6,
+   "count": 413,
    "hours": {
     "d": "6-18",
     "u": "7-18",
@@ -3826,7 +3852,7 @@
    "id": "ChIJdxfOMSYVkFQRT283uS_dls4",
    "name": "Chaco Coffee & Tea",
    "rating": 4.8,
-   "count": 314,
+   "count": 318,
    "hours": {
     "d": "9-18",
     "u": "9-19",
@@ -3838,7 +3864,7 @@
    "id": "ChIJ5YJuQU8VkFQRZonqey4Qyj8",
    "name": "Zeeks Pizza",
    "rating": 4.3,
-   "count": 2497,
+   "count": 2508,
    "hours": {
     "d": "11-21",
     "r": "11-22",
@@ -3851,23 +3877,27 @@
    "id": "ChIJUQY5irJqkFQRNyEM-1Nq3oQ",
    "name": "Zig Zag Cafe",
    "rating": 4.6,
-   "count": 1313,
+   "count": 1320,
    "hours": "17-24",
    "status": "OPERATIONAL"
   },
   {
    "id": "ChIJpRalmVFrkFQR1QO9__xI7oA",
    "name": "Spice King Seattle",
-   "rating": 4,
-   "count": 443,
-   "hours": "10.5-20",
+   "rating": 4.1,
+   "count": 446,
+   "hours": {
+    "d": "10.5-20",
+    "u": "11-20",
+    "s": "11-20"
+   },
    "status": "OPERATIONAL"
   },
   {
    "id": "ChIJ1_445rJqkFQRaXpyjQg8uQs",
    "name": "White Heron Cellars",
    "rating": 3.9,
-   "count": 128,
+   "count": 129,
    "hours": {
     "d": "11-18",
     "t": "x"
@@ -3878,7 +3908,7 @@
    "id": "ChIJPcr187JrkFQRLApO8QKP8ZM",
    "name": "Pike Place Market",
    "rating": 4.6,
-   "count": 79753,
+   "count": 79966,
    "hours": {
     "d": "8-18",
     "u": "8-17"
@@ -3890,14 +3920,14 @@
    "name": "Verve Bowls Downtown",
    "rating": 4.6,
    "count": 358,
-   "hours": "8-20",
+   "hours": "8-18",
    "status": "OPERATIONAL"
   },
   {
    "id": "ChIJm6pa2rJqkFQReL5-qw2P3Ms",
    "name": "Kastoori Grill",
    "rating": 4.2,
-   "count": 1941,
+   "count": 1970,
    "hours": {
     "d": "10.5-21",
     "f": "10.5-21.5",
@@ -3909,7 +3939,7 @@
    "id": "ChIJQVHlzbJqkFQR3KSsOoYgmr4",
    "name": "Wines of Washington",
    "rating": 4.4,
-   "count": 180,
+   "count": 184,
    "hours": {
     "d": "14-20",
     "u": "14-19",
@@ -3933,7 +3963,7 @@
    "id": "ChIJ5YbCpbRqkFQRYPb1fHc0MQw",
    "name": "Westlake Center",
    "rating": 4.1,
-   "count": 6119,
+   "count": 6117,
    "hours": {
     "d": "11-19",
     "u": "12-19"
@@ -3944,7 +3974,7 @@
    "id": "ChIJF8uhc7BqkFQReuz4DBHbYC0",
    "name": "Cocoa Banana",
    "rating": 4.9,
-   "count": 138,
+   "count": 139,
    "hours": {
     "d": "8-16",
     "u": "10-15.5",
@@ -3956,7 +3986,7 @@
    "id": "ChIJjxALCYZrkFQRDWMs5sUBImA",
    "name": "Fusion Bistro Indian Cuisine",
    "rating": 4.7,
-   "count": 864,
+   "count": 868,
    "hours": "11-22",
    "status": "OPERATIONAL"
   },
@@ -3964,7 +3994,7 @@
    "id": "ChIJMW___MsVkFQRH7Ba6iPVWYM",
    "name": "BERRY MUCH",
    "rating": 4.7,
-   "count": 126,
+   "count": 133,
    "hours": {
     "d": "8-19",
     "u": "8-18",
@@ -3976,7 +4006,7 @@
    "id": "ChIJsShv3bJqkFQRSqYTgc7r_0w",
    "name": "Chan Seattle",
    "rating": 4.3,
-   "count": 558,
+   "count": 561,
    "hours": {
     "d": "16-21",
     "u": "x",
@@ -3990,7 +4020,7 @@
    "id": "ChIJTaq-E7VqkFQRbVu5G0WF9NY",
    "name": "Daawat Indian Grill & Bar",
    "rating": 4,
-   "count": 2745,
+   "count": 2752,
    "hours": {
     "d": "11-21.5",
     "u": "12-21.5"
@@ -4001,13 +4031,12 @@
    "id": "ChIJGZv5YCsVkFQRNBWTvkEg6nw",
    "name": "Kanak Indian Cuisine",
    "rating": 4.2,
-   "count": 1194,
+   "count": 1202,
    "hours": {
-    "d": "11.5-22.5",
+    "d": "11-22",
     "u": "11.5-22",
-    "m": "11-22",
-    "f": "11.5-23",
-    "s": "11.5-23"
+    "f": "11.5-22.5",
+    "s": "11.5-22.5"
    },
    "status": "OPERATIONAL"
   },
@@ -4015,7 +4044,7 @@
    "id": "ChIJbQ-0x00VkFQRxqbXptW5zsg",
    "name": "Al Basha Mediterranean Grill",
    "rating": 4.2,
-   "count": 2196,
+   "count": 2203,
    "hours": {
     "d": "11-26",
     "f": "11-27",
@@ -4027,7 +4056,7 @@
    "id": "ChIJHaNmK6EVkFQRpIVd0Myj2m8",
    "name": "Vindicktive Bar and Wings",
    "rating": 4.4,
-   "count": 981,
+   "count": 993,
    "hours": {
     "d": "12-24",
     "u": "10-24",
@@ -4039,8 +4068,8 @@
   {
    "id": "ChIJLXBIm1RrkFQRallMhBfCjtM",
    "name": "Fat Shack",
-   "rating": 4,
-   "count": 918,
+   "rating": 3.9,
+   "count": 925,
    "hours": {
     "d": "16-25",
     "f": "16-27",
@@ -4060,7 +4089,7 @@
    "id": "ChIJMcEFR9cVkFQRFLOT9hRxbuM",
    "name": "District H",
    "rating": 4.2,
-   "count": 555,
+   "count": 557,
    "hours": "8-21",
    "status": "OPERATIONAL"
   },
@@ -4068,7 +4097,7 @@
    "id": "ChIJeepuK0kVkFQR1Y_4A_kzTWE",
    "name": "Pluto Organic Cafe",
    "rating": 4.5,
-   "count": 448,
+   "count": 449,
    "hours": {
     "d": "7-18",
     "u": "8-18",
@@ -4080,7 +4109,7 @@
    "id": "ChIJw4nBApIVkFQRj5mOyl58yAo",
    "name": "Pure Green Juice Bar",
    "rating": 4.7,
-   "count": 199,
+   "count": 203,
    "hours": "7-21",
    "status": "OPERATIONAL"
   }
